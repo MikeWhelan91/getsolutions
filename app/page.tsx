@@ -6,9 +6,9 @@ export default function Home() {
   const appsArray = Object.values(allApps);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative overflow-hidden h-[600px] md:h-[700px]">
+      <section className="relative overflow-hidden flex items-end min-h-[420px] sm:min-h-[520px] lg:min-h-[640px]">
         {/* Hero Image */}
         <div className="absolute inset-0">
           <Image
@@ -17,31 +17,32 @@ export default function Home() {
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
+          <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         </div>
 
         {/* Overlay Content */}
-        <div className="relative h-full flex items-center justify-center">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="text-center animate-scale-in">
-              <p className="text-xl md:text-2xl text-white mb-4 max-w-3xl mx-auto drop-shadow-lg">
-                Powerful Android apps designed for your mobile experience
+        <div className="relative z-10 w-full">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-6 sm:pb-12 lg:pb-16 w-full">
+            <div className="text-center animate-scale-in space-y-4 sm:space-y-6 flex flex-col items-center">
+              <p className="text-base sm:text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-lg">
+                Powerful apps crafted for seamless web and mobile experiences
               </p>
-              <p className="text-lg text-white mb-12 drop-shadow-lg">
+              <p className="text-sm sm:text-lg text-white drop-shadow-lg max-w-2xl mx-auto">
                 Privacy-focused. Feature-rich. Always improving.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2 sm:pt-4 w-full max-w-2xl mx-auto">
                 <a
                   href="#apps"
-                  className="group px-8 py-4 bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-grass-700"
+                  className="group w-[55%] min-w-[200px] max-w-xs sm:w-auto px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-grass-700 text-center"
                 >
                   Explore Our Apps
-                  <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
                 <a
                   href="#about"
-                  className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 border-2 border-grass-500 hover:border-grass-600"
+                  className="w-[55%] min-w-[200px] max-w-xs sm:w-auto px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 border-2 border-grass-500 hover:border-grass-600 text-center"
                 >
                   Learn More
                 </a>
@@ -53,7 +54,7 @@ export default function Home() {
 
       {/* Apps Showcase Section */}
       <section id="apps" className="py-20 bg-white">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Apps
@@ -68,7 +69,7 @@ export default function Home() {
               <Link
                 key={app.id}
                 href={`/apps/${app.id}`}
-                className="group relative bg-white rounded-2xl p-8 border-2 border-gray-200 hover:border-grass-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-slide-up cursor-pointer flex flex-col"
+                className="group relative bg-white rounded-2xl p-6 sm:p-8 border-2 border-gray-200 hover:border-grass-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-slide-up cursor-pointer flex flex-col"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* App Icon */}
@@ -114,7 +115,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-white to-grass-50">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               About GetSolutions
@@ -169,7 +170,7 @@ export default function Home() {
           </div>
 
           {/* Contact/CTA */}
-          <div className="text-center bg-white rounded-2xl p-12 border-2 border-grass-500 shadow-lg">
+          <div className="text-center bg-white rounded-2xl p-8 sm:p-12 border-2 border-grass-500 shadow-lg">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Ready for apps that respect you?
             </h3>
@@ -188,20 +189,20 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="mb-6 md:mb-0 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-2">
                 Get<span className="text-grass-600">Solutions</span>
               </h3>
               <p className="text-gray-400">Building better Android apps.</p>
             </div>
 
-            <div className="flex flex-col items-center md:items-end">
-              <p className="text-gray-400 text-sm mb-2">
+            <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2">
+              <p className="text-gray-400 text-sm">
                 © 2026 GetSolutions. All rights reserved.
               </p>
-              <div className="flex gap-6">
+              <div className="flex gap-6 flex-wrap justify-center md:justify-end">
                 <a href="/privacy" className="text-gray-400 hover:text-grass-500 transition-colors">
                   Privacy Policy
                 </a>

@@ -10,11 +10,11 @@ interface AppListingProps {
 
 export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <AppStructuredData app={app} />
       {/* Header */}
       <header className="bg-white border-b-2 border-gray-200">
-        <div className="mx-auto max-w-6xl px-6 py-4">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4">
           <Link href="/" className="inline-flex items-center text-gray-600 hover:text-grass-600 transition-colors">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -26,7 +26,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
 
       {/* App Header Section */}
       <section className="bg-white border-b-2 border-gray-200">
-        <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* App Icon */}
             <div className="flex-shrink-0">
@@ -98,7 +98,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
                     href={app.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 border-2 border-grass-700 shadow-lg"
+                    className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 border-2 border-grass-700 shadow-lg text-center"
                   >
                     <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -110,7 +110,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
                     href={app.playStoreUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 border-2 border-grass-700 shadow-lg"
+                    className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 border-2 border-grass-700 shadow-lg text-center"
                   >
                     <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
@@ -118,7 +118,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
                     Get on Play Store
                   </a>
                 )}
-                <button className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 border-2 border-grass-500 hover:border-grass-600">
+                <button className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 border-2 border-grass-500 hover:border-grass-600 text-center">
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                   </svg>
@@ -133,7 +133,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
       {/* Banner Image Section (if exists) */}
       {app.banner && (
         <section className="bg-white py-8 border-b-2 border-gray-200">
-          <div className="mx-auto max-w-3xl px-6">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
             <div className="rounded-xl overflow-hidden border-2 border-gray-300 shadow-lg">
               <Image
                 src={app.banner}
@@ -149,7 +149,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
 
       {/* Screenshots Section */}
       <section className="bg-white py-12 border-b-2 border-gray-200">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Screenshots</h2>
           <div className="flex gap-4 overflow-x-auto pb-4">
             {app.screenshots.map((screenshot, index) => (
@@ -172,7 +172,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
 
       {/* About Section */}
       <section className="bg-white py-12 border-b-2 border-gray-200">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Description */}
             <div className="lg:col-span-2">
@@ -245,7 +245,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
       {/* Related Apps Section */}
       {relatedApps.length > 0 && (
         <section className="bg-gray-50 py-12">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">More from GetSolutions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedApps.map((relatedApp) => (
@@ -282,7 +282,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
 
       {/* Footer CTA */}
       <section className="bg-white py-12 border-t-2 border-gray-200">
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Ready to get started?
           </h2>
@@ -296,7 +296,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
               href={app.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 border-2 border-grass-700 shadow-lg"
+              className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 border-2 border-grass-700 shadow-lg text-center"
             >
               Visit {app.name}
             </a>
@@ -305,7 +305,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
               href={app.playStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 border-2 border-grass-700 shadow-lg"
+              className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 border-2 border-grass-700 shadow-lg text-center"
             >
               Download from Play Store
             </a>
@@ -315,20 +315,20 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="mb-6 md:mb-0 text-center md:text-left">
               <h3 className="text-2xl font-bold mb-2">
                 Get<span className="text-grass-600">Solutions</span>
               </h3>
               <p className="text-gray-400">Building better Android apps.</p>
             </div>
 
-            <div className="flex flex-col items-center md:items-end">
-              <p className="text-gray-400 text-sm mb-2">
+            <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2">
+              <p className="text-gray-400 text-sm">
                 © 2026 GetSolutions. All rights reserved.
               </p>
-              <div className="flex gap-6">
+              <div className="flex gap-6 flex-wrap justify-center md:justify-end">
                 <a href="/privacy" className="text-gray-400 hover:text-grass-500 transition-colors">
                   Privacy Policy
                 </a>

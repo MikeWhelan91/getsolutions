@@ -73,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-white">
+      <body className="antialiased bg-white overflow-x-hidden">
         <Navbar />
         {children}
         <Analytics />
