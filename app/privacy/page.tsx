@@ -2,7 +2,16 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - GetSolutions",
-  description: "Privacy policy for GetSolutions apps and websites.",
+  description: "Our commitment to your privacy. We don't collect, store, or sell your data. Learn how GetSolutions apps protect your privacy with local processing and zero uploads.",
+  openGraph: {
+    title: "Privacy Policy - GetSolutions",
+    description: "Our commitment to your privacy. We don't collect, store, or sell your data.",
+    url: "https://getsolutions.app/privacy",
+    type: "website"
+  },
+  alternates: {
+    canonical: "https://getsolutions.app/privacy"
+  }
 };
 
 export default function PrivacyPage() {

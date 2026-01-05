@@ -1,6 +1,7 @@
 import { AppData } from "@/types/app";
 import Link from "next/link";
 import Image from "next/image";
+import AppStructuredData from "./AppStructuredData";
 
 interface AppListingProps {
   app: AppData;
@@ -10,6 +11,7 @@ interface AppListingProps {
 export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
   return (
     <div className="min-h-screen bg-gray-50">
+      <AppStructuredData app={app} />
       {/* Header */}
       <header className="bg-white border-b-2 border-gray-200">
         <div className="mx-auto max-w-6xl px-6 py-4">

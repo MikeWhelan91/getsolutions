@@ -2,7 +2,16 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service - GetSolutions",
-  description: "Terms of service for GetSolutions apps and websites.",
+  description: "Terms of service for GetSolutions apps and websites. Fair terms, no hidden traps, written in plain English.",
+  openGraph: {
+    title: "Terms of Service - GetSolutions",
+    description: "Fair terms, no hidden traps, written in plain English.",
+    url: "https://getsolutions.app/terms",
+    type: "website"
+  },
+  alternates: {
+    canonical: "https://getsolutions.app/terms"
+  }
 };
 
 export default function TermsPage() {
