@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://getsolutions.app'),
@@ -75,6 +76,7 @@ export default function RootLayout({
       <body className="antialiased bg-white">
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   );
