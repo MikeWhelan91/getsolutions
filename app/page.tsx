@@ -8,44 +8,83 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative overflow-hidden flex items-end min-h-[420px] sm:min-h-[520px] lg:min-h-[640px]">
-        {/* Hero Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/hero.png"
-            alt="GetSolutions Hero"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-        </div>
-
-        {/* Overlay Content */}
-        <div className="relative z-10 w-full">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 pb-6 sm:pb-12 lg:pb-16 w-full">
-            <div className="text-center animate-scale-in space-y-4 sm:space-y-6 flex flex-col items-center">
-              <p className="text-base sm:text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-lg">
-                Powerful apps crafted for seamless web and mobile experiences
-              </p>
-              <p className="text-sm sm:text-lg text-white drop-shadow-lg max-w-2xl mx-auto">
-                Privacy-focused. Feature-rich. Always improving.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2 sm:pt-4 w-full max-w-2xl mx-auto">
-                <a
-                  href="#apps"
-                  className="group w-[55%] min-w-[200px] max-w-xs sm:w-auto px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-grass-700 text-center"
-                >
-                  Explore Our Apps
-                </a>
-                <a
-                  href="#about"
-                  className="w-[55%] min-w-[200px] max-w-xs sm:w-auto px-6 py-3 text-base sm:px-8 sm:py-4 sm:text-lg bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 border-2 border-grass-500 hover:border-grass-600 text-center"
-                >
-                  Learn More
-                </a>
+      <section className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-900 text-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-16 sm:px-6 lg:flex-row lg:items-center lg:py-24">
+          <div className="w-full space-y-6 lg:w-1/2">
+            <span className="inline-flex items-center gap-2 rounded-full border border-grass-500/50 bg-grass-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-grass-100">
+              <span className="h-2 w-2 rounded-full bg-grass-400 animate-pulse" aria-hidden="true" />
+              Purpose-built Android utilities
+            </span>
+            <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
+              Hero experiences that stay sharp on every screen.
+            </h1>
+            <p className="text-base text-gray-200 sm:text-lg">
+              GetSolutions delivers privacy-first tools that look as good on desktop monitors as they do on handheld devices.
+              No stretched imagery, no awkward layouts—just confident, utility-focused design.
+            </p>
+            <div className="grid grid-cols-1 gap-4 text-gray-100 sm:grid-cols-2">
+              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-grass-500/20 text-grass-300">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-semibold text-white">Pixel-perfect scaling</p>
+                  <p className="text-sm text-gray-300">Hero imagery is framed to keep its clarity across breakpoints.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-grass-500/20 text-grass-300">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-semibold text-white">Transparent value</p>
+                  <p className="text-sm text-gray-300">Fair pricing, no lock-ins, and thoughtful design touches.</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-4 pt-2 sm:flex-row">
+              <a
+                href="#apps"
+                className="group w-full rounded-xl border-2 border-grass-500 bg-grass-600 px-8 py-4 text-center text-lg font-semibold text-white transition-all duration-300 hover:translate-y-0.5 hover:bg-grass-500 hover:shadow-xl sm:w-auto"
+              >
+                Explore our apps
+              </a>
+              <a
+                href="#about"
+                className="w-full rounded-xl border-2 border-white/20 bg-white/5 px-8 py-4 text-center text-lg font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10 sm:w-auto"
+              >
+                See how we build
+              </a>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <div className="relative mx-auto w-full max-w-xl">
+              <div className="absolute inset-0 -z-10 rounded-[32px] bg-gradient-to-r from-grass-500/30 via-grass-400/20 to-transparent blur-3xl" aria-hidden="true" />
+              <div className="relative rounded-[32px] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-xl">
+                <div className="relative aspect-[5/3] w-full overflow-hidden rounded-3xl">
+                  <Image
+                    src="/hero.png"
+                    alt="GetSolutions Hero"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(min-width: 1024px) 520px, 90vw"
+                  />
+                </div>
+                <div className="mt-5 flex items-center justify-between text-sm text-gray-200">
+                  <div>
+                    <p className="font-semibold text-white">Responsive by design</p>
+                    <p className="text-xs text-gray-400">Optimized for tablets, phones, and wide displays.</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-2xl font-bold text-grass-300">50K+</p>
+                    <p className="text-[11px] uppercase tracking-wide text-gray-400">installs</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
