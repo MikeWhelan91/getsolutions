@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "GetSolutions",
     short_name: "GetSolutions",
     description:
-      "Privacy-first Android utilities including GetPDF, GetScan, GetCompress, and GetSecure.",
+      "Privacy-first Android utilities including GetPDF, GetScan, GetCompress, GetSecure, and Smart Resume.",
     start_url: "/",
     scope: "/",
     display: "standalone",
@@ -37,6 +37,11 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "512x512",
         type: "image/png",
       },
+      {
+        src: "/appicons/resume.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     shortcuts: [
       {
@@ -58,6 +63,11 @@ export default function manifest(): MetadataRoute.Manifest {
         name: "GetSecure",
         url: "/apps/getsecure",
         description: "Review Android permissions",
+      },
+      {
+        name: "Smart Resume",
+        url: "/apps/smart-resume",
+        description: "Build resumes and cover letters",
       },
     ],
   };

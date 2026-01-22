@@ -3,38 +3,37 @@ import AppListing from "@/components/AppListing";
 import { apps } from "@/types/app";
 
 export const metadata: Metadata = {
-  title: "GetCompress - Image & Video Compressor for Android",
-  description: "Reduce file sizes without quality loss. Compress images, videos, and PDFs with advanced algorithms. Save storage space and share files faster. Batch compression supported.",
+  title: "GetCompress - PDF & Image Compressor for Android",
+  description: "Compress PDFs and images directly on your device. Adjust quality with a simple slider or advanced controls, all offline with zero uploads.",
   keywords: [
     "image compressor Android",
-    "video compressor",
+    "PDF compressor",
     "compress photos",
     "reduce file size",
-    "PDF compressor",
     "GetCompress",
-    "batch compression",
+    "offline compression",
     "photo compression app",
     "save storage space"
   ],
   openGraph: {
-    title: "GetCompress - Image & Video Compressor for Android",
-    description: "Reduce file sizes without quality loss. Compress images, videos, and PDFs efficiently.",
+    title: "GetCompress - PDF & Image Compressor for Android",
+    description: "Compress PDFs and images locally with no uploads and easy quality controls.",
     url: "https://getsolutions.app/apps/getcompress",
     type: "website",
     images: [
       {
-        url: "/appicons/getcompress.png",
-        width: 512,
-        height: 512,
-        alt: "GetCompress App Icon"
+        url: "/appscreenshots/getcompress/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "GetCompress Feature Banner"
       }
     ]
   },
   twitter: {
-    card: "summary",
-    title: "GetCompress - Image & Video Compressor for Android",
-    description: "Reduce file sizes without quality loss. Save storage space instantly.",
-    images: ["/appicons/getcompress.png"]
+    card: "summary_large_image",
+    title: "GetCompress - PDF & Image Compressor for Android",
+    description: "Compress PDFs and images locally with simple, private controls.",
+    images: ["/appscreenshots/getcompress/banner.png"]
   },
   alternates: {
     canonical: "https://getsolutions.app/apps/getcompress"
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function GetCompressPage() {
   const app = apps.getcompress;
-  const relatedApps = [apps.getpdf, apps.getscan, apps.getsecure];
+  const relatedApps = [apps.getpdf, apps.getscan, apps.getsecure, apps["smart-resume"]];
 
   return <AppListing app={app} relatedApps={relatedApps} />;
 }

@@ -151,7 +151,7 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="mb-8 bg-grass-50 border-2 border-grass-200 rounded-xl p-6">
+          <section className="mb-8 bg-grass-50 rounded-xl p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-3">The Bottom Line</h3>
             <p className="text-gray-700 leading-relaxed">
               We built GetSolutions because we were frustrated with apps that treat users like products.
@@ -170,19 +170,22 @@ export default function PrivacyPage() {
               <a href="/" className="text-2xl font-bold mb-2 hover:text-grass-500 transition-colors">
                 Get<span className="text-grass-600">Solutions</span>
               </a>
-              <p className="text-gray-400">Building better Android apps.</p>
+              <p className="text-gray-400">Building better apps.</p>
             </div>
 
             <div className="flex flex-col items-center md:items-end">
               <p className="text-gray-400 text-sm mb-2">
                 © 2026 GetSolutions. All rights reserved.
               </p>
-              <div className="flex gap-6">
+              <div className="flex gap-6 flex-wrap justify-center md:justify-end">
                 <a href="/privacy" className="text-gray-400 hover:text-grass-500 transition-colors underline">
                   Privacy Policy
                 </a>
                 <a href="/terms" className="text-gray-400 hover:text-grass-500 transition-colors">
                   Terms of Service
+                </a>
+                <a href="/contact" className="text-gray-400 hover:text-grass-500 transition-colors">
+                  Contact
                 </a>
               </div>
             </div>

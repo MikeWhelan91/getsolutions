@@ -3,8 +3,8 @@ import AppListing from "@/components/AppListing";
 import { apps } from "@/types/app";
 
 export const metadata: Metadata = {
-  title: "GetPDF - Free Offline PDF Editor for Android",
-  description: "Edit PDFs offline with complete privacy. Merge, split, compress, and annotate PDFs on your Android device. No uploads, no cloud, zero risk. 100% free PDF editor.",
+  title: "GetPDF - Privacy-First PDF Editor for Android",
+  description: "Edit, organize, scan, and convert PDFs on your device. No accounts, no forced uploads, and fast on-device tools.",
   keywords: [
     "PDF editor Android",
     "offline PDF editor",
@@ -17,24 +17,24 @@ export const metadata: Metadata = {
     "GetPDF"
   ],
   openGraph: {
-    title: "GetPDF - Free Offline PDF Editor for Android",
-    description: "Edit PDFs offline with complete privacy. Merge, split, compress, and annotate PDFs on your Android device.",
+    title: "GetPDF - Privacy-First PDF Editor for Android",
+    description: "Edit, organize, scan, and convert PDFs on your device with private, on-device tools.",
     url: "https://getsolutions.app/apps/getpdf",
     type: "website",
     images: [
       {
-        url: "/appicons/getpdf.png",
-        width: 512,
-        height: 512,
-        alt: "GetPDF App Icon"
+        url: "/appscreenshots/getpdfapp/banner.png",
+        width: 1200,
+        height: 630,
+        alt: "GetPDF Feature Banner"
       }
     ]
   },
   twitter: {
-    card: "summary",
-    title: "GetPDF - Free Offline PDF Editor for Android",
-    description: "Edit PDFs offline with complete privacy. No uploads, no cloud, zero risk.",
-    images: ["/appicons/getpdf.png"]
+    card: "summary_large_image",
+    title: "GetPDF - Privacy-First PDF Editor for Android",
+    description: "Edit PDFs with private, on-device tools and no forced uploads.",
+    images: ["/appscreenshots/getpdfapp/banner.png"]
   },
   alternates: {
     canonical: "https://getsolutions.app/apps/getpdf"
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function GetPDFPage() {
   const app = apps.getpdf;
-  const relatedApps = [apps.getscan, apps.getcompress, apps.getsecure];
+  const relatedApps = [apps.getscan, apps.getcompress, apps.getsecure, apps["smart-resume"]];
 
   return <AppListing app={app} relatedApps={relatedApps} />;
 }

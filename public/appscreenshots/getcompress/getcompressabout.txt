@@ -1,0 +1,27 @@
+Icon image
+GetCompress - PDF & Image
+About this app
+GetCompress makes PDF and image compression fast, simple, and completely private. Compress PDF files, JPGs, PNGs, and images directly on your device — no uploads, no cloud processing, no tracking. Your files never leave your phone.
+
+Reduce file size in seconds using an easy safe-to-strong compression slider, or switch to advanced controls when you need precise results. Preserve text, links, and readability for documents, or push maximum compression when file size matters most.
+
+Perfect for email attachments, uploads with strict size limits, saving storage space, or sharing files securely.
+
+Key features
+• On-device PDF and image compression
+• Works fully offline — no internet required
+• Adjustable compression slider with visible quality trade-offs
+• Preserve text, links, and document structure
+• Optional rasterize mode for maximum size reduction
+• Advanced compression controls (Premium):
+– Target file size
+– DPI downsampling
+– Grayscale conversion
+– Metadata removal
+– Custom JPEG quality
+• Batch compression and reusable presets (Premium)
+• Ad-free upgrade available
+
+Unlike cloud-based compressor apps, GetCompress processes everything locally on your phone. No accounts, no uploads, and no data collection — just fast, reliable PDF and image compression you can trust.
+
+Built for real-world use: sending documents, meeting upload limits, freeing storage, and keeping sensitive files private.

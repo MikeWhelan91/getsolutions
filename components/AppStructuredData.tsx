@@ -1,6 +1,8 @@
 import { AppData } from "@/types/app";
 
 const siteUrl = "https://getsolutions.app";
+const developerPlayStoreUrl =
+  "https://play.google.com/store/apps/developer?id=GetSolutions.app";
 
 const withBase = (path?: string) => {
   if (!path) return undefined;
@@ -16,7 +18,7 @@ const buildStructuredData = (app: AppData) => {
   const screenshots = app.screenshots
     .map(withBase)
     .filter((src): src is string => Boolean(src));
-  const sameAs: string[] = [];
+  const sameAs: string[] = [developerPlayStoreUrl];
 
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -41,17 +43,10 @@ const buildStructuredData = (app: AppData) => {
       "@type": "Organization",
       name: "GetSolutions",
       url: siteUrl,
+      sameAs: [developerPlayStoreUrl],
     },
     isAccessibleForFree: true,
   };
-
-  if (app.rating) {
-    data.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: app.rating,
-      ratingCount: Math.max(Math.round((app.rating || 0) * 1000), 1),
-    };
-  }
 
   if (app.playStoreUrl) {
     data.installUrl = app.playStoreUrl;

@@ -2,9 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/next";
+import SiteStructuredData from "@/components/SiteStructuredData";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://getsolutions.app'),
+  icons: {
+    icon: "/getsolutionslogo.png",
+  },
   title: {
     default: "GetSolutions - Privacy-First Android Apps | PDF Editor, Document Scanner & More",
     template: "%s | GetSolutions"
@@ -73,7 +83,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-white overflow-x-hidden">
+      <body className={`${inter.className} antialiased bg-white overflow-x-hidden`}>
+        <SiteStructuredData />
         <Navbar />
         {children}
         <Analytics />

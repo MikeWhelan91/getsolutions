@@ -1,0 +1,12 @@
+Icon image
+GetScan - Fast PDF Scanner
+About this app
+GetScan is a no-frills document scanner. Open the app, start the camera, and save a PDF to your device in seconds—no accounts, no uploads, no busy screens. Everything happens locally so you can focus on the paper in front of you.
+
+Highlights:
+• Fast camera-to-PDF workflow with a single “Start Scan” button.
+• Automatic edge detection from Google ML Kit; save straight into the Downloads folder.
+• Latest scan preview plus a streamlined history list for quick re-downloads.
+• Clean Inter typography, centered layout, and zero popups or gimmicks.
+
+If you want a simple, reliable way to turn documents into PDFs, GetScan keeps it tight: Scan, Save, Done.

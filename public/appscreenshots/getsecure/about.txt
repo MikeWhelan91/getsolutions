@@ -1,0 +1,36 @@
+Icon image
+GetSecure
+About this app
+Protect your privacy without babysitting another app.
+
+GetSecure is a lightweight Android permission manager that scans your installed apps on demand, highlights risky permissions, and shows you exactly how to lock things down, no constant background monitoring, no battery drain.
+
+Open the app, get a full permission scan, and see where your data is exposed.
+
+Why users love GetSecure
+
+On-demand permission scans
+GetSecure only scans when you open it. No 24/7 background services, no silent tracking—just clear, instant results.
+
+Clear privacy dashboard
+View user apps and system apps separately. Track high, medium, and low-risk permissions at a glance, and mark trusted apps as Safe to keep your signal clean.
+
+Weekly privacy report
+Get a Monday summary showing new installs, permission changes, and overall privacy health score trends.
+
+Permission drill-downs
+Tap any permission group; camera, microphone, location, storage, notifications and see every app with access. Jump straight to Android settings to revoke or adjust permissions.
+
+Trusted app tracking
+Flag banking, finance, or utility apps as trusted so GetSecure highlights only the surprises that matter.
+
+Extras you’ll appreciate
+
+• No hidden background services draining battery
+• Works great on phones and tablets
+• Lightweight banner ads with occasional interstitials
+• One-time upgrade available to remove ads completely
+
+Take back control of your data.
+
+Install GetSecure today and see exactly which apps deserve your trust.

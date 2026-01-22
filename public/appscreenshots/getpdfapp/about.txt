@@ -1,0 +1,51 @@
+GetPDF – PDF Editor & Tools
+About this app
+✏️ GetPDF – Powerful PDF Editor for Android (Private & Fast)
+
+GetPDF is a fast, privacy-focused PDF editor for Android.
+Edit, organize, scan, and convert PDFs directly on your device —
+no accounts, no forced uploads, no waiting.
+
+Most tools run locally on your device, so your documents stay under your control 🔒
+
+🧰 PDF Editor Features
+
+• Edit PDFs directly on your phone
+• Add text, page numbers, headers, and watermarks
+• Fill, edit, and flatten PDF forms
+• Redact sensitive information
+• Merge, split, reorder, rotate, and organize pages
+• Compress PDFs without losing quality
+• Lock, unlock, and restrict PDFs with passwords
+• Edit PDF metadata
+
+🔄 Convert, Scan & OCR
+
+• Convert PDF to images
+• Convert images to PDF
+• Create searchable PDFs with OCR
+• Extract text from PDFs
+• Scan documents using your camera (OCR supported) 📷
+
+Note: One advanced feature uses an external API. This is clearly indicated in-app and used only when required.
+
+🔐 Privacy-Focused by Design
+
+Your documents are processed locally whenever possible.
+GetPDF avoids unnecessary cloud processing and does not require accounts or sign-in.
+
+⚡ Fast & Optimized for Android
+
+Smooth performance even with large PDF files.
+Open a PDF and start editing — no setup required.
+
+👥 Who It’s For
+
+• Students editing notes and assignments
+• Professionals editing contracts and reports
+• Small businesses editing invoices and forms
+• Anyone who needs a reliable PDF editor without mandatory cloud uploads
+
+⭐ Pro Options
+
+Upgrade to unlock higher limits, advanced editing tools, and an ad-free PDF editor experience.

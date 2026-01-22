@@ -6,7 +6,8 @@ import Image from "next/image";
 
 const navLinks = [
   { href: "/#apps", label: "Apps" },
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -43,7 +44,7 @@ export default function Navbar() {
   const closeMenu = () => setMobileOpen(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b-2 border-gray-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white shadow-sm">
       {mobileOpen && (
         <div
           className="fixed inset-0 top-16 bg-black/40 backdrop-blur-sm z-40 md:hidden"
@@ -80,7 +81,7 @@ export default function Navbar() {
               href="https://getpdf.me"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 border-2 border-grass-700"
+              className="px-4 py-2 bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300"
             >
               Try GetPDF.me
             </a>
@@ -89,7 +90,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 text-gray-600 hover:text-grass-600 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-grass-500"
+            className="md:hidden p-2 text-gray-600 hover:text-grass-600 rounded-lg focus-visible:outline-none"
             aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
@@ -113,7 +114,7 @@ export default function Navbar() {
             id="mobile-menu"
             role="dialog"
             aria-modal="true"
-            className="md:hidden fixed inset-x-4 top-[5.5rem] z-50 rounded-2xl border-2 border-gray-200 bg-white shadow-2xl"
+            className="md:hidden fixed inset-x-4 top-[5.5rem] z-50 rounded-2xl bg-white shadow-2xl"
           >
             <div className="px-5 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -130,7 +131,7 @@ export default function Navbar() {
                 href="https://getpdf.me"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-3 bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 border-2 border-grass-700 text-center"
+                className="px-4 py-3 bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 text-center"
                 onClick={closeMenu}
               >
                 Try GetPDF.me

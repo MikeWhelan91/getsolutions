@@ -1,92 +1,101 @@
 import Link from "next/link";
 import Image from "next/image";
 import { apps as allApps } from "@/types/app";
+import HeroSlideshow from "@/components/HeroSlideshow";
 
 export default function Home() {
   const appsArray = Object.values(allApps);
+  const heroSlides = appsArray
+    .filter((app) => app.banner)
+    .map((app) => ({
+      src: app.banner as string,
+      alt: `${app.name} feature banner`,
+      name: app.name,
+      tagline: app.tagline
+    }));
 
   return (
     <main className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-900 text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-16 sm:px-6 lg:flex-row lg:items-center lg:py-24">
-          <div className="w-full space-y-6 lg:w-1/2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-grass-500/50 bg-grass-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-grass-100">
+          <div className="w-full space-y-6 text-center lg:w-1/2">
+            <span className="inline-flex items-center gap-2 rounded-full bg-grass-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-grass-100">
               <span className="h-2 w-2 rounded-full bg-grass-400 animate-pulse" aria-hidden="true" />
-              Purpose-built Android utilities
+              Privacy-first utility suite
             </span>
             <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
-              Hero experiences that stay sharp on every screen.
+              Utility apps that feel focused, fast, and fair.
             </h1>
             <p className="text-base text-gray-200 sm:text-lg">
-              GetSolutions delivers privacy-first tools that look as good on desktop monitors as they do on handheld devices.
-              No stretched imagery, no awkward layouts—just confident, utility-focused design.
+              GetSolutions builds a focused lineup of tools that stay on-device, stay simple, and stay out of your way.
+              Clean interfaces, practical features, and a design system that feels intentional from start to finish.
             </p>
             <div className="grid grid-cols-1 gap-4 text-gray-100 sm:grid-cols-2">
-              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-grass-500/20 text-grass-300">
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
+              <div className="flex flex-col items-center gap-3 rounded-2xl p-4 text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-grass-500/20 text-grass-200">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Pixel-perfect scaling</p>
-                  <p className="text-sm text-gray-300">Hero imagery is framed to keep its clarity across breakpoints.</p>
+                  <p className="font-semibold text-white">No-nonsense UX</p>
+                  <p className="text-sm text-gray-300">Streamlined flows that get you from task to done in seconds.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-grass-500/20 text-grass-300">
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <div className="flex flex-col items-center gap-3 rounded-2xl p-4 text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-grass-500/20 text-grass-200">
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2l7 4v6c0 5-3.5 9.7-7 11-3.5-1.3-7-6-7-11V6l7-4z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Transparent value</p>
-                  <p className="text-sm text-gray-300">Fair pricing, no lock-ins, and thoughtful design touches.</p>
+                  <p className="font-semibold text-white">Local-first by default</p>
+                  <p className="text-sm text-gray-300">Your files stay on your device unless you choose otherwise.</p>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4 pt-2 sm:flex-row">
+            <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:justify-center">
               <a
                 href="#apps"
-                className="group w-full rounded-xl border-2 border-grass-500 bg-grass-600 px-8 py-4 text-center text-lg font-semibold text-white transition-all duration-300 hover:translate-y-0.5 hover:bg-grass-500 hover:shadow-xl sm:w-auto"
+                className="group w-full rounded-xl bg-grass-600 px-8 py-4 text-center text-lg font-semibold text-white transition-all duration-300 hover:translate-y-0.5 hover:bg-grass-500 hover:shadow-xl sm:w-auto"
               >
-                Explore our apps
+                Explore the lineup
               </a>
               <a
-                href="#about"
-                className="w-full rounded-xl border-2 border-white/20 bg-white/5 px-8 py-4 text-center text-lg font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/10 sm:w-auto"
+                href="/about"
+                className="w-full rounded-xl bg-white/5 px-8 py-4 text-center text-lg font-semibold text-white transition-all duration-300 hover:bg-white/10 sm:w-auto"
               >
-                See how we build
+                Learn our approach
               </a>
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-            <div className="relative mx-auto w-full max-w-xl">
-              <div className="absolute inset-0 -z-10 rounded-[32px] bg-gradient-to-r from-grass-500/30 via-grass-400/20 to-transparent blur-3xl" aria-hidden="true" />
-              <div className="relative rounded-[32px] border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-xl">
-                <div className="relative aspect-[5/3] w-full overflow-hidden rounded-3xl">
-                  <Image
-                    src="/hero.png"
-                    alt="GetSolutions Hero"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(min-width: 1024px) 520px, 90vw"
-                  />
-                </div>
-                <div className="mt-5 flex items-center justify-between text-sm text-gray-200">
-                  <div>
-                    <p className="font-semibold text-white">Responsive by design</p>
-                    <p className="text-xs text-gray-400">Optimized for tablets, phones, and wide displays.</p>
+            {heroSlides.length > 0 ? (
+              <HeroSlideshow slides={heroSlides} />
+            ) : (
+              <div className="relative mx-auto w-full max-w-xl">
+                <div className="absolute inset-0 -z-10 rounded-[32px] bg-gradient-to-r from-grass-500/30 via-grass-400/20 to-transparent blur-3xl" aria-hidden="true" />
+              <div className="relative rounded-[32px] bg-white/5 p-3 shadow-2xl backdrop-blur-xl">
+                  <div className="relative aspect-[5/3] w-full overflow-hidden rounded-3xl">
+                    <Image
+                      src="/hero.png"
+                      alt="GetSolutions Hero"
+                      fill
+                      className="object-cover"
+                      priority
+                      sizes="(min-width: 1024px) 520px, 90vw"
+                    />
                   </div>
-                  <div className="text-right">
-                    <p className="text-2xl font-bold text-grass-300">50K+</p>
-                    <p className="text-[11px] uppercase tracking-wide text-gray-400">installs</p>
+                  <div className="mt-5 flex items-center justify-between text-sm text-gray-200">
+                    <div>
+                      <p className="font-semibold text-white">Responsive by design</p>
+                      <p className="text-xs text-gray-400">Optimized for tablets, phones, and wide displays.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -108,11 +117,11 @@ export default function Home() {
               <Link
                 key={app.id}
                 href={`/apps/${app.id}`}
-                className="group relative bg-white rounded-2xl p-6 sm:p-8 border-2 border-gray-200 hover:border-grass-400 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-slide-up cursor-pointer flex flex-col"
+                className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer flex flex-col text-center items-center"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* App Icon */}
-                <div className="w-20 h-20 mb-6 bg-gradient-to-br from-lime-100 to-grass-100 rounded-2xl flex items-center justify-center border-2 border-grass-300 overflow-hidden">
+                <div className="w-20 h-20 mb-6 bg-gradient-to-br from-lime-100 to-grass-100 rounded-2xl flex items-center justify-center overflow-hidden">
                   <Image
                     src={app.icon}
                     alt={`${app.name} icon`}
@@ -129,7 +138,7 @@ export default function Home() {
 
                 {/* Category Badge */}
                 <div className="mb-3">
-                  <span className="inline-block px-2 py-1 bg-grass-100 text-grass-700 text-xs font-semibold rounded border border-grass-300">
+                  <span className="inline-block px-2 py-1 bg-grass-100 text-grass-700 text-xs font-semibold rounded">
                     {app.category}
                   </span>
                 </div>
@@ -140,7 +149,7 @@ export default function Home() {
                 </p>
 
                 {/* View Details Link */}
-                <div className="inline-flex items-center justify-center w-full px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg group-hover:bg-grass-600 group-hover:text-white transition-all duration-300 border-2 border-gray-900 group-hover:border-grass-700 mt-auto">
+                <div className="inline-flex items-center justify-center w-full px-6 py-3 bg-grass-600 text-white font-semibold rounded-lg transition-all duration-300 mt-auto hover:bg-grass-500">
                   View Details
                   <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -170,7 +179,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Value 1 */}
             <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center border-2 border-grass-500">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center">
                 <svg className="w-8 h-8 text-grass-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
@@ -183,7 +192,7 @@ export default function Home() {
 
             {/* Value 2 */}
             <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center border-2 border-grass-500">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center">
                 <svg className="w-8 h-8 text-grass-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -196,7 +205,7 @@ export default function Home() {
 
             {/* Value 3 */}
             <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center border-2 border-grass-500">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center">
                 <svg className="w-8 h-8 text-grass-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -209,7 +218,7 @@ export default function Home() {
           </div>
 
           {/* Contact/CTA */}
-          <div className="text-center bg-white rounded-2xl p-8 sm:p-12 border-2 border-grass-500 shadow-lg">
+          <div className="text-center bg-white rounded-2xl p-8 sm:p-12 shadow-lg">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Ready for apps that respect you?
             </h3>
@@ -218,7 +227,7 @@ export default function Home() {
             </p>
             <a
               href="#apps"
-              className="inline-block px-8 py-4 bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-grass-700"
+              className="inline-block px-8 py-4 bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Browse Apps
             </a>
@@ -234,7 +243,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-2">
                 Get<span className="text-grass-600">Solutions</span>
               </h3>
-              <p className="text-gray-400">Building better Android apps.</p>
+              <p className="text-gray-400">Building better apps.</p>
             </div>
 
             <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2">
@@ -247,6 +256,9 @@ export default function Home() {
                 </a>
                 <a href="/terms" className="text-gray-400 hover:text-grass-500 transition-colors">
                   Terms of Service
+                </a>
+                <a href="/contact" className="text-gray-400 hover:text-grass-500 transition-colors">
+                  Contact
                 </a>
               </div>
             </div>

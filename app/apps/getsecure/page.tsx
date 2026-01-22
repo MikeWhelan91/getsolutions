@@ -3,8 +3,8 @@ import AppListing from "@/components/AppListing";
 import { apps } from "@/types/app";
 
 export const metadata: Metadata = {
-  title: "GetSecure - Permission Guard & Privacy Manager for Android",
-  description: "Monitor app permissions, scan on demand, and spot risky apps instantly. Lightweight permission manager with on-demand scans. No background services draining battery.",
+  title: "GetSecure - Privacy Permission Scanner for Android",
+  description: "Scan app permissions on demand and spot risky access instantly. Lightweight privacy dashboard with no background monitoring.",
   keywords: [
     "Android permission manager",
     "app permissions",
@@ -13,12 +13,11 @@ export const metadata: Metadata = {
     "permission scanner",
     "privacy app",
     "app security Android",
-    "permission monitoring",
     "risky app detector"
   ],
   openGraph: {
-    title: "GetSecure - Permission Guard & Privacy Manager for Android",
-    description: "Monitor app permissions, scan on demand, and spot risky apps instantly. Protect your privacy without babysitting another app.",
+    title: "GetSecure - Privacy Permission Scanner for Android",
+    description: "On-demand permission scans with a clear privacy dashboard and zero background drain.",
     url: "https://getsolutions.app/apps/getsecure",
     type: "website",
     images: [
@@ -26,14 +25,14 @@ export const metadata: Metadata = {
         url: "/appscreenshots/getsecure/banner.png",
         width: 1200,
         height: 630,
-        alt: "GetSecure Permission Guard Banner"
+        alt: "GetSecure Feature Banner"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "GetSecure - Permission Guard & Privacy Manager for Android",
-    description: "Monitor app permissions, scan on demand, spot risky apps instantly.",
+    title: "GetSecure - Privacy Permission Scanner for Android",
+    description: "On-demand permission scans with a clear privacy dashboard.",
     images: ["/appscreenshots/getsecure/banner.png"]
   },
   alternates: {
@@ -43,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function GetSecurePage() {
   const app = apps.getsecure;
-  const relatedApps = [apps.getpdf, apps.getscan, apps.getcompress];
+  const relatedApps = [apps.getpdf, apps.getscan, apps.getcompress, apps["smart-resume"]];
 
   return <AppListing app={app} relatedApps={relatedApps} />;
 }
