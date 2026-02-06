@@ -3,10 +3,12 @@ import AppListing from "@/components/AppListing";
 import { apps } from "@/types/app";
 
 export const metadata: Metadata = {
-  title: "Smart Resume - AI Resume & Cover Letter Builder",
+  title: "Smart Resume - AI Resume & Cover Letter Builder for Android & iOS",
   description: "Create tailored resumes and cover letters with AI guidance, ATS checks, and polished templates. Export ready-to-send PDFs in minutes.",
   keywords: [
     "AI resume builder",
+    "resume builder iOS",
+    "resume builder Android",
     "cover letter generator",
     "ATS resume check",
     "resume templates",
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
     "CV builder"
   ],
   openGraph: {
-    title: "Smart Resume - AI Resume & Cover Letter Builder",
+    title: "Smart Resume - AI Resume & Cover Letter Builder for Android & iOS",
     description: "Build resumes and cover letters fast with AI guidance, ATS checks, and clean templates.",
     url: "https://getsolutions.app/apps/smart-resume",
     type: "website",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smart Resume - AI Resume & Cover Letter Builder",
+    title: "Smart Resume - AI Resume & Cover Letter Builder for Android & iOS",
     description: "Build resumes and cover letters fast with AI guidance and ATS checks.",
     images: ["/appscreenshots/resume/banner.png"]
   },

@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-sm text-gray-500 mb-12">
-          Last updated: January 2026
+          Last updated: February 2026
         </p>
 
         <div className="prose prose-lg max-w-none">
@@ -30,8 +30,8 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Commitment to Privacy</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               GetSolutions is built by a solo developer who believes your data is yours, not ours.
-              This privacy policy applies to all GetSolutions apps (GetPDF, GetScan, GetCompress, GetSecure)
-              and websites (including GetPDF.me and GetSolutions.app).
+              This privacy policy applies to all GetSolutions apps (GetPDF, GetScan, GetCompress, GetSecure,
+              Smart Resume, and Firstly) and websites (including GetPDF.me and GetSolutions.app).
             </p>
           </section>
 
@@ -57,6 +57,10 @@ export default function PrivacyPage() {
               Your files never leave your device unless you explicitly choose to share them using your device's
               standard sharing features.
             </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Some apps include AI-assisted features (like conversation analysis in Firstly). When you choose to use
+              these features, the content you submit is processed in real time and not stored on our servers.
+            </p>
           </section>
 
           <section className="mb-8">
@@ -65,8 +69,8 @@ export default function PrivacyPage() {
               To keep the lights on and improve our apps, we collect minimal, anonymous data:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li><strong>Crash reports:</strong> If an app crashes, Android may send us anonymous crash logs so we can fix bugs. These don't contain your personal data or file contents.</li>
-              <li><strong>Basic analytics:</strong> We may collect anonymous usage statistics (like which features are used most) through Google Play Services. This helps us understand what to improve.</li>
+              <li><strong>Crash reports:</strong> If an app crashes, Android or iOS may send us anonymous crash logs so we can fix bugs. These don't contain your personal data or file contents.</li>
+              <li><strong>Basic analytics:</strong> We may collect anonymous usage statistics (like which features are used most) through platform services (Google Play on Android, Apple services on iOS). This helps us understand what to improve.</li>
               <li><strong>Ad interactions:</strong> Some apps show lightweight ads. Ad providers may collect anonymous data about ad views and clicks. We use reputable ad networks that comply with privacy regulations.</li>
             </ul>
           </section>
@@ -77,7 +81,8 @@ export default function PrivacyPage() {
               Our apps may use these third-party services:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li><strong>Google Play Services:</strong> For app distribution, crash reporting, and basic analytics</li>
+              <li><strong>App Stores:</strong> Google Play and Apple App Store for distribution, updates, and purchases</li>
+              <li><strong>Platform services:</strong> For crash reporting and basic analytics</li>
               <li><strong>Ad Networks:</strong> For displaying lightweight ads in free versions of our apps</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mb-4">
@@ -92,9 +97,9 @@ export default function PrivacyPage() {
               Our apps only request permissions necessary for their core functionality:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li><strong>Storage/Files:</strong> To read and save documents you're working with</li>
-              <li><strong>Camera:</strong> (GetScan only) To capture document photos</li>
-              <li><strong>Internet:</strong> Only for displaying ads or downloading app updates, never for uploading your data</li>
+              <li><strong>Files/Photos:</strong> To read and save documents or screenshots you're working with</li>
+              <li><strong>Camera:</strong> To capture documents or photos when needed</li>
+              <li><strong>Internet:</strong> Only for displaying ads, downloading updates, or using optional AI features</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mb-4">
               We never access permissions for unrelated purposes. If an app doesn't need your camera, it won't ask for it.

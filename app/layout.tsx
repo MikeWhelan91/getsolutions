@@ -16,12 +16,13 @@ export const metadata: Metadata = {
     icon: "/getsolutionslogo.png",
   },
   title: {
-    default: "GetSolutions - Privacy-First Android Apps | PDF Editor, Document Scanner & More",
+    default: "GetSolutions - Privacy-First Android & iOS Apps | PDF Editor, Document Scanner & More",
     template: "%s | GetSolutions"
   },
-  description: "Solo-developed Android apps built with privacy in mind. Edit PDFs offline, scan documents, compress files, and manage app permissions. No predatory subscriptions, no data collection. Just tools that work.",
+  description: "Solo-developed Android and iOS apps built with privacy in mind. Edit PDFs offline, scan documents, compress files, and manage app permissions. No predatory subscriptions, no data collection. Just tools that work.",
   keywords: [
     "Android apps",
+    "iOS apps",
     "PDF editor Android",
     "document scanner app",
     "file compression Android",
@@ -42,22 +43,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://getsolutions.app",
-    title: "GetSolutions - Privacy-First Android Apps",
-    description: "Solo-developed Android apps built with privacy in mind. No predatory subscriptions, no data collection.",
+    title: "GetSolutions - Privacy-First Android & iOS Apps",
+    description: "Solo-developed Android and iOS apps built with privacy in mind. No predatory subscriptions, no data collection.",
     siteName: "GetSolutions",
     images: [
       {
         url: "/hero.png",
         width: 1200,
         height: 630,
-        alt: "GetSolutions - Privacy-First Android Apps"
+        alt: "GetSolutions - Privacy-First Android & iOS Apps"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "GetSolutions - Privacy-First Android Apps",
-    description: "Solo-developed Android apps built with privacy in mind. No predatory subscriptions, no data collection.",
+    title: "GetSolutions - Privacy-First Android & iOS Apps",
+    description: "Solo-developed Android and iOS apps built with privacy in mind. No predatory subscriptions, no data collection.",
     images: ["/hero.png"]
   },
   robots: {

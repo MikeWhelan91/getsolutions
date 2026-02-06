@@ -22,15 +22,15 @@ export default function TermsPage() {
           Terms of Service
         </h1>
         <p className="text-sm text-gray-500 mb-12">
-          Last updated: January 2026
+          Last updated: February 2026
         </p>
 
         <div className="prose prose-lg max-w-none">
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Agreement to Terms</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              By using GetSolutions apps (GetPDF, GetScan, GetCompress, GetSecure) or websites
-              (GetPDF.me, GetSolutions.app), you agree to these terms. If you don't agree, please don't use our services.
+              By using GetSolutions apps (GetPDF, GetScan, GetCompress, GetSecure, Smart Resume, Firstly)
+              or websites (GetPDF.me, GetSolutions.app), you agree to these terms. If you don't agree, please don't use our services.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               This isn't a trap—we're just covering the basics to protect both you and us.
@@ -40,13 +40,15 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What We Provide</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              GetSolutions provides utility apps and web tools for Android users. Our apps help you:
+              GetSolutions provides utility apps and web tools for Android and iOS users. Our apps help you:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
               <li>Edit, merge, split, and manage PDF files</li>
               <li>Scan documents with your camera</li>
               <li>Compress images, videos, and documents</li>
               <li>Monitor and manage app permissions</li>
+              <li>Create resumes and cover letters with AI assistance</li>
+              <li>Get conversation coaching and dating insights</li>
               <li>And other productivity features we add over time</li>
             </ul>
           </section>
@@ -98,8 +100,8 @@ export default function TermsPage() {
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
               <li><strong>Free versions:</strong> Include lightweight ads to support development. Core features remain functional.</li>
-              <li><strong>Paid upgrades:</strong> One-time purchases (where possible) to remove ads or unlock premium features. No sneaky auto-renewing subscriptions designed to trap you.</li>
-              <li><strong>Refunds:</strong> Handled through Google Play Store's standard refund policy. We're not trying to make refunds impossible.</li>
+              <li><strong>Paid upgrades:</strong> One-time purchases or subscriptions (where needed) to remove ads or unlock premium features. We keep pricing clear and avoid misleading flows.</li>
+              <li><strong>Refunds:</strong> Handled through Google Play or the Apple App Store's standard refund policies. We're not trying to make refunds impossible.</li>
             </ul>
           </section>
 
@@ -147,7 +149,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Updates and Changes</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               We may update our apps and these terms from time to time. App updates are delivered through
-              Google Play Store. Significant changes to these terms will be noted with a new "Last updated" date.
+              Google Play or the Apple App Store. Significant changes to these terms will be noted with a new "Last updated" date.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               Continued use of our services after changes means you accept the updated terms.

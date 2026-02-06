@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "GetSolutions",
     short_name: "GetSolutions",
     description:
-      "Privacy-first Android utilities including GetPDF, GetScan, GetCompress, GetSecure, and Smart Resume.",
+      "Privacy-first utilities for Android and iOS including GetPDF, GetScan, GetCompress, GetSecure, Smart Resume, and Firstly.",
     start_url: "/",
     scope: "/",
     display: "standalone",
@@ -42,6 +42,11 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "512x512",
         type: "image/png",
       },
+      {
+        src: "/appicons/firstly.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     shortcuts: [
       {
@@ -68,6 +73,11 @@ export default function manifest(): MetadataRoute.Manifest {
         name: "Smart Resume",
         url: "/apps/smart-resume",
         description: "Build resumes and cover letters",
+      },
+      {
+        name: "Firstly",
+        url: "/apps/firstly",
+        description: "AI dating coach for better conversations",
       },
     ],
   };

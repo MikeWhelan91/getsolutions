@@ -10,6 +10,52 @@ interface AppListingProps {
   relatedApps?: AppData[];
 }
 
+const StoreBadges = ({ app }: { app: AppData }) => {
+  const badges: { href: string; src: string; alt: string }[] = [];
+
+  if (app.appStoreUrl) {
+    badges.push({
+      href: app.appStoreUrl,
+      src: "/badges/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg",
+      alt: "Download on the App Store"
+    });
+  }
+
+  if (app.playStoreUrl) {
+    badges.push({
+      href: app.playStoreUrl,
+      src: "/badges/GetItOnGooglePlay_Badge_Web_color_English.png",
+      alt: "Get it on Google Play"
+    });
+  }
+
+  if (badges.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      {badges.map((badge) => (
+        <a
+          key={badge.href}
+          href={badge.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center hover:opacity-90 transition-opacity"
+        >
+          <Image
+            src={badge.src}
+            alt={badge.alt}
+            width={200}
+            height={60}
+            className="h-12 w-auto"
+          />
+        </a>
+      ))}
+    </div>
+  );
+};
+
 export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -80,7 +126,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                     {app.isWebsite ? (
                       <a
                         href={app.websiteUrl}
@@ -94,23 +140,12 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
                         Visit Website
                       </a>
                     ) : (
-                      app.playStoreUrl ? (
-                        <a
-                          href={app.playStoreUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 shadow-lg text-center"
-                        >
-                          <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                          </svg>
-                          Get on Play Store
-                        </a>
-                      ) : (
-                        <div className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-gray-200 text-gray-600 font-bold rounded-lg text-center cursor-not-allowed">
-                          Coming Soon
-                        </div>
-                      )
+                      <StoreBadges app={app} />
+                    )}
+                    {!app.isWebsite && !app.appStoreUrl && !app.playStoreUrl && (
+                      <div className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-gray-200 text-gray-600 font-bold rounded-lg text-center cursor-not-allowed">
+                        Coming Soon
+                      </div>
                     )}
                     <button className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 text-center">
                       <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -331,15 +366,10 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
             >
               Visit {app.name}
             </a>
-          ) : app.playStoreUrl ? (
-            <a
-              href={app.playStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 shadow-lg text-center"
-            >
-              Download from Play Store
-            </a>
+          ) : app.appStoreUrl || app.playStoreUrl ? (
+            <div className="flex justify-center">
+              <StoreBadges app={app} />
+            </div>
           ) : (
             <div className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-gray-200 text-gray-600 font-bold rounded-lg text-center cursor-not-allowed">
               Coming Soon

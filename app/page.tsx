@@ -108,7 +108,7 @@ export default function Home() {
               Our Apps
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover our suite of Android applications, each crafted with attention to detail and user privacy.
+              Discover our suite of Android and iOS applications, each crafted with attention to detail and user privacy.
             </p>
           </div>
 

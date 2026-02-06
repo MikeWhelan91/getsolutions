@@ -19,6 +19,7 @@ const buildStructuredData = (app: AppData) => {
     .map(withBase)
     .filter((src): src is string => Boolean(src));
   const sameAs: string[] = [developerPlayStoreUrl];
+  const installTargets: string[] = [];
 
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -27,7 +28,11 @@ const buildStructuredData = (app: AppData) => {
     alternateName: app.tagline,
     description: app.longDescription,
     applicationCategory: app.category,
-    operatingSystem: isWebApp ? "Any" : "ANDROID",
+    operatingSystem: isWebApp
+      ? "Any"
+      : [app.playStoreUrl ? "ANDROID" : null, app.appStoreUrl ? "IOS" : null]
+          .filter((os): os is string => Boolean(os))
+          .join(", ") || "ANDROID",
     softwareVersion: app.version,
     offers: {
       "@type": "Offer",
@@ -49,12 +54,21 @@ const buildStructuredData = (app: AppData) => {
   };
 
   if (app.playStoreUrl) {
-    data.installUrl = app.playStoreUrl;
-    data.downloadUrl = app.playStoreUrl;
+    installTargets.push(app.playStoreUrl);
     sameAs.push(app.playStoreUrl);
+  }
+
+  if (app.appStoreUrl) {
+    installTargets.push(app.appStoreUrl);
+    sameAs.push(app.appStoreUrl);
+  }
+
+  if (installTargets.length > 0) {
+    data.installUrl = installTargets.length === 1 ? installTargets[0] : installTargets;
+    data.downloadUrl = data.installUrl;
     data.potentialAction = {
       "@type": "InstallAction",
-      target: app.playStoreUrl,
+      target: installTargets.length === 1 ? installTargets[0] : installTargets,
     };
   }
 

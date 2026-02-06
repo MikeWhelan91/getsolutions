@@ -3,10 +3,11 @@ import AppListing from "@/components/AppListing";
 import { apps } from "@/types/app";
 
 export const metadata: Metadata = {
-  title: "GetPDF - Privacy-First PDF Editor for Android",
+  title: "GetPDF - Privacy-First PDF Editor for Android & iOS",
   description: "Edit, organize, scan, and convert PDFs on your device. No accounts, no forced uploads, and fast on-device tools.",
   keywords: [
     "PDF editor Android",
+    "PDF editor iOS",
     "offline PDF editor",
     "free PDF app",
     "merge PDF Android",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     "GetPDF"
   ],
   openGraph: {
-    title: "GetPDF - Privacy-First PDF Editor for Android",
+    title: "GetPDF - Privacy-First PDF Editor for Android & iOS",
     description: "Edit, organize, scan, and convert PDFs on your device with private, on-device tools.",
     url: "https://getsolutions.app/apps/getpdf",
     type: "website",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GetPDF - Privacy-First PDF Editor for Android",
+    title: "GetPDF - Privacy-First PDF Editor for Android & iOS",
     description: "Edit PDFs with private, on-device tools and no forced uploads.",
     images: ["/appscreenshots/getpdfapp/banner.png"]
   },

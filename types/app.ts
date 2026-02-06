@@ -16,6 +16,7 @@ export interface AppData {
   screenshots: string[];
   banner?: string;
   playStoreUrl?: string;
+  appStoreUrl?: string;
   websiteUrl?: string;
   isWebsite?: boolean;
   isComingSoon?: boolean;
@@ -26,13 +27,13 @@ export const apps: Record<string, AppData> = {
     id: "getpdf",
     name: "GetPDF",
     tagline: "Powerful PDF editing that stays on your device",
-    description: "Edit, organize, scan, and convert PDFs directly on your Android device with no accounts or forced uploads.",
-    longDescription: "GetPDF is a fast, privacy-first PDF editor for Android. It keeps most tools on-device so your documents stay under your control while you edit, organize, and convert PDFs. From forms and redaction to OCR and camera scans, GetPDF brings everything into a single, focused workflow with optional upgrades for advanced limits.",
+    description: "Edit, organize, scan, and convert PDFs directly on your Android or iOS device with no accounts or forced uploads.",
+    longDescription: "GetPDF is a fast, privacy-first PDF editor for Android and iOS. It keeps most tools on-device so your documents stay under your control while you edit, organize, and convert PDFs. From forms and redaction to OCR and camera scans, GetPDF brings everything into a single, focused workflow with optional upgrades for advanced limits.",
     icon: "/appicons/getpdf.png",
     category: "Productivity",
-    size: "8.5 MB",
-    version: "2.1.0",
-    updatedOn: "December 2025",
+    size: "Varies by platform",
+    version: "See store listing",
+    updatedOn: "See store listing",
     features: [
       "Edit PDFs directly on your phone",
       "Add text, page numbers, headers, and watermarks",
@@ -110,7 +111,8 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/getpdfapp/5.png"
     ],
     banner: "/appscreenshots/getpdfapp/banner.png",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getsolutions.getpdf"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getsolutions.getpdf",
+    appStoreUrl: "https://apps.apple.com/us/app/getpdf-pdf-editor-tools/id6757444980"
   },
   getscan: {
     id: "getscan",
@@ -374,9 +376,9 @@ export const apps: Record<string, AppData> = {
     longDescription: "Smart Resume helps you build, review, and export polished resumes and cover letters in one streamlined flow. Start from scratch or upload an existing CV, then use AI guidance to sharpen your wording, structure, and formatting before exporting ready-to-send documents.",
     icon: "/appicons/resume.png",
     category: "Productivity",
-    size: "TBD",
-    version: "Coming soon",
-    updatedOn: "Coming soon",
+    size: "Varies by platform",
+    version: "See store listing",
+    updatedOn: "See store listing",
     features: [
       "Guided AI resume builder with structured sections",
       "Instant cover letter generator from your resume",
@@ -435,8 +437,8 @@ export const apps: Record<string, AppData> = {
         answer: "It is launching soon with free tools and optional upgrades."
       },
       {
-        question: "When will Smart Resume launch?",
-        answer: "It is coming soon. The Play Store listing will be published after launch."
+        question: "Where can I download Smart Resume?",
+        answer: "It is available on iOS and Android via the store listings."
       }
     ],
     screenshots: [
@@ -447,7 +449,70 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/resume/image5.png"
     ],
     banner: "/appscreenshots/resume/banner.png",
-    isComingSoon: true
+    appStoreUrl: "https://apps.apple.com/us/app/smart-resume-ai-cv-builder/id6758463319",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.smartresume.app"
+  },
+  firstly: {
+    id: "firstly",
+    name: "Firstly",
+    tagline: "AI dating coach for better conversations",
+    description: "Get smart openers, chat analysis, and confidence-boosting reply ideas from real conversations.",
+    longDescription: "Firstly helps you start conversations, keep them going, and understand where you stand. Upload screenshots of dating profiles or chats to get personalized openers, compatibility insights, and next-message suggestions. It focuses on real conversations with real people, not scripted chats, and keeps privacy in mind by analyzing screenshots in real time without storing them.",
+    icon: "/appicons/firstly.png",
+    category: "Lifestyle",
+    size: "See App Store",
+    version: "See App Store",
+    updatedOn: "See App Store",
+    features: [
+      "Personalized openers for any profile",
+      "Conversation health and compatibility insights",
+      "Next-message suggestions to keep flow natural",
+      "Red and green flag detection",
+      "Regional tone matching for US, UK, CA, AU, and IE",
+      "Works with Tinder, Hinge, Bumble, Match, and more",
+      "Privacy-first processing with no stored chats"
+    ],
+    useCases: [
+      "Break the ice with tailored openers",
+      "Understand whether a conversation has momentum",
+      "Avoid overthinking your next message",
+      "Spot red flags early and lean into green flags"
+    ],
+    valueProps: [
+      "Real feedback from real conversations",
+      "Keeps your tone intact while reducing guesswork",
+      "Built for privacy with no stored chats"
+    ],
+    faqs: [
+      {
+        question: "What does Firstly analyze?",
+        answer: "Screenshots of dating profiles and conversations to generate openers, insights, and suggestions."
+      },
+      {
+        question: "Does Firstly store my chats?",
+        answer: "No. Screenshots are analyzed in real time and not stored on our servers."
+      },
+      {
+        question: "Which dating apps are supported?",
+        answer: "It works with major apps including Tinder, Hinge, Bumble, Match, and more."
+      },
+      {
+        question: "Is Firstly available on Android?",
+        answer: "Not yet. Firstly is available on iOS only right now."
+      },
+      {
+        question: "Is there a premium plan?",
+        answer: "Yes. Premium unlocks unlimited openers, unlimited chat analysis, and advanced insights."
+      }
+    ],
+    screenshots: [
+      "/appscreenshots/firstly/image1.png",
+      "/appscreenshots/firstly/image2.png",
+      "/appscreenshots/firstly/image3.png",
+      "/appscreenshots/firstly/image4.png",
+      "/appscreenshots/firstly/image5.png"
+    ],
+    banner: "/appscreenshots/firstly/banner.png"
   },
   "getpdf-web": {
     id: "getpdf-web",
@@ -521,7 +586,7 @@ export const apps: Record<string, AppData> = {
         answer: "Yes. Add signatures directly in the browser."
       },
       {
-        question: "Is it the same as the Android app?",
+        question: "Is it the same as the mobile app?",
         answer: "It is the web version with a browser-first workflow and privacy-first design."
       }
     ],
