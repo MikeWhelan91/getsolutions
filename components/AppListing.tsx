@@ -108,24 +108,6 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
                   </p>
 
                   {/* Stats */}
-                  {!app.isWebsite && (
-                    <div className="flex flex-wrap gap-6 mb-6 text-sm">
-                      <div className="flex items-center">
-                        <span className="text-2xl mr-2">📦</span>
-                        <div>
-                          <div className="font-bold text-gray-900">{app.size}</div>
-                          <div className="text-gray-500">Size</div>
-                        </div>
-                      </div>
-                      <div className="flex items-center">
-                        <span className="text-2xl mr-2">🔄</span>
-                        <div>
-                          <div className="font-bold text-gray-900">{app.version}</div>
-                          <div className="text-gray-500">Version</div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
