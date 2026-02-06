@@ -34,7 +34,7 @@ const StoreBadges = ({ app }: { app: AppData }) => {
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="flex flex-row flex-nowrap items-center gap-3">
       {badges.map((badge) => (
         <a
           key={badge.href}
@@ -140,7 +140,9 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
                         Visit Website
                       </a>
                     ) : (
-                      <StoreBadges app={app} />
+                      <div className="w-full sm:w-auto">
+                        <StoreBadges app={app} />
+                      </div>
                     )}
                     {!app.isWebsite && !app.appStoreUrl && !app.playStoreUrl && (
                       <div className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-gray-200 text-gray-600 font-bold rounded-lg text-center cursor-not-allowed">
