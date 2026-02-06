@@ -149,7 +149,7 @@ export default function PrivacyPage() {
               If you have questions about this privacy policy or our privacy practices, you can reach us at:
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              <strong>Email:</strong> privacy@getsolutions.app
+              <strong>Email:</strong> info@getsolutions.app
             </p>
             <p className="text-gray-700 leading-relaxed">
               We're a small operation (solo dev!), so responses might take a few days, but we read every message.
