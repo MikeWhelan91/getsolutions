@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: "GetSolutions - Privacy-First Android & iOS Apps | PDF Editor, Document Scanner & More",
     template: "%s | GetSolutions"
   },
-  description: "Solo-developed Android and iOS apps built with privacy in mind. Edit PDFs offline, scan documents, compress files, and manage app permissions. No predatory subscriptions, no data collection. Just tools that work.",
+  description: "Solo-developed Android and iOS apps built with privacy in mind. Edit PDFs offline, scan documents, compress files, manage app permissions, and use optional AI features where they add value.",
   keywords: [
     "Android apps",
     "iOS apps",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://getsolutions.app",
     title: "GetSolutions - Privacy-First Android & iOS Apps",
-    description: "Solo-developed Android and iOS apps built with privacy in mind. No predatory subscriptions, no data collection.",
+    description: "Solo-developed Android and iOS apps built with privacy in mind, with local-first workflows and optional online features where they add value.",
     siteName: "GetSolutions",
     images: [
       {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GetSolutions - Privacy-First Android & iOS Apps",
-    description: "Solo-developed Android and iOS apps built with privacy in mind. No predatory subscriptions, no data collection.",
+    description: "Solo-developed Android and iOS apps built with privacy in mind, with local-first workflows and optional online features where they add value.",
     images: ["/hero.png"]
   },
   robots: {

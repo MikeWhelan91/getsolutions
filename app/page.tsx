@@ -186,7 +186,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Privacy First</h3>
               <p className="text-gray-600">
-                Your data stays on your device. No tracking, no data collection, no cloud dependencies unless you choose them.
+                Local-first where it makes sense, with optional online features only when the product actually needs them.
               </p>
             </div>
 

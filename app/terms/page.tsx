@@ -2,10 +2,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service - GetSolutions",
-  description: "Terms of service for GetSolutions apps and websites. Fair terms, no hidden traps, written in plain English.",
+  description:
+    "Terms of service for GetSolutions apps and websites, including LineCheck. Covers subscriptions, AI features, acceptable use, and medical disclaimers where relevant.",
   openGraph: {
     title: "Terms of Service - GetSolutions",
-    description: "Fair terms, no hidden traps, written in plain English.",
+    description:
+      "Terms of service for GetSolutions apps and websites, including LineCheck.",
     url: "https://getsolutions.app/terms",
     type: "website"
   },
@@ -22,186 +24,156 @@ export default function TermsPage() {
           Terms of Service
         </h1>
         <p className="text-sm text-gray-500 mb-12">
-          Last updated: February 2026
+          Last updated: June 2026
         </p>
 
         <div className="prose prose-lg max-w-none">
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Agreement to Terms</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Agreement to These Terms</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              By using GetSolutions apps (GetPDF, GetScan, GetCompress, GetSecure, Smart Resume, Firstly)
-              or websites (GetPDF.me, GetSolutions.app), you agree to these terms. If you don't agree, please don't use our services.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              This isn't a trap—we're just covering the basics to protect both you and us.
+              By using GetSolutions apps and websites, including GetPDF, GetScan, GetCompress, GetSecure,
+              Smart Resume, Firstly, LineCheck, GetPDF.me, and GetSolutions.app, you agree to these terms.
+              If you do not agree, do not use the service.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">What We Provide</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              GetSolutions provides utility apps and web tools for Android and iOS users. Our apps help you:
+              GetSolutions provides software tools for document workflows, productivity, privacy utilities, AI-assisted
+              features, and related services. Features vary by app and may change over time.
             </p>
-            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li>Edit, merge, split, and manage PDF files</li>
-              <li>Scan documents with your camera</li>
-              <li>Compress images, videos, and documents</li>
-              <li>Monitor and manage app permissions</li>
-              <li>Create resumes and cover letters with AI assistance</li>
-              <li>Get conversation coaching and dating insights</li>
-              <li>And other productivity features we add over time</li>
-            </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">License and Usage</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">License and Acceptable Use</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              We grant you a personal, non-transferable, non-exclusive license to use our apps and services
-              for your personal or internal business purposes. You may:
+              We grant you a personal, limited, non-exclusive, non-transferable license to use our apps and services
+              for lawful personal or internal business use.
             </p>
-            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li>Install and use our apps on devices you own or control</li>
-              <li>Process your own files and documents</li>
-              <li>Use all features available in your version (free or paid)</li>
-            </ul>
             <p className="text-gray-700 leading-relaxed mb-4">
               You may not:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li>Reverse engineer, decompile, or attempt to extract source code</li>
-              <li>Remove or modify any copyright, trademark, or proprietary notices</li>
-              <li>Use our apps for illegal purposes or to process illegal content</li>
-              <li>Attempt to circumvent ads or payment systems through unauthorized means</li>
-              <li>Resell, redistribute, or sublicense our apps</li>
+              <li>Reverse engineer, decompile, or attempt to extract source code except where the law expressly allows it.</li>
+              <li>Use the service to violate law, infringe rights, or process unlawful content.</li>
+              <li>Attempt to interfere with payment, ad, entitlement, or security systems.</li>
+              <li>Resell, sublicense, or redistribute the service unless we separately agree in writing.</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Content and Data</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Content</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              You retain all ownership rights to your files, documents, and content. We don't claim any rights
-              to your data—it's yours.
+              You keep ownership of the content you submit, create, edit, or process through our products. You are
+              responsible for making sure you have the right to use that content and for keeping your own backups where
+              appropriate.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">AI Features</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Some apps include optional AI-assisted features. By choosing to use them, you authorize us and our
+              service providers to process the content and related context required to generate the requested result.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              You're responsible for:
+              AI output can be incomplete, inaccurate, or inappropriate for your specific situation. You should use
+              judgment and not rely on AI output as a substitute for professional advice.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">LineCheck-Specific Terms</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              LineCheck is intended to help users capture, organize, compare, and interpret home pregnancy and LH test
+              photos. It is not a medical device, does not provide medical diagnosis, and is not a substitute for a
+              doctor, clinic, or laboratory test.
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li>The legality of your content</li>
-              <li>Having the right to process any files you use with our apps</li>
-              <li>Backing up important files (we're not a cloud storage service)</li>
-              <li>Complying with applicable laws when using our services</li>
+              <li>Local tools, reminders, saved history, and image adjustments are provided for personal reference.</li>
+              <li>AI-assisted reads, comparisons, and assistant guidance are informational only and may be wrong.</li>
+              <li>You are responsible for following the instructions for your test brand and seeking medical advice where appropriate.</li>
+              <li>You must not use LineCheck for emergency decision-making or as the sole basis for medical decisions.</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Free vs. Paid Features</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Free Features, Ads, and Paid Upgrades</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Some of our apps offer free versions with ads and optional paid upgrades. Here's the deal:
+              Some apps offer free tiers, ad-supported experiences, one-time purchases, subscriptions, or a mix of
+              those models.
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li><strong>Free versions:</strong> Include lightweight ads to support development. Core features remain functional.</li>
-              <li><strong>Paid upgrades:</strong> One-time purchases or subscriptions (where needed) to remove ads or unlock premium features. We keep pricing clear and avoid misleading flows.</li>
-              <li><strong>Refunds:</strong> Handled through Google Play or the Apple App Store's standard refund policies. We're not trying to make refunds impossible.</li>
+              <li><strong>Free tiers:</strong> may include ads, usage limits, or restricted premium features.</li>
+              <li><strong>Paid upgrades:</strong> may unlock subscriptions, premium AI usage, ad removal, additional export limits, or other app-specific features.</li>
+              <li><strong>Billing:</strong> app-store purchases are handled by Apple or Google under their billing terms.</li>
+              <li><strong>Refunds:</strong> refund requests are generally handled through the platform you purchased from unless local law requires otherwise.</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Service Availability</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Availability and Changes</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              We strive to keep our apps working smoothly, but we're a solo dev operation, so:
+              We may add, remove, suspend, or change features, limits, providers, or pricing. We try to keep the
+              service working, but we do not guarantee uninterrupted availability.
             </p>
-            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li>Apps may occasionally have bugs or downtime (we fix them as fast as we can)</li>
-              <li>We may update or discontinue features with reasonable notice</li>
-              <li>Web services (like GetPDF.me) may experience occasional outages</li>
-              <li>We're not liable for data loss—please back up important files</li>
-            </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Disclaimer of Warranties</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Disclaimers</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Our apps are provided "as is" without warranties of any kind. We do our best to make them reliable,
-              but we can't guarantee they'll always work perfectly or meet every specific need.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Translation: We work hard to make good software, but stuff happens. Use at your own risk.
+              The service is provided "as is" and "as available" to the maximum extent allowed by law. We do not
+              promise that every feature will be error-free, uninterrupted, or suitable for every purpose.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Limitation of Liability</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              To the maximum extent permitted by law, GetSolutions and its developer are not liable for:
-            </p>
-            <ul className="list-disc pl-6 text-gray-700 space-y-2 mb-4">
-              <li>Data loss or corruption</li>
-              <li>Lost profits or business interruption</li>
-              <li>Indirect, incidental, or consequential damages</li>
-              <li>Any damages beyond the amount you paid for the app (if anything)</li>
-            </ul>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Some jurisdictions don't allow these limitations, so they may not apply to you.
-            </p>
-          </section>
-
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Updates and Changes</h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              We may update our apps and these terms from time to time. App updates are delivered through
-              Google Play or the Apple App Store. Significant changes to these terms will be noted with a new "Last updated" date.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Continued use of our services after changes means you accept the updated terms.
+              To the maximum extent permitted by law, GetSolutions is not liable for indirect, incidental, special,
+              consequential, or punitive damages, or for loss of data, profits, goodwill, or business interruption.
+              Where liability cannot be excluded, it is limited to the amount you paid for the relevant product or
+              service in the 12 months before the claim.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Termination</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              You can stop using our apps at any time by uninstalling them. We may terminate or suspend
-              access to our services if you violate these terms, though honestly, we'd rather just help you
-              use the apps properly.
+              You may stop using the service at any time. We may suspend or terminate access where reasonably necessary,
+              including for abuse, fraud, unlawful use, or serious violation of these terms.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Governing Law</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Changes to These Terms</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              These terms are governed by the laws of your jurisdiction. Any disputes should be resolved
-              through friendly discussion first, then formal legal channels if necessary.
+              We may update these terms from time to time. When we do, we will update the date at the top of this
+              page. Continued use after changes means you accept the updated terms.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Questions about these terms? Reach out:
+              Questions about these terms can be sent to:
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               <strong>Email:</strong> support@getsolutions.app
             </p>
-            <p className="text-gray-700 leading-relaxed">
-              We're a small team (okay, one person), but we read every message and respond as quickly as possible.
-            </p>
           </section>
 
           <section className="mb-8 bg-grass-50 rounded-xl p-6">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Plain English Summary</h3>
-            <p className="text-gray-700 leading-relaxed mb-3">
-              These terms boil down to: Use our apps responsibly, don't try to break or steal them,
-              and understand that while we work hard to make them great, we can't be held liable if
-              something goes wrong.
-            </p>
+            <h3 className="text-xl font-bold text-gray-900 mb-3">Plain-English Summary</h3>
             <p className="text-gray-700 leading-relaxed">
-              We're not trying to trap you or hide gotchas in legal jargon. We built these apps to
-              solve real problems, and we want you to use them with confidence.
+              Use the apps lawfully, keep backups of important content, understand that optional AI features can be
+              wrong, and do not treat LineCheck as medical advice or diagnosis.
             </p>
           </section>
         </div>
       </div>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
