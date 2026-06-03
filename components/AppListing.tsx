@@ -57,6 +57,17 @@ const StoreBadges = ({ app }: { app: AppData }) => {
 };
 
 export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
+  const safetyHighlights = app.safetyHighlights ?? [
+    {
+      icon: "🔒",
+      label: "No data collection"
+    },
+    {
+      icon: "✓",
+      label: "Offline-capable"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <AppStructuredData app={app} />
@@ -264,15 +275,13 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
                 </div>
 
                 <div className="mt-6 pt-6">
-                  <h4 className="text-sm font-bold text-gray-900 mb-3">Privacy & Security</h4>
-                  <div className="flex items-start mb-2">
-                    <span className="text-grass-500 mr-2 text-lg">🔒</span>
-                    <span className="text-sm text-gray-600">No data collection</span>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="text-grass-500 mr-2 text-lg">✓</span>
-                    <span className="text-sm text-gray-600">Offline-capable</span>
-                  </div>
+                  <h4 className="text-sm font-bold text-gray-900 mb-3">Safety & Privacy</h4>
+                  {safetyHighlights.map((highlight, index) => (
+                    <div key={`${highlight.label}-${index}`} className="flex items-start mb-2 last:mb-0">
+                      <span className="text-grass-500 mr-2 text-lg">{highlight.icon}</span>
+                      <span className="text-sm text-gray-600">{highlight.label}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

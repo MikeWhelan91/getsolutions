@@ -13,6 +13,7 @@ export interface AppData {
   faqs?: { question: string; answer: string }[];
   useCases?: string[];
   valueProps?: string[];
+  safetyHighlights?: { icon: string; label: string }[];
   screenshots: string[];
   banner?: string;
   playStoreUrl?: string;
@@ -513,6 +514,86 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/firstly/image5.png"
     ],
     banner: "/appscreenshots/firstly/banner.png"
+  },
+  linecheck: {
+    id: "linecheck",
+    name: "LineCheck",
+    tagline: "AI-assisted hCG and LH strip review for iPhone",
+    description: "Read pregnancy and ovulation test strips faster with AI-assisted line review, saved results, cycle tracking, and gentle guidance.",
+    longDescription: "LineCheck helps you capture hCG and LH test strips, review faint lines, track LH changes, compare saved scans, and keep pregnancy or ovulation timing in one place. It is built for quick reference and trend tracking on iPhone, with clear confidence indicators, result history, calendar views, and Luna guidance for making sense of saved tests. LineCheck is not a medical device and does not diagnose pregnancy, fertility status, or health conditions; always follow your test instructions and consult a healthcare professional when needed.",
+    icon: "/appicons/linecheck.png",
+    category: "Health & Fitness",
+    size: "See App Store",
+    version: "See App Store",
+    updatedOn: "June 2026",
+    features: [
+      "AI-assisted review for hCG pregnancy test strips",
+      "LH ovulation strip reads with T/C ratio tracking",
+      "Faint line detection with read confidence",
+      "Saved scan history for pregnancy and ovulation tests",
+      "Side-by-side comparison for earlier and later results",
+      "Calendar view for tests, cycle timing, and windows",
+      "LH trend charts to watch surge patterns over time",
+      "Luna chat guidance based on saved test context",
+      "Clear reference-only medical disclaimer",
+      "Built for iPhone"
+    ],
+    useCases: [
+      "Check whether a pregnancy test image shows a faint second line",
+      "Track LH strip changes from low to peak fertility",
+      "Compare saved tests to see whether lines look stronger or lighter",
+      "Plan testing around cycle dates, windows, and previous results"
+    ],
+    valueProps: [
+      "Turns hard-to-read strip photos into clearer reference results",
+      "Combines scan history, comparisons, and calendar context",
+      "Designed for sensitive moments with careful, non-diagnostic language"
+    ],
+    safetyHighlights: [
+      {
+        icon: "✓",
+        label: "Reference-only guidance"
+      },
+      {
+        icon: "i",
+        label: "Not a medical device"
+      }
+    ],
+    faqs: [
+      {
+        question: "What tests does LineCheck support?",
+        answer: "LineCheck supports hCG pregnancy test strips and LH ovulation test strips."
+      },
+      {
+        question: "Can LineCheck diagnose pregnancy or fertility status?",
+        answer: "No. LineCheck is for reference only and is not a medical device. Follow your test instructions and consult a healthcare professional when needed."
+      },
+      {
+        question: "Does it help with faint lines?",
+        answer: "Yes. LineCheck reviews test photos, highlights possible faint lines, and shows read confidence."
+      },
+      {
+        question: "Can I compare results over time?",
+        answer: "Yes. Save scans and compare earlier and later tests to see whether lines appear stronger, lighter, or similar."
+      },
+      {
+        question: "Does LineCheck track LH trends?",
+        answer: "Yes. It tracks LH ratios and stages so you can watch changes from low through peak."
+      },
+      {
+        question: "Is LineCheck available on Android?",
+        answer: "No. LineCheck is iOS only right now."
+      }
+    ],
+    screenshots: [
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-03%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-16%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-26%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-38%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-45%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-54%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-59%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png"
+    ]
   },
   "getpdf-web": {
     id: "getpdf-web",
