@@ -588,11 +588,11 @@ export const apps: Record<string, AppData> = {
     screenshots: [
       "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-03%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
       "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-16%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-26%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-38%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-45%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-54%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-59%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png"
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-48-52%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-49-23%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-49-36%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-49-43%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-49-49%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png"
     ]
   },
   "getpdf-web": {
