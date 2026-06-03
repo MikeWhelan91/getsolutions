@@ -1,159 +1,187 @@
 import Link from "next/link";
 import Image from "next/image";
-import { apps as allApps } from "@/types/app";
-import HeroSlideshow from "@/components/HeroSlideshow";
+import { apps as allApps, AppData } from "@/types/app";
+import SiteFooter from "@/components/SiteFooter";
+
+function getPlatformLabel(app: AppData) {
+  const platforms = [];
+
+  if (app.appStoreUrl) platforms.push("iOS");
+  if (app.playStoreUrl) platforms.push("Android");
+  if (app.isWebsite) platforms.push("Web");
+
+  return platforms.length > 0 ? platforms.join(" / ") : app.isComingSoon ? "Coming soon" : "In development";
+}
+
+function getVisual(app: AppData) {
+  return app.banner ?? app.screenshots[0] ?? app.icon;
+}
 
 export default function Home() {
   const appsArray = Object.values(allApps);
-  const heroSlides = appsArray
-    .filter((app) => app.banner)
-    .map((app) => ({
-      src: app.banner as string,
-      alt: `${app.name} feature banner`,
-      name: app.name,
-      tagline: app.tagline
-    }));
+  const heroApps = [allApps.linecheck, allApps["smart-resume"], allApps.getpdf].filter(Boolean);
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-900 text-white">
-        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 py-16 sm:px-6 lg:flex-row lg:items-center lg:py-24">
-          <div className="w-full space-y-6 text-center lg:w-1/2">
-            <span className="inline-flex items-center gap-2 rounded-full bg-grass-600/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-grass-100">
-              <span className="h-2 w-2 rounded-full bg-grass-400 animate-pulse" aria-hidden="true" />
-              Privacy-first utility suite
-            </span>
-            <h1 className="text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
-              Utility apps that feel focused, fast, and fair.
+    <main className="min-h-screen overflow-hidden bg-[#f6f1e8] text-[#171717]">
+      <section className="px-4 pb-10 pt-6 sm:px-6 lg:px-8">
+        <div className="mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl grid-cols-1 gap-8 rounded-[32px] bg-[#151821] p-6 text-white shadow-[0_24px_80px_rgba(32,26,18,0.16)] sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:p-12">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl font-black leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+              Utility apps that feel calm, quick, and finished.
             </h1>
-            <p className="text-base text-gray-200 sm:text-lg">
-              GetSolutions builds a focused lineup of tools that stay on-device, stay simple, and stay out of your way.
-              Clean interfaces, practical features, and a design system that feels intentional from start to finish.
+            <p className="mt-7 text-lg leading-8 text-white/72">
+              A small suite for PDFs, scanning, compression, privacy checks, resumes, dating support, and test tracking. Built for the exact moment you need the tool, then designed to get out of the way.
             </p>
-            <div className="grid grid-cols-1 gap-4 text-gray-100 sm:grid-cols-2">
-              <div className="flex flex-col items-center gap-3 rounded-2xl p-4 text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-grass-500/20 text-grass-200">
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold text-white">No-nonsense UX</p>
-                  <p className="text-sm text-gray-300">Streamlined flows that get you from task to done in seconds.</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-3 rounded-2xl p-4 text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-grass-500/20 text-grass-200">
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2l7 4v6c0 5-3.5 9.7-7 11-3.5-1.3-7-6-7-11V6l7-4z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold text-white">Local-first by default</p>
-                  <p className="text-sm text-gray-300">Your files stay on your device unless you choose otherwise.</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:justify-center">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#apps"
-                className="group w-full rounded-xl bg-grass-600 px-8 py-4 text-center text-lg font-semibold text-white transition-all duration-300 hover:translate-y-0.5 hover:bg-grass-500 hover:shadow-xl sm:w-auto"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-[#ff7a59] px-6 text-sm font-bold text-[#151821] transition-colors hover:bg-[#ffb45c]"
               >
-                Explore the lineup
+                Browse apps
               </a>
-              <a
+              <Link
                 href="/about"
-                className="w-full rounded-xl bg-white/5 px-8 py-4 text-center text-lg font-semibold text-white transition-all duration-300 hover:bg-white/10 sm:w-auto"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-white/22 px-6 text-sm font-bold text-white transition-colors hover:bg-white hover:text-[#151821]"
               >
-                Learn our approach
-              </a>
+                Why GetSolutions
+              </Link>
             </div>
           </div>
-          <div className="w-full lg:w-1/2">
-            {heroSlides.length > 0 ? (
-              <HeroSlideshow slides={heroSlides} />
-            ) : (
-              <div className="relative mx-auto w-full max-w-xl">
-                <div className="absolute inset-0 -z-10 rounded-[32px] bg-gradient-to-r from-grass-500/30 via-grass-400/20 to-transparent blur-3xl" aria-hidden="true" />
-              <div className="relative rounded-[32px] bg-white/5 p-3 shadow-2xl backdrop-blur-xl">
-                  <div className="relative aspect-[5/3] w-full overflow-hidden rounded-3xl">
+
+          <div className="rounded-[28px] bg-white/8 p-3 ring-1 ring-white/10 sm:p-4">
+            <div className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
+              {heroApps.slice(0, 1).map((app) => (
+                <Link
+                  key={app.id}
+                  href={`/apps/${app.id}`}
+                  className="group overflow-hidden rounded-[24px] bg-white text-[#171717] shadow-[0_18px_55px_rgba(0,0,0,0.24)]"
+                >
+                  <div className="relative aspect-[4/5] overflow-hidden bg-[#ece7dc]">
                     <Image
-                      src="/hero.png"
-                      alt="GetSolutions Hero"
+                      src={getVisual(app)}
+                      alt={`${app.name} preview`}
                       fill
-                      className="object-cover"
+                      sizes="(min-width: 1024px) 380px, 90vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                       priority
-                      sizes="(min-width: 1024px) 520px, 90vw"
                     />
                   </div>
-                  <div className="mt-5 flex items-center justify-between text-sm text-gray-200">
-                    <div>
-                      <p className="font-semibold text-white">Responsive by design</p>
-                      <p className="text-xs text-gray-400">Optimized for tablets, phones, and wide displays.</p>
+                  <div className="flex items-center gap-3 p-4">
+                    <Image
+                      src={app.icon}
+                      alt={`${app.name} icon`}
+                      width={48}
+                      height={48}
+                      className="h-12 w-12 rounded-2xl object-cover"
+                    />
+                    <div className="min-w-0">
+                      <p className="truncate font-black tracking-tight">{app.name}</p>
+                      <p className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-[#73808c]">
+                        {getPlatformLabel(app)}
+                      </p>
                     </div>
                   </div>
+                </Link>
+              ))}
+              <div className="flex flex-col gap-4">
+                {heroApps.slice(1).map((app) => (
+                  <Link
+                    key={app.id}
+                    href={`/apps/${app.id}`}
+                    className="group flex items-center gap-4 rounded-[24px] bg-white p-4 text-[#171717] shadow-[0_18px_55px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-1"
+                  >
+                    <Image
+                      src={app.icon}
+                      alt={`${app.name} icon`}
+                      width={72}
+                      height={72}
+                      className="h-16 w-16 flex-none rounded-[20px] object-cover shadow-sm"
+                      priority
+                    />
+                    <div className="min-w-0">
+                      <p className="text-xl font-black leading-tight tracking-tight">{app.name}</p>
+                      <p className="mt-2 line-clamp-2 text-sm leading-5 text-[#5f615f]">{app.tagline}</p>
+                      <p className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-[#73808c]">
+                        {getPlatformLabel(app)}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+                <div className="rounded-[24px] bg-[#ffb45c] p-5 text-[#151821]">
+                  <p className="text-3xl font-black">{appsArray.length}</p>
+                  <p className="mt-1 text-sm font-bold">apps across mobile and web</p>
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Apps Showcase Section */}
-      <section id="apps" className="py-20 bg-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Apps
+      <section className="px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl gap-3 overflow-x-auto pb-2">
+          {appsArray.map((app) => (
+            <Link
+              key={`strip-${app.id}`}
+              href={`/apps/${app.id}`}
+              className="flex min-w-max items-center gap-3 rounded-full bg-white px-4 py-3 text-sm font-bold text-[#171717] shadow-sm ring-1 ring-black/5 transition-transform hover:-translate-y-0.5"
+            >
+              <Image src={app.icon} alt={`${app.name} icon`} width={34} height={34} className="h-8 w-8 rounded-xl object-cover" />
+              {app.name}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section id="apps" className="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 grid gap-5 lg:grid-cols-[0.75fr_1fr] lg:items-end">
+            <h2 className="text-4xl font-black leading-none tracking-tight text-[#171717] sm:text-5xl">
+              The app shelf.
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover our suite of Android and iOS applications, each crafted with attention to detail and user privacy.
+            <p className="max-w-3xl text-base leading-7 text-[#5f615f]">
+              Pick the tool you need. Each product page shows what it does, where it runs, and the screens you will actually use.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {appsArray.map((app, index) => (
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {appsArray.map((app) => (
               <Link
                 key={app.id}
                 href={`/apps/${app.id}`}
-                className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-slide-up cursor-pointer flex flex-col text-center items-center"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group overflow-hidden rounded-[28px] bg-white shadow-sm ring-1 ring-black/5 transition-all hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(32,26,18,0.14)]"
               >
-                {/* App Icon */}
-                <div className="w-20 h-20 mb-6 bg-gradient-to-br from-lime-100 to-grass-100 rounded-2xl flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={app.icon}
-                    alt={`${app.name} icon`}
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#ece7dc]">
+                  <div className="absolute inset-3 overflow-hidden rounded-[20px] bg-white/40">
+                    <Image
+                      src={getVisual(app)}
+                      alt={`${app.name} preview`}
+                      fill
+                      sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                      className="object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                 </div>
-
-                {/* App Name */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-grass-600 transition-colors">
-                  {app.name}
-                </h3>
-
-                {/* Category Badge */}
-                <div className="mb-3">
-                  <span className="inline-block px-2 py-1 bg-grass-100 text-grass-700 text-xs font-semibold rounded">
-                    {app.category}
-                  </span>
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
-                  {app.description}
-                </p>
-
-                {/* View Details Link */}
-                <div className="inline-flex items-center justify-center w-full px-6 py-3 bg-grass-600 text-white font-semibold rounded-lg transition-all duration-300 mt-auto hover:bg-grass-500">
-                  View Details
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                <div className="p-5">
+                  <div className="mb-4 flex items-center gap-3">
+                    <Image
+                      src={app.icon}
+                      alt={`${app.name} icon`}
+                      width={52}
+                      height={52}
+                      className="h-12 w-12 rounded-2xl object-cover shadow-sm"
+                    />
+                    <div>
+                      <p className="text-sm font-semibold text-[#73808c]">{app.category}</p>
+                      <p className="mt-1 text-xs font-black uppercase tracking-[0.12em] text-[#db5f42]">
+                        {getPlatformLabel(app)}
+                      </p>
+                    </div>
+                  </div>
+                  <h3 className="mt-2 text-2xl font-black tracking-tight text-[#171717]">{app.name}</h3>
+                  <p className="mt-3 min-h-[84px] text-sm leading-6 text-[#5f615f]">{app.description}</p>
+                  <div className="mt-5 inline-flex items-center text-sm font-black text-[#db5f42]">
+                    View details <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -161,110 +189,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-white to-grass-50">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About GetSolutions
+      <section className="px-4 pb-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 overflow-hidden rounded-[32px] bg-white shadow-sm ring-1 ring-black/5 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="bg-[#ff7a59] p-8 sm:p-10 lg:p-12">
+            <h2 className="max-w-xl text-4xl font-black leading-none tracking-tight text-[#151821] sm:text-5xl">
+              Small apps, built with a lower tolerance for nonsense.
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
-              Built by a solo developer who got frustrated with restrictive utility apps that nickel-and-dime users with predatory subscriptions and excessive ads.
-            </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              GetSolutions apps are designed to be genuinely useful without the frustration. Light ads, fair pricing, and no sneaky subscription traps that try to catch you out. Just tools that work the way you'd expect them to.
-            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {/* Value 1 */}
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center">
-                <svg className="w-8 h-8 text-grass-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
+          <div className="grid gap-px bg-black/5">
+            {[
+              ["Direct workflows", "Open the app, complete the task, and move on."],
+              ["Fair upgrades", "Premium features should be clear, optional, and understandable."],
+              ["Private by habit", "Local-first where possible, online only where the feature needs it."]
+            ].map(([title, body]) => (
+              <div key={title} className="bg-white p-7">
+                <h3 className="text-xl font-black text-[#171717]">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#5f615f]">{body}</p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Privacy First</h3>
-              <p className="text-gray-600">
-                Local-first where it makes sense, with optional online features only when the product actually needs them.
-              </p>
-            </div>
-
-            {/* Value 2 */}
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center">
-                <svg className="w-8 h-8 text-grass-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Fair Pricing</h3>
-              <p className="text-gray-600">
-                Light ads, one-time purchases where possible, and absolutely no predatory subscription traps designed to catch you out.
-              </p>
-            </div>
-
-            {/* Value 3 */}
-            <div className="text-center p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-grass-100 flex items-center justify-center">
-                <svg className="w-8 h-8 text-grass-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Less Frustration</h3>
-              <p className="text-gray-600">
-                No artificial restrictions, paywalls for basic features, or dark patterns. Just straightforward apps that do what they say.
-              </p>
-            </div>
-          </div>
-
-          {/* Contact/CTA */}
-          <div className="text-center bg-white rounded-2xl p-8 sm:p-12 shadow-lg">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Ready for apps that respect you?
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Try our apps and experience utility software that's actually built with users in mind, not just profit margins.
-            </p>
-            <a
-              href="#apps"
-              className="inline-block px-8 py-4 bg-grass-600 text-white font-semibold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              Browse Apps
-            </a>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="mb-6 md:mb-0 text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2">
-                Get<span className="text-grass-600">Solutions</span>
-              </h3>
-              <p className="text-gray-400">Building better apps.</p>
-            </div>
-
-            <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2">
-              <p className="text-gray-400 text-sm">
-                © 2026 GetSolutions. All rights reserved.
-              </p>
-              <div className="flex gap-6 flex-wrap justify-center md:justify-end">
-                <a href="/privacy" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Terms of Service
-                </a>
-                <a href="/contact" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Contact
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

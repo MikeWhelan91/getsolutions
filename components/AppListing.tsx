@@ -4,10 +4,25 @@ import Image from "next/image";
 import AppStructuredData from "./AppStructuredData";
 import AppFaqStructuredData from "./AppFaqStructuredData";
 import AppBreadcrumbStructuredData from "./AppBreadcrumbStructuredData";
+import SiteFooter from "./SiteFooter";
 
 interface AppListingProps {
   app: AppData;
   relatedApps?: AppData[];
+}
+
+function getPlatformLabel(app: AppData) {
+  const platforms = [];
+
+  if (app.appStoreUrl) platforms.push("iOS");
+  if (app.playStoreUrl) platforms.push("Android");
+  if (app.isWebsite) platforms.push("Web");
+
+  return platforms.length > 0 ? platforms.join(" / ") : app.isComingSoon ? "Coming soon" : "In development";
+}
+
+function getVisual(app: AppData) {
+  return app.banner ?? app.screenshots[0] ?? app.icon;
 }
 
 const StoreBadges = ({ app }: { app: AppData }) => {
@@ -34,22 +49,10 @@ const StoreBadges = ({ app }: { app: AppData }) => {
   }
 
   return (
-    <div className="flex flex-row flex-nowrap items-center gap-3">
+    <div className="flex flex-row flex-wrap items-center gap-3">
       {badges.map((badge) => (
-        <a
-          key={badge.href}
-          href={badge.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center hover:opacity-90 transition-opacity"
-        >
-          <Image
-            src={badge.src}
-            alt={badge.alt}
-            width={200}
-            height={60}
-            className="h-12 w-auto"
-          />
+        <a key={badge.href} href={badge.href} target="_blank" rel="noopener noreferrer" className="inline-flex transition-opacity hover:opacity-85">
+          <Image src={badge.src} alt={badge.alt} width={200} height={60} className="h-12 w-auto" />
         </a>
       ))}
     </div>
@@ -59,131 +62,126 @@ const StoreBadges = ({ app }: { app: AppData }) => {
 export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
   const safetyHighlights = app.safetyHighlights ?? [
     {
-      icon: "🔒",
+      icon: "lock",
       label: "No data collection"
     },
     {
-      icon: "✓",
+      icon: "check",
       label: "Offline-capable"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-[#f6f1e8] text-[#171717]">
       <AppStructuredData app={app} />
       <AppFaqStructuredData app={app} />
       <AppBreadcrumbStructuredData app={app} />
-      {/* Header */}
-      <header className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4">
-          <Link href="/" className="inline-flex items-center text-gray-600 hover:text-grass-600 transition-colors">
-            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+
+      <header className="px-4 pb-2 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <Link href="/#apps" className="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-bold text-[#666b70] shadow-sm ring-1 ring-black/5 transition-colors hover:text-[#171717]">
+            <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="m15 18-6-6 6-6" />
             </svg>
-            Back to Apps
+            Back to apps
           </Link>
         </div>
       </header>
 
-      {/* App Header Section */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:items-center">
-            <div>
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                {/* App Icon */}
-                <div className="flex-shrink-0 mt-8 md:mt-9">
-                  <div className="w-32 h-32 bg-gradient-to-br from-lime-100 to-grass-100 rounded-3xl flex items-center justify-center shadow-lg overflow-hidden">
-                    <Image
-                      src={app.icon}
-                      alt={`${app.name} icon`}
-                      width={128}
-                      height={128}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                {/* App Info */}
-                <div className="flex-grow">
-                  <div className="mb-2">
-                    <span className="inline-block px-3 py-1 bg-grass-100 text-grass-700 text-sm font-semibold rounded-full">
-                      {app.category}
-                    </span>
-                  </div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-                    {app.name}
-                  </h1>
-                  <p className="text-xl text-gray-600 mb-6">
-                    {app.tagline}
-                  </p>
-
-                  {/* Stats */}
-
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                    {app.isWebsite ? (
-                      <a
-                        href={app.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 shadow-lg text-center"
-                      >
-                        <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                        </svg>
-                        Visit Website
-                      </a>
-                    ) : (
-                      <div className="w-full sm:w-auto">
-                        <StoreBadges app={app} />
-                      </div>
-                    )}
-                    {!app.isWebsite && !app.appStoreUrl && !app.playStoreUrl && (
-                      <div className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-gray-200 text-gray-600 font-bold rounded-lg text-center cursor-not-allowed">
-                        Coming Soon
-                      </div>
-                    )}
-                  </div>
-                </div>
+      <section className="px-4 pb-8 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 overflow-hidden rounded-[32px] bg-[#151821] p-6 text-white shadow-[0_24px_80px_rgba(32,26,18,0.16)] sm:p-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:p-10">
+          <div>
+            <div className="flex items-center gap-4">
+              <Image
+                src={app.icon}
+                alt={`${app.name} icon`}
+                width={104}
+                height={104}
+                className="h-24 w-24 rounded-[24px] object-cover shadow-lg"
+                priority
+              />
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-[#ffb45c]">
+                  {app.category} · {getPlatformLabel(app)}
+                </p>
+                <h1 className="mt-2 text-5xl font-black leading-none tracking-tight sm:text-6xl">{app.name}</h1>
               </div>
             </div>
-            {app.banner && (
-              <div className="w-full">
-                <div className="overflow-hidden rounded-2xl shadow-lg">
-                  <Image
-                    src={app.banner}
-                    alt={`${app.name} banner`}
-                    width={900}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
+            <p className="mt-7 max-w-xl text-2xl font-bold leading-9">{app.tagline}</p>
+            <p className="mt-4 max-w-xl text-base leading-7 text-white/68">{app.description}</p>
+            <div className="mt-8">
+              {app.isWebsite ? (
+                <a
+                  href={app.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#ff7a59] px-6 text-sm font-black text-[#151821] transition-colors hover:bg-[#ffb45c]"
+                >
+                  Visit website
+                </a>
+              ) : app.appStoreUrl || app.playStoreUrl ? (
+                <StoreBadges app={app} />
+              ) : (
+                <div className="inline-flex h-12 items-center justify-center rounded-full border border-white/22 px-6 text-sm font-black text-white/72">
+                  Coming soon
                 </div>
+              )}
+            </div>
+          </div>
+
+          <div className="rounded-[28px] bg-white/8 p-3 ring-1 ring-white/10 sm:p-4">
+            {app.banner ? (
+              <div className="overflow-hidden rounded-[24px] bg-white shadow-[0_18px_55px_rgba(0,0,0,0.24)]">
+                <Image
+                  src={app.banner}
+                  alt={`${app.name} banner`}
+                  width={900}
+                  height={600}
+                  className="h-full w-full object-cover"
+                  priority
+                />
+              </div>
+            ) : (
+              <div className="grid grid-cols-3 gap-3">
+                {app.screenshots.slice(0, 3).map((screenshot, index) => (
+                  <div key={`${screenshot}-${index}`} className="overflow-hidden rounded-[22px] bg-white shadow-[0_16px_45px_rgba(0,0,0,0.22)]">
+                    <div className="relative aspect-[9/16]">
+                      <Image
+                        src={screenshot}
+                        alt={`${app.name} screenshot ${index + 1}`}
+                        fill
+                        sizes="(min-width: 1024px) 200px, 30vw"
+                        className="object-cover"
+                        priority={index === 0}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
           </div>
         </div>
       </section>
 
-      {/* Screenshots Section */}
       {!app.isWebsite && (
-        <section className="bg-white py-12">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Screenshots</h2>
-            <div className="flex gap-4 overflow-x-auto pb-4">
+        <section className="px-4 py-8 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[32px] bg-white p-5 shadow-sm ring-1 ring-black/5 sm:p-7">
+            <div className="mb-5 flex items-end justify-between gap-4">
+              <h2 className="text-3xl font-black tracking-tight">Screenshots</h2>
+              <span className="text-sm font-semibold text-[#73808c]">Swipe to browse</span>
+            </div>
+            <div className="flex gap-4 overflow-x-auto pb-3">
               {app.screenshots.map((screenshot, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-48 h-[360px] bg-gradient-to-br from-gray-100 to-grass-50 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300"
-                >
-                  <Image
-                    src={screenshot}
-                    alt={`${app.name} screenshot ${index + 1}`}
-                    width={192}
-                    height={360}
-                    className="w-full h-full object-cover"
-                  />
+                <div key={screenshot} className="w-48 flex-none overflow-hidden rounded-[24px] bg-[#ece7dc] shadow-sm ring-1 ring-black/5 sm:w-56">
+                  <div className="relative aspect-[9/16]">
+                    <Image
+                      src={screenshot}
+                      alt={`${app.name} screenshot ${index + 1}`}
+                      fill
+                      sizes="224px"
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -191,143 +189,105 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
         </section>
       )}
 
-      {/* About Section */}
-      <section className="bg-white py-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Description */}
-            <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">About this {app.isWebsite ? 'website' : 'app'}</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                {app.description}
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                {app.longDescription}
-              </p>
+      <section className="px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="rounded-[32px] bg-white p-6 shadow-sm ring-1 ring-black/5 sm:p-8">
+            <h2 className="text-4xl font-black tracking-tight">About this {app.isWebsite ? "website" : "app"}</h2>
+            <p className="mt-5 text-lg leading-8 text-[#4f5356]">{app.longDescription}</p>
 
-              {/* Features List */}
-              <div className="mt-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {app.features.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <span className="text-lime-500 mr-3 mt-1 text-xl flex-shrink-0">✓</span>
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {app.useCases && app.useCases.length > 0 && (
-                <div className="mt-10">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Use Cases</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {app.useCases.map((useCase, index) => (
-                      <div key={index} className="flex items-start">
-                        <span className="text-grass-600 mr-3 mt-1 text-xl flex-shrink-0">•</span>
-                        <span className="text-gray-700">{useCase}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {app.faqs && app.faqs.length > 0 && (
-                <div className="mt-12">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">FAQs</h3>
-                  <div className="space-y-4">
-                    {app.faqs.map((faq, index) => (
-                      <div key={index} className="bg-gray-50 rounded-xl p-5 shadow-sm">
-                        <h4 className="font-semibold text-gray-900 mb-2">{faq.question}</h4>
-                        <p className="text-gray-700">{faq.answer}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Additional Info Sidebar */}
-            <div>
-              <div className="bg-gray-50 rounded-2xl p-6 shadow-sm sticky top-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-4">Additional Information</h3>
-                <div className="space-y-4 text-sm">
-                  <div>
-                    <div className="text-gray-500 mb-1">Updated</div>
-                    <div className="text-gray-900 font-semibold">{app.updatedOn}</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500 mb-1">Version</div>
-                    <div className="text-gray-900 font-semibold">{app.version}</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500 mb-1">Size</div>
-                    <div className="text-gray-900 font-semibold">{app.size}</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500 mb-1">Category</div>
-                    <div className="text-gray-900 font-semibold">{app.category}</div>
-                  </div>
-                  <div>
-                    <div className="text-gray-500 mb-1">Developer</div>
-                    <div className="text-gray-900 font-semibold">GetSolutions</div>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-6">
-                  <h4 className="text-sm font-bold text-gray-900 mb-3">Safety & Privacy</h4>
-                  {safetyHighlights.map((highlight, index) => (
-                    <div key={`${highlight.label}-${index}`} className="flex items-start mb-2 last:mb-0">
-                      <span className="text-grass-500 mr-2 text-lg">{highlight.icon}</span>
-                      <span className="text-sm text-gray-600">{highlight.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          {app.valueProps && app.valueProps.length > 0 && (
-            <div className="mt-12">
-              <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">Why it stands out</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {app.valueProps.map((value, index) => (
-                  <div key={index} className="bg-gray-50 rounded-xl p-5 shadow-sm text-gray-700">
-                    {value}
+            <div className="mt-10">
+              <h3 className="text-2xl font-black tracking-tight">Key features</h3>
+              <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
+                {app.features.map((feature) => (
+                  <div key={feature} className="rounded-2xl bg-[#f6f1e8] p-4 text-sm leading-6 text-[#4f5356]">
+                    <span className="mr-2 inline-block h-2 w-2 rounded-full bg-[#ff7a59]" aria-hidden="true" />
+                    {feature}
                   </div>
                 ))}
               </div>
             </div>
-          )}
+
+            {app.useCases && app.useCases.length > 0 && (
+              <div className="mt-10">
+                <h3 className="text-2xl font-black tracking-tight">Use cases</h3>
+                <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
+                  {app.useCases.map((useCase) => (
+                    <div key={useCase} className="rounded-2xl bg-[#e8f7f5] p-4 text-sm leading-6 text-[#4f5356]">
+                      {useCase}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {app.faqs && app.faqs.length > 0 && (
+              <div className="mt-10">
+                <h3 className="text-2xl font-black tracking-tight">FAQs</h3>
+                <div className="mt-5 space-y-3">
+                  {app.faqs.map((faq) => (
+                    <div key={faq.question} className="rounded-2xl bg-[#f8f6f1] p-5">
+                      <h4 className="font-black text-[#171717]">{faq.question}</h4>
+                      <p className="mt-2 text-sm leading-6 text-[#5f615f]">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <aside className="h-fit rounded-[32px] bg-[#151821] p-6 text-white shadow-sm lg:sticky lg:top-24">
+            <h3 className="text-xl font-black tracking-tight">App information</h3>
+            <dl className="mt-5 divide-y divide-white/10 text-sm">
+              {[
+                ["Updated", app.updatedOn],
+                ["Version", app.version],
+                ["Size", app.size],
+                ["Category", app.category],
+                ["Platform", getPlatformLabel(app)],
+                ["Developer", "GetSolutions"]
+              ].map(([label, value]) => (
+                <div key={label} className="flex items-start justify-between gap-5 py-3">
+                  <dt className="text-white/50">{label}</dt>
+                  <dd className="text-right font-bold text-white">{value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="mt-7 rounded-[24px] bg-white/8 p-5">
+              <h4 className="text-sm font-black uppercase tracking-[0.16em] text-[#ffb45c]">Safety & privacy</h4>
+              <div className="mt-4 space-y-3">
+                {safetyHighlights.map((highlight) => (
+                  <div key={highlight.label} className="flex gap-3 text-sm text-white/72">
+                    <span className="mt-1 h-2 w-2 flex-none rounded-full bg-[#ff7a59]" aria-hidden="true" />
+                    <span>{highlight.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </aside>
         </div>
+
+        {app.valueProps && app.valueProps.length > 0 && (
+          <div className="mx-auto mt-6 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-3">
+            {app.valueProps.map((value) => (
+              <div key={value} className="rounded-[24px] bg-white p-5 text-sm leading-6 text-[#5f615f] shadow-sm ring-1 ring-black/5">
+                {value}
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
-      {/* Related Apps Section */}
       {relatedApps.length > 0 && (
-        <section className="bg-gray-50 py-12">
-          <div className="mx-auto max-w-6xl px-4 sm:px-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">More from GetSolutions</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <section className="px-4 py-12 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-4xl font-black tracking-tight">More from GetSolutions</h2>
+            <div className="mt-7 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
               {relatedApps.map((relatedApp) => (
-                <Link
-                  key={relatedApp.id}
-                  href={`/apps/${relatedApp.id}`}
-                  className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
-                >
-                  <div className="w-16 h-16 mb-3 bg-gradient-to-br from-lime-100 to-grass-100 rounded-2xl flex items-center justify-center overflow-hidden">
-                    <Image
-                      src={relatedApp.icon}
-                      alt={`${relatedApp.name} icon`}
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-grass-600 transition-colors">
-                    {relatedApp.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                    {relatedApp.tagline}
-                  </p>
+                <Link key={relatedApp.id} href={`/apps/${relatedApp.id}`} className="group rounded-[24px] bg-white p-5 shadow-sm ring-1 ring-black/5 transition-transform hover:-translate-y-1">
+                  <Image src={relatedApp.icon} alt={`${relatedApp.name} icon`} width={64} height={64} className="h-14 w-14 rounded-2xl object-cover" />
+                  <h3 className="mt-5 text-lg font-black tracking-tight group-hover:text-[#db5f42]">{relatedApp.name}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#5f615f]">{relatedApp.tagline}</p>
                 </Link>
               ))}
             </div>
@@ -335,68 +295,29 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
         </section>
       )}
 
-      {/* Footer CTA */}
-      <section className="bg-white py-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to get started?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            {app.isWebsite
-              ? "Visit the website and start using it right away."
-              : "Download now and experience the difference."}
-          </p>
+      <section className="px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 rounded-[32px] bg-[#151821] p-7 text-white sm:p-9 md:flex-row md:items-center">
+          <div>
+            <h2 className="text-3xl font-black tracking-tight">Ready to try {app.name}?</h2>
+            <p className="mt-3 text-white/62">
+              {app.isWebsite ? "Open the web app and start right away." : "Use the store links for the platforms currently available."}
+            </p>
+          </div>
           {app.isWebsite ? (
-            <a
-              href={app.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-grass-600 text-white font-bold rounded-lg hover:bg-grass-500 transition-all duration-300 hover:scale-105 shadow-lg text-center"
-            >
+            <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center rounded-full bg-[#ff7a59] px-6 text-sm font-black text-[#151821] transition-colors hover:bg-[#ffb45c]">
               Visit {app.name}
             </a>
           ) : app.appStoreUrl || app.playStoreUrl ? (
-            <div className="flex justify-center">
-              <StoreBadges app={app} />
-            </div>
+            <StoreBadges app={app} />
           ) : (
-            <div className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-4 bg-gray-200 text-gray-600 font-bold rounded-lg text-center cursor-not-allowed">
-              Coming Soon
+            <div className="inline-flex h-12 items-center justify-center rounded-full border border-white/22 px-6 text-sm font-black text-white/70">
+              Coming soon
             </div>
           )}
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="mb-6 md:mb-0 text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2">
-                Get<span className="text-grass-600">Solutions</span>
-              </h3>
-              <p className="text-gray-400">Building better apps.</p>
-            </div>
-
-            <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2">
-              <p className="text-gray-400 text-sm">
-                © 2026 GetSolutions. All rights reserved.
-              </p>
-              <div className="flex gap-6 flex-wrap justify-center md:justify-end">
-                <a href="/privacy" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Terms of Service
-                </a>
-                <a href="/contact" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Contact
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

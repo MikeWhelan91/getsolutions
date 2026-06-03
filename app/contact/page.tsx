@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Contact GetSolutions",
@@ -17,70 +18,46 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col">
-      <div className="mx-auto max-w-4xl px-6 py-20 flex-1">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
-          Contact GetSolutions
-        </h1>
-        <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-          Questions about our apps, partnerships, or support? Email us and we will reply as soon as we can.
-        </p>
+    <main className="min-h-screen bg-white">
+      <section className="border-b border-neutral-200">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-24">
+          <div>
+            <h1 className="text-5xl font-semibold leading-none tracking-tight text-neutral-950 sm:text-6xl">
+              Contact GetSolutions
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-neutral-600">
+              Questions about an app, a store listing, support, or partnerships can go straight to email.
+            </p>
+          </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-lg">
-          <div className="flex flex-wrap items-center justify-center gap-3 text-center">
-            <h2 className="text-xl font-bold text-gray-900">Email</h2>
+          <div className="border border-neutral-200 bg-[#f7f6f3] p-6 sm:p-8">
+            <p className="text-sm font-medium uppercase tracking-[0.16em] text-neutral-500">Email</p>
             <a
               href="mailto:info@getsolutions.app"
-              className="text-lg font-semibold text-grass-600 hover:text-grass-500 transition-colors"
+              className="mt-4 block break-words text-3xl font-semibold tracking-tight text-[#9b5614] transition-colors hover:text-neutral-950 sm:text-4xl"
             >
               info@getsolutions.app
             </a>
+            <p className="mt-6 text-sm leading-6 text-neutral-600">
+              Include the app name in the subject line if it is a support request. A screenshot, device model, and short description will make the issue easier to track down.
+            </p>
           </div>
-          <p className="text-gray-600 mt-4">
-            We read every message. Please include the app name in the subject line if it is a support request.
-          </p>
         </div>
+      </section>
 
-        <div className="mt-12">
+      <section className="bg-white py-14">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 px-5 sm:px-8 md:flex-row md:items-center lg:px-10">
+          <p className="text-neutral-600">Want to look through the product pages first?</p>
           <Link
-            href="/"
-            className="inline-flex items-center justify-center rounded-lg bg-grass-600 px-6 py-3 text-white font-semibold hover:bg-grass-500 transition-colors"
+            href="/#apps"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-neutral-950 px-6 text-sm font-semibold text-white transition-colors hover:bg-neutral-800"
           >
-            Back to home
+            Back to apps
           </Link>
         </div>
-      </div>
+      </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 mt-auto">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="mb-6 md:mb-0 text-center md:text-left">
-              <Link href="/" className="text-2xl font-bold mb-2 hover:text-grass-500 transition-colors">
-                Get<span className="text-grass-600">Solutions</span>
-              </Link>
-              <p className="text-gray-400">Building better apps.</p>
-            </div>
-
-            <div className="flex flex-col items-center md:items-end text-center md:text-right gap-2">
-              <p className="text-gray-400 text-sm">
-                © 2026 GetSolutions. All rights reserved.
-              </p>
-              <div className="flex gap-6 flex-wrap justify-center md:justify-end">
-                <a href="/privacy" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="/terms" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Terms of Service
-                </a>
-                <a href="/contact" className="text-gray-400 hover:text-grass-500 transition-colors">
-                  Contact
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

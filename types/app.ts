@@ -195,7 +195,7 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/getscan/3.jpg",
       "/appscreenshots/getscan/4.jpg"
     ],
-    banner: "/appscreenshots/getscan/ChatGPT%20Image%20Jan%2022,%202026,%2002_30_09%20AM.png",
+    banner: "/appscreenshots/getscan/banner.png",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.getscan.app"
   },
   getcompress: {
