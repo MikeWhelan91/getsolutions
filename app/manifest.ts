@@ -10,16 +10,16 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: "/",
     display: "standalone",
     background_color: "#ffffff",
-    theme_color: "#16a34a",
+    theme_color: "#111827",
     lang: "en",
     orientation: "portrait-primary",
     categories: ["productivity", "utilities"],
     icons: [
       {
-        src: "/appicons/getpdf.png",
+        src: "/getsolutions-favicon.png",
         sizes: "512x512",
         type: "image/png",
-        purpose: "maskable",
+        purpose: "any",
       },
       {
         src: "/appicons/getscan.png",

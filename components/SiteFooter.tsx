@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#151821] text-white">
-      <div className="mx-auto max-w-7xl px-5 py-10 sm:px-8 lg:px-10">
+    <footer className="site-footer">
+      <div className="page-shell footer-inner">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <Link href="/" className="text-2xl font-black tracking-tight">
+            <Link href="/" className="footer-brand">
               GetSolutions
             </Link>
-            <p className="mt-3 max-w-md text-sm leading-6 text-white/60">
+            <p className="footer-copy">
               Independent utility apps for documents, scanning, file size, privacy, resumes, dating, and test tracking.
             </p>
           </div>

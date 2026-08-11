@@ -105,11 +105,13 @@ export const apps: Record<string, AppData> = {
       }
     ],
     screenshots: [
-      "/appscreenshots/getpdfapp/1.png",
-      "/appscreenshots/getpdfapp/2.png",
-      "/appscreenshots/getpdfapp/3.png",
-      "/appscreenshots/getpdfapp/4.png",
-      "/appscreenshots/getpdfapp/5.png"
+      "/appscreenshots/getpdfapp/Screenshot%202026-07-25%20at%2023-33-51%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/getpdfapp/Screenshot%202026-07-25%20at%2023-34-14%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/getpdfapp/Screenshot%202026-07-25%20at%2023-34-24%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/getpdfapp/Screenshot%202026-07-25%20at%2023-34-35%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/getpdfapp/Screenshot%202026-07-25%20at%2023-34-45%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/getpdfapp/Screenshot%202026-07-25%20at%2023-34-55%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/getpdfapp/Screenshot%202026-07-25%20at%2023-35-24%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png"
     ],
     banner: "/appscreenshots/getpdfapp/banner.png",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.getsolutions.getpdf",
@@ -443,11 +445,10 @@ export const apps: Record<string, AppData> = {
       }
     ],
     screenshots: [
-      "/appscreenshots/resume/image1.png",
-      "/appscreenshots/resume/image2.png",
-      "/appscreenshots/resume/image3.png",
-      "/appscreenshots/resume/image4.png",
-      "/appscreenshots/resume/image5.png"
+      "/appscreenshots/resume/Screenshot%202026-06-03%20at%2022-18-26%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/resume/Screenshot%202026-06-03%20at%2022-18-38%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/resume/Screenshot%202026-06-03%20at%2022-18-48%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/resume/Screenshot%202026-06-03%20at%2022-19-07%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png"
     ],
     banner: "/appscreenshots/resume/banner.png",
     appStoreUrl: "https://apps.apple.com/us/app/smart-resume-ai-cv-builder/id6758463319",
@@ -525,7 +526,7 @@ export const apps: Record<string, AppData> = {
     category: "Health & Fitness",
     size: "See App Store",
     version: "See App Store",
-    updatedOn: "June 2026",
+    updatedOn: "August 2026",
     features: [
       "AI-assisted review for hCG pregnancy test strips",
       "LH ovulation strip reads with T/C ratio tracking",
@@ -586,14 +587,14 @@ export const apps: Record<string, AppData> = {
       }
     ],
     screenshots: [
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-03%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-35-16%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-48-52%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-49-23%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-49-36%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-49-43%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-06-03%20at%2003-49-49%20AppScreenStudio%20Free%20App%20Store%20Screenshot%20Generator.png"
-    ]
+      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-40-42%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-40-53%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-04%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-15%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-27%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-42-32%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png"
+    ],
+    appStoreUrl: "https://apps.apple.com/us/app/linecheck-test-line-scanner/id6775990353"
   },
   "getpdf-web": {
     id: "getpdf-web",

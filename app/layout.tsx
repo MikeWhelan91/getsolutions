@@ -3,17 +3,15 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/next";
 import SiteStructuredData from "@/components/SiteStructuredData";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://getsolutions.app'),
   icons: {
-    icon: "/getsolutionslogo.png",
+    icon: [
+      { url: "/getsolutions-favicon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/getsolutions-favicon.png",
+    apple: "/getsolutions-favicon.png",
   },
   title: {
     default: "GetSolutions - Privacy-First Android & iOS Apps | PDF Editor, Document Scanner & More",
@@ -84,7 +82,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased bg-white overflow-x-hidden`}>
+      <body>
         <SiteStructuredData />
         <Navbar />
         {children}

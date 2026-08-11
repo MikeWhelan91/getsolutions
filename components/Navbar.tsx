@@ -42,18 +42,15 @@ export default function Navbar() {
   const closeMenu = () => setMobileOpen(false);
 
   return (
-    <header className="relative z-50 bg-[#f6f1e8] py-3">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between rounded-full bg-white px-4 shadow-sm ring-1 ring-black/5 sm:px-5">
+    <header className="site-header">
+      <div className="page-shell nav-inner">
         <Link
           href="/"
-          className="flex items-center gap-3 text-[#171717]"
+          className="brand"
           aria-label="GetSolutions home"
           onClick={closeMenu}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#151821] text-sm font-black text-white">
-            GS
-          </span>
-          <span className="text-base font-black tracking-tight">GetSolutions</span>
+          <span className="brand-mark">G</span><span>GetSolutions</span>
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex" aria-label="Primary navigation">
@@ -61,7 +58,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-bold text-[#666b70] transition-colors hover:text-[#171717]"
+              className="nav-link"
             >
               {link.label}
             </Link>
@@ -70,7 +67,7 @@ export default function Navbar() {
             href="https://getpdf.me"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center rounded-full bg-[#ff7a59] px-4 text-sm font-black text-[#151821] transition-colors hover:bg-[#ffb45c]"
+            className="nav-cta"
           >
             Try GetPDF.me
           </a>
@@ -78,7 +75,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 text-[#171717] md:hidden"
+          className="menu-button md:hidden"
           aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
@@ -98,7 +95,7 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="mx-4 mt-2 rounded-[24px] bg-white shadow-sm ring-1 ring-black/5 md:hidden" id="mobile-menu">
+        <div className="mobile-menu md:hidden" id="mobile-menu">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 sm:px-8" aria-label="Mobile navigation">
             {navLinks.map((link) => (
               <Link
