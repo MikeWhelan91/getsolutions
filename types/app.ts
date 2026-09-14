@@ -587,8 +587,8 @@ export const apps: Record<string, AppData> = {
       }
     ],
     screenshots: [
-      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-40-42%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-40-53%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-08-31%20at%2002-20-55%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
+      "/appscreenshots/linecheck/Screenshot%202026-08-31%20at%2002-21-04%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
       "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-04%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
       "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-15%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
       "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-27%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
