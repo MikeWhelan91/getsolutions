@@ -588,12 +588,13 @@ export const apps: Record<string, AppData> = {
       }
     ],
     screenshots: [
-      "/appscreenshots/linecheck/Screenshot%202026-08-31%20at%2002-20-55%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-08-31%20at%2002-21-04%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-04%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-15%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-41-27%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png",
-      "/appscreenshots/linecheck/Screenshot%202026-08-07%20at%2001-42-32%20Projects%20AppLaunchpad%20Free%20App%20Store%20Screenshot%20Generator.png"
+      "/appscreenshots/linecheck/01-spot-faint-lines-iphone-1242x2688.png",
+      "/appscreenshots/linecheck/02-follow-ovulation-trends-iphone-1242x2688.png",
+      "/appscreenshots/linecheck/03-plan-your-cycle-iphone-1242x2688.png",
+      "/appscreenshots/linecheck/04-see-your-trends-iphone-1242x2688.png",
+      "/appscreenshots/linecheck/05-log-everything-iphone-1242x2688.png",
+      "/appscreenshots/linecheck/06-see-results-change-iphone-1242x2688.png",
+      "/appscreenshots/linecheck/07-ask-luna-iphone-1242x2688.png"
     ],
     appStoreUrl: "https://apps.apple.com/us/app/linecheck-test-line-scanner/id6775990353"
   },
