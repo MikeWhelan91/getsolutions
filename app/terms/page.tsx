@@ -3,11 +3,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service - GetSolutions",
   description:
-    "Terms of service for GetSolutions apps and websites, including LineCheck. Covers subscriptions, AI features, acceptable use, and medical disclaimers where relevant.",
+    "Terms of service for GetSolutions apps and websites, including LineCheck and Critter Scale. Covers subscriptions, in-app purchases, AI features, acceptable use, and medical disclaimers where relevant.",
   openGraph: {
     title: "Terms of Service - GetSolutions",
     description:
-      "Terms of service for GetSolutions apps and websites, including LineCheck.",
+      "Terms of service for GetSolutions apps and websites, including LineCheck and Critter Scale.",
     url: "https://getsolutions.app/terms",
     type: "website"
   },
@@ -24,7 +24,7 @@ export default function TermsPage() {
           Terms of Service
         </h1>
         <p className="text-sm text-neutral-500 mb-12">
-          Last updated: June 2026
+          Last updated: September 2026
         </p>
 
         <div className="prose prose-lg max-w-none">
@@ -32,7 +32,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">Agreement to These Terms</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               By using GetSolutions apps and websites, including GetPDF, GetScan, GetCompress, GetSecure,
-              Smart Resume, Firstly, LineCheck, GetPDF.me, and GetSolutions.app, you agree to these terms.
+              Smart Resume, Firstly, LineCheck, Critter Scale, GetPDF.me, and GetSolutions.app, you agree to these terms.
               If you do not agree, do not use the service.
             </p>
           </section>
@@ -41,7 +41,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">What We Provide</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               GetSolutions provides software tools for document workflows, productivity, privacy utilities, AI-assisted
-              features, and related services. Features vary by app and may change over time.
+              features, games, and related services. Features vary by app and may change over time.
             </p>
           </section>
 
@@ -95,6 +95,20 @@ export default function TermsPage() {
               <li>AI-assisted reads, comparisons, and assistant guidance are informational only and may be wrong.</li>
               <li>You are responsible for following the instructions for your test brand and seeking medical advice where appropriate.</li>
               <li>You must not use LineCheck for emergency decision-making or as the sole basis for medical decisions.</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-bold text-neutral-950 mb-4">Critter Scale-Specific Terms</h2>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              Critter Scale is a casual game provided for personal entertainment.
+            </p>
+            <ul className="list-disc pl-6 text-neutral-700 space-y-2 mb-4">
+              <li><strong>Purchases:</strong> Remove Ads and the Supporter Pack are one-time, non-consumable purchases. The Supporter Pack unlocks cosmetic looks and also removes ads. Both can be restored on devices signed in to the same Apple Account.</li>
+              <li><strong>Cosmetic items:</strong> unlocked looks are a license to use visual content inside the app. They have no cash value, cannot be transferred or exchanged, and do not change scoring, balance, or leaderboard results.</li>
+              <li><strong>Progress:</strong> scores, records, and settings are stored on your device and may be lost if you delete the app or reset your device. Purchases can be restored; local progress cannot.</li>
+              <li><strong>Leaderboards:</strong> you must not cheat, exploit bugs, or tamper with the app or its data to submit scores. We may remove scores or report abuse to Apple where we reasonably believe a score was not earned through normal play.</li>
+              <li><strong>Changes to gameplay:</strong> we may rebalance critters, scoring, or difficulty in updates, which can affect how scores compare with earlier versions.</li>
             </ul>
           </section>
 
@@ -168,7 +182,8 @@ export default function TermsPage() {
             <h3 className="text-xl font-bold text-neutral-950 mb-3">Plain-English Summary</h3>
             <p className="text-neutral-700 leading-relaxed">
               Use the apps lawfully, keep backups of important content, understand that optional AI features can be
-              wrong, and do not treat LineCheck as medical advice or diagnosis.
+              wrong, and do not treat LineCheck as medical advice or diagnosis. In Critter Scale, purchases are
+              one-time and restorable, cosmetics are visual only, and leaderboard scores must be earned fairly.
             </p>
           </section>
         </div>

@@ -596,6 +596,81 @@ export const apps: Record<string, AppData> = {
     ],
     appStoreUrl: "https://apps.apple.com/us/app/linecheck-test-line-scanner/id6775990353"
   },
+  "critter-scale": {
+    id: "critter-scale",
+    name: "Critter Scale",
+    tagline: "A cosy physics puzzle about balancing squishy critters",
+    description: "Steer falling critters onto two piles, keep the plank level to build your multiplier, and don't let the water spill.",
+    longDescription: "Critter Scale is a relaxed but tricky balancing game for iPhone. Every critter that drops in has to go left or right onto a plank balanced on a spike. Keep the board level to grow your multiplier all the way to ×3, or let a bad critter melt on the spike, at the cost of water rising between the piles. Nibblers eat what they land on, Sippers drink the water back up, and Swells keep on growing, so every run plays out differently. Unlock golden critters, new planks, and new skies with the optional Supporter Pack, and chase your best score on the Game Center leaderboard.",
+    icon: "/appicons/critterscale.png",
+    category: "Games",
+    size: "See App Store",
+    version: "See App Store",
+    updatedOn: "September 2026",
+    features: [
+      "Swipe or tap to steer each critter onto the left or right pile",
+      "Torque-based physics: heavy critters far out tip the plank harder",
+      "Keep the plank level to build a multiplier up to ×3",
+      "Skip a bad critter by letting it melt, at the cost of rising water",
+      "Special critters: Nibblers nibble, Sippers sip, Swells swell",
+      "A guided first run that introduces each critter as it appears",
+      "Supporter Pack with golden critters, planks, and skies",
+      "Game Center leaderboard and personal records",
+      "One-time purchase to remove ads",
+      "Built for iPhone"
+    ],
+    useCases: [
+      "Play a quick, calming round in a spare minute",
+      "Chase a higher multiplier with careful, level placements",
+      "Plan around specials to rescue a flooding board",
+      "Compete for a spot on the Game Center leaderboard"
+    ],
+    valueProps: [
+      "Simple one-thumb controls with surprisingly deep balancing",
+      "Cosmetics never change scores, balance, or the leaderboard",
+      "No account needed: your progress stays on your iPhone"
+    ],
+    faqs: [
+      {
+        question: "How do you play Critter Scale?",
+        answer: "Swipe or tap left or right to send each falling critter onto that pile. Keep the plank level to grow your multiplier, and don't let the water spill over the lower pile."
+      },
+      {
+        question: "What happens if I don't choose a side?",
+        answer: "The critter falls onto the centre spike and melts. That's a handy way to skip a bad critter, but it adds water to the plank."
+      },
+      {
+        question: "What do the special critters do?",
+        answer: "Nibblers shrink the critter they land on, Sippers drink water back off the plank, and Swells keep growing after they land until they're heavier than anything else."
+      },
+      {
+        question: "Is Critter Scale free?",
+        answer: "Yes. The game is free with ads. You can remove ads with a one-time purchase, or get the Supporter Pack, which unlocks every cosmetic look and also removes ads."
+      },
+      {
+        question: "Do cosmetics make the game easier?",
+        answer: "No. Supporter looks are purely visual and never change scoring, balance, or the leaderboard."
+      },
+      {
+        question: "Do I need an account?",
+        answer: "No. Scores, settings, and unlocked looks are saved on your device. Leaderboards use your existing Game Center profile if you're signed in."
+      },
+      {
+        question: "Is Critter Scale available on Android?",
+        answer: "No. Critter Scale is iOS only right now."
+      }
+    ],
+    screenshots: [
+      "/appscreenshots/critterscale/01-balance-the-critters-iphone-1242x2688.png",
+      "/appscreenshots/critterscale/02-mind-the-water-iphone-1242x2688.png",
+      "/appscreenshots/critterscale/03-meet-the-specials-iphone-1242x2688.png",
+      "/appscreenshots/critterscale/04-tap-left-tap-right-iphone-1242x2688.png",
+      "/appscreenshots/critterscale/05-keep-it-level-iphone-1242x2688.png",
+      "/appscreenshots/critterscale/06-dress-up-your-scale-iphone-1242x2688.png",
+      "/appscreenshots/critterscale/07-beat-your-best-iphone-1242x2688.png"
+    ],
+    isComingSoon: true
+  },
   "getpdf-web": {
     id: "getpdf-web",
     name: "GetPDF.me",
