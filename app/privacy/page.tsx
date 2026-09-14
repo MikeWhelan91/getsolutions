@@ -96,7 +96,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc pl-6 text-neutral-700 space-y-2 mb-4">
               <li><strong>Local storage:</strong> high scores, run statistics, settings, tutorial progress, chosen cosmetics, and purchase status are saved on your device. We do not receive a copy.</li>
-              <li><strong>Ads:</strong> the free version shows banner ads and occasional full-screen ads between runs, served by Google AdMob. Google may collect device identifiers, approximate location derived from IP address, and ad interaction data to deliver, measure, and limit fraud in those ads. On iOS, Critter Scale asks for App Tracking Transparency permission before any ad personalization that relies on tracking; if you decline, ads are shown without that tracking.</li>
+              <li><strong>Ads:</strong> the free version shows banner ads and occasional full-screen ads between runs, served by Google AdMob. Google may collect device identifiers, approximate location derived from IP address, and ad interaction data to deliver, measure, and limit fraud in those ads. On iOS, Critter Scale asks for App Tracking Transparency permission before any ad personalization that relies on tracking; if you decline, ads are shown without that tracking. Where required, such as in the EEA, UK, and Switzerland, a consent message lets you choose how your data is used for ads.</li>
               <li><strong>Purchases:</strong> Remove Ads and the Supporter Pack are one-time purchases processed by Apple. We receive only the entitlement status needed to unlock them and restore them; we never see your payment details.</li>
               <li><strong>Game Center:</strong> if you are signed in to Game Center, your score and Game Center player profile are submitted to Apple so leaderboards can work. This is handled by Apple under its own privacy policy.</li>
               <li><strong>Diagnostics:</strong> crash and performance data may be shared with us through Apple if you have enabled sharing with app developers in your device settings.</li>
@@ -158,11 +158,24 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-neutral-950 mb-4">Children's Privacy</h2>
+            <h2 className="text-2xl font-bold text-neutral-950 mb-4">Age Ratings and Children's Privacy</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
-              Our apps and services are not directed to children under 13, and we do not knowingly collect personal
-              information from children. If you believe a child has provided us information, contact us and we will
-              review the request.
+              Each GetSolutions app has its own intended audience and age rating, shown on its App Store or Google
+              Play listing. Some apps cover adult topics and are intended only for adults, such as LineCheck
+              (reproductive health) and Firstly (dating). Others, such as casual games like Critter Scale and our
+              document utilities, are made for a general audience.
+            </p>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              None of our apps are designed specifically for children, and we do not knowingly collect personal
+              information from children under 13, or the minimum age of digital consent where you live. General
+              audience apps that younger people may use are built to need no account and no contact details, and
+              we keep any data collection in them to what the app needs to run, deliver ads in free versions, and
+              process purchases. A parent or guardian should review an app's age rating and store listing before a
+              child uses it.
+            </p>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              If you believe a child has provided us personal information, contact us and we will review and, where
+              appropriate, delete it.
             </p>
           </section>
 
