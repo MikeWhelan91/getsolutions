@@ -3,11 +3,11 @@ import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "About GetSolutions - Built to Fix Spammy, Overpriced Apps",
-  description: "GetSolutions builds focused tools that respect users. No spammy upsells, no bloated subscriptions, just clean utility apps that solve real problems.",
+  title: "About GetSolutions - Apps and Games for iPhone, Android, and Web",
+  description: "GetSolutions makes apps and games for iPhone, Android, and the web, including GetPDF, Smart Resume, LineCheck, Firstly, and Critter Scale.",
   openGraph: {
-    title: "About GetSolutions - Built to Fix Spammy, Overpriced Apps",
-    description: "We build practical tools that stay out of your way. Privacy-first, fairly priced, and intentionally designed.",
+    title: "About GetSolutions - Apps and Games for iPhone, Android, and Web",
+    description: "Apps and games for iPhone, Android, and the web, including GetPDF, Smart Resume, LineCheck, Firstly, and Critter Scale.",
     url: "https://getsolutions.app/about",
     type: "website"
   },
@@ -22,14 +22,14 @@ export default function AboutPage() {
       <section className="border-b border-neutral-200">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:px-10 lg:py-24">
           <h1 className="text-5xl font-semibold leading-none tracking-tight text-neutral-950 sm:text-6xl">
-            Built against bloated utility software.
+            About GetSolutions
           </h1>
           <div className="max-w-3xl">
             <p className="text-xl leading-8 text-neutral-700">
-              GetSolutions exists because everyday utility apps became noisy, restrictive, and overpriced. The goal is simple: build tools that do the job clearly, price them fairly, and avoid wasting people’s time.
+              GetSolutions makes apps and games for iPhone, Android, and the web.
             </p>
             <p className="mt-6 text-base leading-7 text-neutral-600">
-              The suite covers PDF editing, scanning, compression, privacy checks, resumes, dating support, and test tracking. Different products need different technology, but the standard is consistent: practical workflows, honest limits, and interfaces that stay out of the way.
+              The lineup covers PDF editing with GetPDF and GetPDF.me, document scanning with GetScan, file compression with GetCompress, app permission checks with GetSecure, resumes and cover letters with Smart Resume, dating conversation help with Firstly, pregnancy and ovulation test tracking with LineCheck, and Critter Scale, a physics balancing game.
             </p>
           </div>
         </div>
@@ -39,9 +39,9 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
-              ["Clear by default", "No vague feature lists or fake productivity theater. Each app is built around a concrete job."],
-              ["Fair upgrades", "Paid features should feel optional and understandable, not like traps around basic functionality."],
-              ["Local where possible", "Files and private content should stay on-device or in-browser whenever the product can support it."]
+              ["Documents and files", "GetPDF, GetPDF.me, GetScan, and GetCompress edit, scan, convert, and shrink PDFs and images, with most tools running on your device."],
+              ["Everyday help", "Smart Resume builds resumes and cover letters, Firstly helps with dating conversations, LineCheck reads and tracks test strips, and GetSecure reviews app permissions."],
+              ["Games", "Critter Scale is a cosy physics puzzle about balancing squishy critters on a plank without letting the water spill."]
             ].map(([title, body]) => (
               <div key={title} className="border-t border-neutral-300 pt-5">
                 <h2 className="text-xl font-semibold tracking-tight text-neutral-950">{title}</h2>
@@ -55,8 +55,8 @@ export default function AboutPage() {
       <section className="bg-white py-16">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-5 sm:px-8 md:flex-row md:items-center lg:px-10">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight text-neutral-950">See what is shipping now.</h2>
-            <p className="mt-3 text-neutral-600">Browse the full app lineup and open the product pages.</p>
+            <h2 className="text-3xl font-semibold tracking-tight text-neutral-950">Browse the apps.</h2>
+            <p className="mt-3 text-neutral-600">Screenshots, features, and download links for every GetSolutions app.</p>
           </div>
           <Link
             href="/#apps"

@@ -10,7 +10,7 @@ export default function SiteFooter() {
               GetSolutions
             </Link>
             <p className="footer-copy">
-              Independent utility apps for documents, scanning, file size, privacy, resumes, dating, and test tracking.
+              Apps and games for PDFs, scanning, file compression, app permissions, resumes, dating, test tracking, and casual play.
             </p>
           </div>
 

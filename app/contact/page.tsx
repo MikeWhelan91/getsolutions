@@ -26,7 +26,7 @@ export default function ContactPage() {
               Contact GetSolutions
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-neutral-600">
-              Questions about an app, a store listing, support, or partnerships can go straight to email.
+              Email us with questions about any GetSolutions app, support requests, or partnerships.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
 
       <section className="bg-white py-14">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 px-5 sm:px-8 md:flex-row md:items-center lg:px-10">
-          <p className="text-neutral-600">Want to look through the product pages first?</p>
+          <p className="text-neutral-600">Browse every GetSolutions app.</p>
           <Link
             href="/#apps"
             className="inline-flex h-12 items-center justify-center rounded-md bg-neutral-950 px-6 text-sm font-semibold text-white transition-colors hover:bg-neutral-800"

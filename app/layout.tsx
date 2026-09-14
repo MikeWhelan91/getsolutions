@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: "GetSolutions - Privacy-First Android & iOS Apps | PDF Editor, Document Scanner & More",
     template: "%s | GetSolutions"
   },
-  description: "Solo-developed Android and iOS apps built with privacy in mind. Edit PDFs offline, scan documents, compress files, manage app permissions, and use optional AI features where they add value.",
+  description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, check app permissions, build resumes, get dating conversation help, track pregnancy and ovulation tests, and play Critter Scale.",
   keywords: [
     "Android apps",
     "iOS apps",
@@ -32,7 +32,12 @@ export const metadata: Metadata = {
     "GetCompress",
     "GetSecure",
     "no subscription apps",
-    "privacy apps Android"
+    "privacy apps Android",
+    "Critter Scale",
+    "balancing game iPhone",
+    "LineCheck",
+    "Smart Resume",
+    "Firstly"
   ],
   authors: [{ name: "GetSolutions" }],
   creator: "GetSolutions",
@@ -42,7 +47,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://getsolutions.app",
     title: "GetSolutions - Privacy-First Android & iOS Apps",
-    description: "Solo-developed Android and iOS apps built with privacy in mind, with local-first workflows and optional online features where they add value.",
+    description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, check app permissions, build resumes, get dating conversation help, track pregnancy and ovulation tests, and play Critter Scale.",
     siteName: "GetSolutions",
     images: [
       {
@@ -56,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GetSolutions - Privacy-First Android & iOS Apps",
-    description: "Solo-developed Android and iOS apps built with privacy in mind, with local-first workflows and optional online features where they add value.",
+    description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, check app permissions, build resumes, get dating conversation help, track pregnancy and ovulation tests, and play Critter Scale.",
     images: ["/hero.png"]
   },
   robots: {

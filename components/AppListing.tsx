@@ -27,7 +27,10 @@ function StoreLinks({ app, light = false }: { app: AppData; light?: boolean }) {
 }
 
 export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
-  const info = [["Updated", app.updatedOn], ["Version", app.version], ["Size", app.size], ["Category", app.category], ["Platform", platformLabel(app)]];
+  // Store-dependent facts are left out rather than shown as "See App Store".
+  const info = [["Updated", app.updatedOn], ["Version", app.version], ["Size", app.size], ["Category", app.category], ["Platform", platformLabel(app)]]
+    .filter(([, value]) => value && !/^(See |Varies)/.test(value));
+  const stores = [app.appStoreUrl && "the App Store", app.playStoreUrl && "Google Play"].filter(Boolean).join(" and ");
   return <main className="product-page">
     <AppStructuredData app={app}/><AppFaqStructuredData app={app}/><AppBreadcrumbStructuredData app={app}/>
 
@@ -52,7 +55,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
 
     {!app.isWebsite && app.screenshots.length > 0 && <section className="screenshot-section">
       <div className="page-shell">
-        <div className="section-heading"><div><p className="eyebrow">Inside the app</p><h2>A closer look.</h2></div><p>Scroll to explore</p></div>
+        <div className="section-heading"><div><p className="eyebrow">Screenshots</p><h2>{app.name} {app.playStoreUrl && !app.appStoreUrl ? "on Android" : app.playStoreUrl ? "on iPhone and Android" : "on iPhone"}.</h2></div></div>
         <div className="screenshot-rail" aria-label={`${app.name} screenshots`}>
           {app.screenshots.map((src, index) => <figure className="screenshot-card" key={src}>
             <Image src={src} alt={`${app.name} app screenshot ${index + 1}`} width={310} height={671} sizes="(max-width: 640px) 74vw, 310px" priority={index < 2}/>
@@ -64,7 +67,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
     <section className="detail-section page-shell">
       <div className="detail-layout">
         <article className="about-app">
-          <p className="eyebrow">About</p><h2>Made for the task at hand.</h2>
+          <p className="eyebrow">About</p><h2>About {app.name}.</h2>
           <p className="long-description">{app.longDescription}</p>
           <div className="feature-grid">
             {app.features.map((feature, index) => <div className="feature-item" key={feature}><span>{String(index + 1).padStart(2, "0")}</span><p>{feature}</p></div>)}
@@ -75,16 +78,16 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
           {app.safetyHighlights && <div className="privacy-note"><strong>Safety & privacy</strong>{app.safetyHighlights.map(item => <p key={item.label}><span>✓</span>{item.label}</p>)}</div>}
         </aside>
       </div>
-      {app.faqs && <div className="faq-block faq-wide"><div className="faq-heading"><p className="eyebrow">Questions</p><h2>Good to know.</h2></div>
+      {app.faqs && <div className="faq-block faq-wide"><div className="faq-heading"><p className="eyebrow">FAQ</p><h2>{app.name} questions.</h2></div>
         <div className="faq-list">{app.faqs.slice(0, 6).map(faq => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div>
       </div>}
     </section>
 
-    {relatedApps.length > 0 && <section className="related-section"><div className="page-shell"><div className="section-heading"><div><p className="eyebrow">Also by GetSolutions</p><h2>More useful apps.</h2></div></div>
+    {relatedApps.length > 0 && <section className="related-section"><div className="page-shell"><div className="section-heading"><div><p className="eyebrow">Also by GetSolutions</p><h2>More apps.</h2></div></div>
       <div className="related-grid">{relatedApps.map(item => <Link href={`/apps/${item.id}`} className="related-card" key={item.id}><Image src={item.icon} alt="" width={72} height={72}/><div><h3>{item.name}</h3><p>{item.tagline}</p></div><span aria-hidden="true">↗</span></Link>)}</div>
     </div></section>}
 
-    <section className="download-callout page-shell"><div><p className="eyebrow">Get started</p><h2>Try {app.name}.</h2><p>{app.isWebsite ? "Open it in your browser and get straight to work." : "Available from the official store links below."}</p></div><StoreLinks app={app} light/></section>
+    <section className="download-callout page-shell"><div><p className="eyebrow">{app.isWebsite ? "Web app" : stores ? "Download" : "Coming soon"}</p><h2>{app.isWebsite ? `Open ${app.name}.` : stores ? `Get ${app.name}.` : `${app.name} is coming soon.`}</h2><p>{app.isWebsite ? "Runs in any modern browser with nothing to install." : stores ? `${app.name} is available on ${stores}.` : `${app.name} is coming soon to the App Store.`}</p></div><StoreLinks app={app} light/></section>
     <SiteFooter/>
   </main>;
 }

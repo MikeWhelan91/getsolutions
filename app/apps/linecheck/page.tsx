@@ -4,7 +4,7 @@ import { apps } from "@/types/app";
 
 export const metadata: Metadata = {
   title: "LineCheck - AI hCG & LH Test Strip Reader for iOS",
-  description: "Review hCG and LH test strips with AI-assisted line reads, saved scan history, comparisons, cycle tracking, and iPhone-only guidance.",
+  description: "Review hCG and LH test strips with AI-assisted line reads, saved scan history, comparisons, cycle tracking, and Luna guidance on iPhone.",
   keywords: [
     "LineCheck",
     "hCG test reader",

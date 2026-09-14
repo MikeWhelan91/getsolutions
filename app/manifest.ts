@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "GetSolutions",
     short_name: "GetSolutions",
     description:
-      "Privacy-first utilities for Android and iOS including GetPDF, GetScan, GetCompress, GetSecure, Smart Resume, and Firstly.",
+      "Android and iOS apps and games including GetPDF, GetScan, GetCompress, GetSecure, Smart Resume, Firstly, LineCheck, and Critter Scale.",
     start_url: "/",
     scope: "/",
     display: "standalone",

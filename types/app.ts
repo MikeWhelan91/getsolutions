@@ -437,11 +437,11 @@ export const apps: Record<string, AppData> = {
       },
       {
         question: "Is Smart Resume free?",
-        answer: "It is launching soon with free tools and optional upgrades."
+        answer: "Yes. Smart Resume is free to download, with optional upgrades for more AI usage and advanced features."
       },
       {
-        question: "Where can I download Smart Resume?",
-        answer: "It is available on iOS and Android via the store listings."
+        question: "Is Smart Resume available on iPhone and Android?",
+        answer: "Yes. Smart Resume is available on the App Store and Google Play."
       }
     ],
     screenshots: [
@@ -514,7 +514,8 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/firstly/image4.png",
       "/appscreenshots/firstly/image5.png"
     ],
-    banner: "/appscreenshots/firstly/banner.png"
+    banner: "/appscreenshots/firstly/banner.png",
+    appStoreUrl: "https://apps.apple.com/us/app/firstly-ai-dating-coach/id6758738638"
   },
   linecheck: {
     id: "linecheck",
@@ -724,7 +725,7 @@ export const apps: Record<string, AppData> = {
       },
       {
         question: "Is it free to use?",
-        answer: "Yes. The web app is free with optional upgrades in the wider GetSolutions suite."
+        answer: "Yes. GetPDF.me is free to use in your browser."
       },
       {
         question: "Do I need to install anything?",
@@ -744,7 +745,7 @@ export const apps: Record<string, AppData> = {
       },
       {
         question: "Is it the same as the mobile app?",
-        answer: "It is the web version with a browser-first workflow and privacy-first design."
+        answer: "GetPDF.me is the browser version of GetPDF, with editing, merging, splitting, compression, and signatures that run on your device."
       }
     ],
     screenshots: [
