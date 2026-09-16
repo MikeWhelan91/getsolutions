@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function SmartResumePage() {
   const app = apps["smart-resume"];
-  const relatedApps = [apps.getpdf, apps.getscan, apps.getcompress, apps.getsecure];
+  const relatedApps = [apps.getpdf, apps.linecheck, apps["critter-scale"], apps["getpdf-web"]];
 
   return <AppListing app={app} relatedApps={relatedApps} />;
 }

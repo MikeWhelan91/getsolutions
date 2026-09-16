@@ -31,8 +31,8 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">Agreement to These Terms</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
-              By using GetSolutions apps and websites, including GetPDF, GetScan, GetCompress, GetSecure,
-              Smart Resume, Firstly, LineCheck, Critter Scale, GetPDF.me, and GetSolutions.app, you agree to these terms.
+              By using GetSolutions apps and websites, including GetPDF, Smart Resume, LineCheck, Critter Scale,
+              GetPDF.me, and GetSolutions.app, you agree to these terms.
               If you do not agree, do not use the service.
             </p>
           </section>

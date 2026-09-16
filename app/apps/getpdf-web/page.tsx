@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function GetPDFWebPage() {
   const app = apps["getpdf-web"];
-  const relatedApps = [apps.getpdf, apps.getscan, apps.getcompress, apps["smart-resume"]];
+  const relatedApps = [apps.getpdf, apps["smart-resume"], apps.linecheck, apps["critter-scale"]];
 
   return <AppListing app={app} relatedApps={relatedApps} />;
 }

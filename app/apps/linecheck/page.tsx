@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function LineCheckPage() {
   const app = apps.linecheck;
-  const relatedApps = [apps.firstly, apps["smart-resume"], apps.getpdf, apps.getscan];
+  const relatedApps = [apps["smart-resume"], apps.getpdf, apps["getpdf-web"], apps["critter-scale"]];
 
   return <AppListing app={app} relatedApps={relatedApps} />;
 }

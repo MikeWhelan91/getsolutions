@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function CritterScalePage() {
   const app = apps["critter-scale"];
-  const relatedApps = [apps.linecheck, apps["smart-resume"], apps.getpdf, apps.firstly];
+  const relatedApps = [apps.linecheck, apps["smart-resume"], apps.getpdf, apps["getpdf-web"]];
 
   return <AppListing app={app} relatedApps={relatedApps} />;
 }

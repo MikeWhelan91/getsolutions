@@ -9,7 +9,7 @@ function platforms(app: AppData) {
 
 export default function Home() {
   const priorityApps = [apps["critter-scale"], apps.linecheck, apps["smart-resume"], apps.getpdf];
-  const allApps = [...priorityApps, ...Object.values(apps).filter((app) => !priorityApps.some((priority) => priority.id === app.id))];
+  const allApps = [...priorityApps, ...Object.values(apps).filter((app) => !app.isArchived && !priorityApps.some((priority) => priority.id === app.id))];
   const featured = [apps["critter-scale"], apps.linecheck, apps["smart-resume"]];
   return <main>
     <section className="home-hero page-shell">

@@ -21,6 +21,7 @@ export interface AppData {
   websiteUrl?: string;
   isWebsite?: boolean;
   isComingSoon?: boolean;
+  isArchived?: boolean;
 }
 
 export const apps: Record<string, AppData> = {
@@ -198,7 +199,8 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/getscan/4.jpg"
     ],
     banner: "/appscreenshots/getscan/banner.png",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getscan.app"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getscan.app",
+    isArchived: true
   },
   getcompress: {
     id: "getcompress",
@@ -283,7 +285,8 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/getcompress/5.png"
     ],
     banner: "/appscreenshots/getcompress/banner.png",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getapps.getcompress"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getapps.getcompress",
+    isArchived: true
   },
   getsecure: {
     id: "getsecure",
@@ -369,7 +372,8 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/getsecure/5.png"
     ],
     banner: "/appscreenshots/getsecure/banner.png",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getapps.getprivacy"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getapps.getprivacy",
+    isArchived: true
   },
   "smart-resume": {
     id: "smart-resume",
@@ -453,69 +457,6 @@ export const apps: Record<string, AppData> = {
     banner: "/appscreenshots/resume/banner.png",
     appStoreUrl: "https://apps.apple.com/us/app/smart-resume-ai-cv-builder/id6758463319",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.smartresume.app"
-  },
-  firstly: {
-    id: "firstly",
-    name: "Firstly",
-    tagline: "AI dating coach for better conversations",
-    description: "Get smart openers, chat analysis, and confidence-boosting reply ideas from real conversations.",
-    longDescription: "Firstly helps you start conversations, keep them going, and understand where you stand. Upload screenshots of dating profiles or chats to get personalized openers, compatibility insights, and next-message suggestions. It focuses on real conversations with real people, not scripted chats, and keeps privacy in mind by analyzing screenshots in real time without storing them.",
-    icon: "/appicons/firstly.png",
-    category: "Lifestyle",
-    size: "See App Store",
-    version: "See App Store",
-    updatedOn: "See App Store",
-    features: [
-      "Personalized openers for any profile",
-      "Conversation health and compatibility insights",
-      "Next-message suggestions to keep flow natural",
-      "Red and green flag detection",
-      "Regional tone matching for US, UK, CA, AU, and IE",
-      "Works with Tinder, Hinge, Bumble, Match, and more",
-      "Privacy-first processing with no stored chats"
-    ],
-    useCases: [
-      "Break the ice with tailored openers",
-      "Understand whether a conversation has momentum",
-      "Avoid overthinking your next message",
-      "Spot red flags early and lean into green flags"
-    ],
-    valueProps: [
-      "Real feedback from real conversations",
-      "Keeps your tone intact while reducing guesswork",
-      "Built for privacy with no stored chats"
-    ],
-    faqs: [
-      {
-        question: "What does Firstly analyze?",
-        answer: "Screenshots of dating profiles and conversations to generate openers, insights, and suggestions."
-      },
-      {
-        question: "Does Firstly store my chats?",
-        answer: "No. Screenshots are analyzed in real time and not stored on our servers."
-      },
-      {
-        question: "Which dating apps are supported?",
-        answer: "It works with major apps including Tinder, Hinge, Bumble, Match, and more."
-      },
-      {
-        question: "Is Firstly available on Android?",
-        answer: "Not yet. Firstly is available on iOS only right now."
-      },
-      {
-        question: "Is there a premium plan?",
-        answer: "Yes. Premium unlocks unlimited openers, unlimited chat analysis, and advanced insights."
-      }
-    ],
-    screenshots: [
-      "/appscreenshots/firstly/image1.png",
-      "/appscreenshots/firstly/image2.png",
-      "/appscreenshots/firstly/image3.png",
-      "/appscreenshots/firstly/image4.png",
-      "/appscreenshots/firstly/image5.png"
-    ],
-    banner: "/appscreenshots/firstly/banner.png",
-    appStoreUrl: "https://apps.apple.com/us/app/firstly-ai-dating-coach/id6758738638"
   },
   linecheck: {
     id: "linecheck",
@@ -671,7 +612,7 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/critterscale/06-dress-up-your-scale-iphone-1242x2688.png",
       "/appscreenshots/critterscale/07-beat-your-best-iphone-1242x2688.png"
     ],
-    isComingSoon: true
+    appStoreUrl: "https://apps.apple.com/us/app/critter-scale-balance-game/id6811691504"
   },
   "getpdf-web": {
     id: "getpdf-web",

@@ -32,8 +32,8 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">Overview</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               GetSolutions builds utility apps and websites with a bias toward local processing and restrained data
-              collection. This policy applies to GetSolutions apps and websites, including GetPDF, GetScan,
-              GetCompress, GetSecure, Smart Resume, Firstly, LineCheck, Critter Scale, GetPDF.me, and GetSolutions.app.
+              collection. This policy applies to GetSolutions apps and websites, including GetPDF, Smart Resume,
+              LineCheck, Critter Scale, GetPDF.me, and GetSolutions.app.
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">
               Different apps use different data flows. Many features run entirely on-device or in-browser. Some
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
             <p className="text-neutral-700 leading-relaxed mb-4">
               Each GetSolutions app has its own intended audience and age rating, shown on its App Store or Google
               Play listing. Some apps cover adult topics and are intended only for adults, such as LineCheck
-              (reproductive health) and Firstly (dating). Others, such as casual games like Critter Scale and our
+              (reproductive health). Others, such as casual games like Critter Scale and our
               document utilities, are made for a general audience.
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">

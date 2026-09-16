@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const appRoutes: MetadataRoute.Sitemap = Object.values(apps).map((app) => ({
+  const appRoutes: MetadataRoute.Sitemap = Object.values(apps).filter((app) => !app.isArchived).map((app) => ({
     url: `${baseUrl}/apps/${app.id}`,
     lastModified: now,
     changeFrequency: "monthly",

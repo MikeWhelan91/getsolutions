@@ -28,16 +28,11 @@ export const metadata: Metadata = {
     "privacy-focused apps",
     "offline PDF editor",
     "GetPDF",
-    "GetScan",
-    "GetCompress",
-    "GetSecure",
     "no subscription apps",
-    "privacy apps Android",
     "Critter Scale",
     "balancing game iPhone",
     "LineCheck",
-    "Smart Resume",
-    "Firstly"
+    "Smart Resume"
   ],
   authors: [{ name: "GetSolutions" }],
   creator: "GetSolutions",

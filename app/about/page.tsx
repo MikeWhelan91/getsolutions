@@ -4,10 +4,10 @@ import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "About GetSolutions - Apps and Games for iPhone, Android, and Web",
-  description: "GetSolutions makes apps and games for iPhone, Android, and the web, including GetPDF, Smart Resume, LineCheck, Firstly, and Critter Scale.",
+  description: "GetSolutions makes apps and games for iPhone, Android, and the web, including GetPDF, Smart Resume, LineCheck, and Critter Scale.",
   openGraph: {
     title: "About GetSolutions - Apps and Games for iPhone, Android, and Web",
-    description: "Apps and games for iPhone, Android, and the web, including GetPDF, Smart Resume, LineCheck, Firstly, and Critter Scale.",
+    description: "Apps and games for iPhone, Android, and the web, including GetPDF, Smart Resume, LineCheck, and Critter Scale.",
     url: "https://getsolutions.app/about",
     type: "website"
   },
@@ -29,7 +29,7 @@ export default function AboutPage() {
               GetSolutions makes apps and games for iPhone, Android, and the web.
             </p>
             <p className="mt-6 text-base leading-7 text-neutral-600">
-              The lineup covers PDF editing with GetPDF and GetPDF.me, document scanning with GetScan, file compression with GetCompress, app permission checks with GetSecure, resumes and cover letters with Smart Resume, dating conversation help with Firstly, pregnancy and ovulation test tracking with LineCheck, and Critter Scale, a physics balancing game.
+              The lineup covers PDF editing with GetPDF and GetPDF.me, resumes and cover letters with Smart Resume, pregnancy and ovulation test tracking with LineCheck, and Critter Scale, a physics balancing game.
             </p>
           </div>
         </div>
@@ -39,8 +39,8 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
-              ["Documents and files", "GetPDF, GetPDF.me, GetScan, and GetCompress edit, scan, convert, and shrink PDFs and images, with most tools running on your device."],
-              ["Everyday help", "Smart Resume builds resumes and cover letters, Firstly helps with dating conversations, LineCheck reads and tracks test strips, and GetSecure reviews app permissions."],
+              ["Documents and files", "GetPDF and GetPDF.me edit, organize, and convert PDFs, with most tools running on your device."],
+              ["Everyday help", "Smart Resume builds resumes and cover letters, while LineCheck reads and tracks test strips."],
               ["Games", "Critter Scale is a cosy physics puzzle about balancing squishy critters on a plank without letting the water spill."]
             ].map(([title, body]) => (
               <div key={title} className="border-t border-neutral-300 pt-5">
