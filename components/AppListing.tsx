@@ -4,6 +4,7 @@ import Image from "next/image";
 import AppStructuredData from "./AppStructuredData";
 import AppFaqStructuredData from "./AppFaqStructuredData";
 import AppBreadcrumbStructuredData from "./AppBreadcrumbStructuredData";
+import ScreenshotCarousel from "./ScreenshotCarousel";
 import SiteFooter from "./SiteFooter";
 
 interface AppListingProps { app: AppData; relatedApps?: AppData[] }
@@ -56,11 +57,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
     {!app.isWebsite && app.screenshots.length > 0 && <section className="screenshot-section">
       <div className="page-shell">
         <div className="section-heading"><div><p className="eyebrow">Screenshots</p><h2>{app.name} {app.playStoreUrl && !app.appStoreUrl ? "on Android" : app.playStoreUrl ? "on iPhone and Android" : "on iPhone"}.</h2></div></div>
-        <div className="screenshot-rail" aria-label={`${app.name} screenshots`}>
-          {app.screenshots.map((src, index) => <figure className="screenshot-card" key={src}>
-            <Image src={src} alt={`${app.name} app screenshot ${index + 1}`} width={310} height={671} sizes="(max-width: 640px) 74vw, 310px" priority={index < 2}/>
-          </figure>)}
-        </div>
+        <ScreenshotCarousel appName={app.name} screenshots={app.screenshots}/>
       </div>
     </section>}
 
