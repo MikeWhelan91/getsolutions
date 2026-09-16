@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "GetSolutions",
     short_name: "GetSolutions",
     description:
-      "Apps and games for iPhone, Android, and the web, including GetPDF, Smart Resume, LineCheck, and Critter Scale.",
+      "Apps and games for iPhone, Android, and the web, including GetPDF, Smart Resume, LineCheck, Critter Scale, and Kinu Tumble.",
     start_url: "/",
     scope: "/",
     display: "standalone",

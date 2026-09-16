@@ -15,6 +15,11 @@ const withBase = (path?: string) => {
 
 const buildStructuredData = (app: AppData) => {
   const isWebApp = Boolean(app.isWebsite);
+  const platforms = app.platforms ?? [
+    app.playStoreUrl && "Android",
+    app.appStoreUrl && "iOS",
+    app.isWebsite && "Web",
+  ].filter((platform): platform is "Android" | "iOS" | "Web" => Boolean(platform));
   const screenshots = app.screenshots
     .map(withBase)
     .filter((src): src is string => Boolean(src));
@@ -28,17 +33,13 @@ const buildStructuredData = (app: AppData) => {
     alternateName: app.tagline,
     description: app.longDescription,
     applicationCategory: app.category,
-    operatingSystem: isWebApp
-      ? "Any"
-      : [app.playStoreUrl ? "ANDROID" : null, app.appStoreUrl ? "IOS" : null]
-          .filter((os): os is string => Boolean(os))
-          .join(", ") || "ANDROID",
-    softwareVersion: app.version,
+    operatingSystem: isWebApp ? "Any" : platforms.map((platform) => platform.toUpperCase()).join(", "),
+    ...(app.version ? { softwareVersion: app.version } : {}),
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
+      availability: app.isComingSoon ? "https://schema.org/PreOrder" : "https://schema.org/InStock",
     },
     url: `${siteUrl}/apps/${app.id}`,
     image: withBase(app.icon),

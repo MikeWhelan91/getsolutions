@@ -4,18 +4,20 @@ import SiteFooter from "@/components/SiteFooter";
 import { apps, AppData } from "@/types/app";
 
 function platforms(app: AppData) {
-  return [app.appStoreUrl && "iOS", app.playStoreUrl && "Android", app.isWebsite && "Web"].filter(Boolean).join(" · ") || "Coming soon";
+  const available = app.platforms ?? [app.appStoreUrl && "iOS", app.playStoreUrl && "Android", app.isWebsite && "Web"].filter(Boolean);
+  const label = available.join(" · ");
+  return app.isComingSoon ? `${label ? `${label} · ` : ""}Coming soon` : label || "Coming soon";
 }
 
 export default function Home() {
-  const priorityApps = [apps["critter-scale"], apps.linecheck, apps["smart-resume"], apps.getpdf];
+  const priorityApps = [apps["kinu-tumble"], apps["critter-scale"], apps.linecheck, apps["smart-resume"], apps.getpdf];
   const allApps = [...priorityApps, ...Object.values(apps).filter((app) => !app.isArchived && !priorityApps.some((priority) => priority.id === app.id))];
-  const featured = [apps["critter-scale"], apps.linecheck, apps["smart-resume"]];
+  const featured = [apps["kinu-tumble"], apps["critter-scale"], apps.linecheck];
   return <main>
     <section className="home-hero page-shell">
       <div className="hero-copy">
         <h1>Small apps.<br/><span>Big jobs.</span></h1>
-        <p className="hero-intro">Apps and games for iPhone, Android, and the web: PDF editing, scanning, resumes, dating help, test tracking, and Critter Scale.</p>
+        <p className="hero-intro">Apps and games for iPhone, Android, and the web: PDF editing, scanning, resumes, dating help, test tracking, Critter Scale, and Kinu Tumble.</p>
         <div className="hero-actions"><a href="#apps" className="button button-primary">Explore the apps <span aria-hidden="true">↓</span></a><span>Available on iOS, Android &amp; web</span></div>
       </div>
       <div className="featured-stage" aria-label="Featured apps">

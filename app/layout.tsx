@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     default: "GetSolutions - Privacy-First Android & iOS Apps | PDF Editor, Document Scanner & More",
     template: "%s | GetSolutions"
   },
-  description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, check app permissions, build resumes, get dating conversation help, track pregnancy and ovulation tests, and play Critter Scale.",
+  description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, build resumes, track pregnancy and ovulation tests, and play Critter Scale and Kinu Tumble.",
   keywords: [
     "Android apps",
     "iOS apps",
@@ -31,6 +31,8 @@ export const metadata: Metadata = {
     "no subscription apps",
     "Critter Scale",
     "balancing game iPhone",
+    "Kinu Tumble",
+    "physics stacking game",
     "LineCheck",
     "Smart Resume"
   ],
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://getsolutions.app",
     title: "GetSolutions - Privacy-First Android & iOS Apps",
-    description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, check app permissions, build resumes, get dating conversation help, track pregnancy and ovulation tests, and play Critter Scale.",
+    description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, build resumes, track pregnancy and ovulation tests, and play Critter Scale and Kinu Tumble.",
     siteName: "GetSolutions",
     images: [
       {
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GetSolutions - Privacy-First Android & iOS Apps",
-    description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, check app permissions, build resumes, get dating conversation help, track pregnancy and ovulation tests, and play Critter Scale.",
+    description: "Android and iOS apps and games. Edit PDFs offline, scan and compress documents, build resumes, track pregnancy and ovulation tests, and play Critter Scale and Kinu Tumble.",
     images: ["/hero.png"]
   },
   robots: {

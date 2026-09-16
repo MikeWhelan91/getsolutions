@@ -10,8 +10,10 @@ import SiteFooter from "./SiteFooter";
 interface AppListingProps { app: AppData; relatedApps?: AppData[] }
 
 function platformLabel(app: AppData) {
-  return [app.appStoreUrl && "iPhone & iPad", app.playStoreUrl && "Android", app.isWebsite && "Web"]
-    .filter(Boolean).join(" · ") || (app.isComingSoon ? "Coming soon" : "In development");
+  const available = app.platforms?.map((platform) => platform === "iOS" ? "iPhone & iPad" : platform)
+    ?? [app.appStoreUrl && "iPhone & iPad", app.playStoreUrl && "Android", app.isWebsite && "Web"].filter(Boolean);
+  const label = available.join(" · ");
+  return app.isComingSoon ? `Coming soon${label ? ` for ${label}` : ""}` : label || "In development";
 }
 
 function StoreLinks({ app, light = false }: { app: AppData; light?: boolean }) {

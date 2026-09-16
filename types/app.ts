@@ -15,6 +15,7 @@ export interface AppData {
   valueProps?: string[];
   safetyHighlights?: { icon: string; label: string }[];
   screenshots: string[];
+  platforms?: ("iOS" | "Android" | "Web")[];
   banner?: string;
   playStoreUrl?: string;
   appStoreUrl?: string;
@@ -538,6 +539,78 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/linecheck/07-ask-luna-iphone-1242x2688.png"
     ],
     appStoreUrl: "https://apps.apple.com/us/app/linecheck-test-line-scanner/id6775990353"
+  },
+  "kinu-tumble": {
+    id: "kinu-tumble",
+    name: "Kinu Tumble",
+    tagline: "A cosy physics game about fitting one more Kinu",
+    description: "Drop, nudge, and stack soft little Kinu into a box, then see how many you can fit before three tumble out.",
+    longDescription: "Kinu Tumble is a cosy 3D physics stacking game for iPhone. Drag each Kinu into place, spin the box to find a better angle, and let go to watch it plop into the pile. Small shapes squeeze into gaps while tall and round Kinu make every drop a tiny puzzle, and three tumbles end the run. Keep playing to discover new tofu flavours, dress your Kinu in playful outfits, collect new boxes and rooms, and catch special Lucky and Heart Kinu for helpful rewards.",
+    icon: "/appicons/kinu-tumble.png",
+    category: "Games",
+    size: "",
+    version: "",
+    updatedOn: "",
+    platforms: ["iOS"],
+    isComingSoon: true,
+    features: [
+      "Drag to aim, swipe to spin the box, and release to drop",
+      "Physics-based stacking where every shape lands differently",
+      "Slot tiny Kinu into gaps to keep the pile growing",
+      "Three tumbles end the run",
+      "Discover flavours such as matcha, ube, ramune, and kabocha",
+      "Unlock bunny hoods, fox ears, ninja suits, and more outfits",
+      "Collect new boxes and rooms with their own music",
+      "Catch Lucky Kinu for beans and Heart Kinu for another chance",
+      "Daily missions and rewards to keep each run fresh",
+      "Game Center leaderboard support"
+    ],
+    useCases: [
+      "Play a quick, calming stacking run in a spare minute",
+      "Turn the box and hunt for the perfect gap",
+      "Discover every Kinu flavour and shape",
+      "Personalise the nest with outfits, boxes, and rooms"
+    ],
+    valueProps: [
+      "Simple touch controls with playful physics",
+      "A cosy collection game wrapped around a score chase",
+      "Short runs that are easy to start and hard to put down"
+    ],
+    faqs: [
+      {
+        question: "How do you play Kinu Tumble?",
+        answer: "Drag to position each Kinu, swipe to rotate the box, then let go to drop it. Fit as many as you can without letting three tumble out."
+      },
+      {
+        question: "What happens when a Kinu falls out?",
+        answer: "It counts as one tumble. The run ends after three tumbles, though a Heart Kinu can win one back."
+      },
+      {
+        question: "How do I find new flavours?",
+        answer: "Pile more Kinu into a single run to unlock new flavours, then find them as you continue playing."
+      },
+      {
+        question: "Can I customise the Kinu and their nest?",
+        answer: "Yes. Collect outfits, finishes, boxes, and rooms, with different music for each room."
+      },
+      {
+        question: "What are Lucky Kinu?",
+        answer: "Lucky Kinu award bonus beans when you land them. Heart Kinu restore one tumble."
+      },
+      {
+        question: "When will Kinu Tumble be available?",
+        answer: "Kinu Tumble is coming soon to the App Store for iPhone."
+      }
+    ],
+    screenshots: [
+      "/appscreenshots/kinu-tumble/01-how-many-will-fit-iphone-1242x2688.png",
+      "/appscreenshots/kinu-tumble/02-drag-spin-drop-iphone-1242x2688.png",
+      "/appscreenshots/kinu-tumble/03-squeeze-them-in-iphone-1242x2688.png",
+      "/appscreenshots/kinu-tumble/04-find-every-flavour-iphone-1242x2688.png",
+      "/appscreenshots/kinu-tumble/05-dress-them-up-iphone-1242x2688.png",
+      "/appscreenshots/kinu-tumble/06-make-it-your-own-iphone-1242x2688.png",
+      "/appscreenshots/kinu-tumble/07-catch-a-lucky-kinu-iphone-1242x2688.png"
+    ]
   },
   "critter-scale": {
     id: "critter-scale",
