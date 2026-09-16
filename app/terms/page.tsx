@@ -3,11 +3,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service - GetSolutions",
   description:
-    "Terms of service for GetSolutions apps and websites, including LineCheck and Critter Scale. Covers subscriptions, in-app purchases, AI features, acceptable use, and medical disclaimers where relevant.",
+    "Terms of service for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble. Covers subscriptions, in-app purchases, AI features, acceptable use, and medical disclaimers where relevant.",
   openGraph: {
     title: "Terms of Service - GetSolutions",
     description:
-      "Terms of service for GetSolutions apps and websites, including LineCheck and Critter Scale.",
+      "Terms of service for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble.",
     url: "https://getsolutions.app/terms",
     type: "website"
   },
@@ -32,7 +32,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">Agreement to These Terms</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               By using GetSolutions apps and websites, including GetPDF, Smart Resume, LineCheck, Critter Scale,
-              GetPDF.me, and GetSolutions.app, you agree to these terms.
+              Kinu Tumble, GetPDF.me, and GetSolutions.app, you agree to these terms.
               If you do not agree, do not use the service.
             </p>
           </section>
@@ -113,6 +113,20 @@ export default function TermsPage() {
           </section>
 
           <section className="mb-8">
+            <h2 className="text-2xl font-bold text-neutral-950 mb-4">Kinu Tumble-Specific Terms</h2>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              Kinu Tumble is a casual game provided for personal entertainment.
+            </p>
+            <ul className="list-disc pl-6 text-neutral-700 space-y-2 mb-4">
+              <li><strong>Purchases:</strong> optional purchases, such as ad removal or cosmetic content like outfits, boxes, and rooms, are one-time, non-consumable purchases and can be restored on devices signed in to the same Apple Account.</li>
+              <li><strong>Cosmetic items:</strong> unlocked flavours, outfits, boxes, and rooms are a license to use visual and audio content inside the app. They have no cash value, cannot be transferred or exchanged, and do not change scoring or leaderboard results.</li>
+              <li><strong>Progress:</strong> run history, unlocked content, and settings are stored on your device and may be lost if you delete the app or reset your device. Purchases can be restored; local progress cannot.</li>
+              <li><strong>Leaderboards:</strong> you must not cheat, exploit bugs, or tamper with the app or its data to submit scores. We may remove scores or report abuse to Apple where we reasonably believe a score was not earned through normal play.</li>
+              <li><strong>Changes to gameplay:</strong> we may rebalance physics, scoring, or difficulty in updates, which can affect how scores compare with earlier versions.</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">Free Features, Ads, and Paid Upgrades</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               Some apps offer free tiers, ad-supported experiences, one-time purchases, subscriptions, or a mix of
@@ -182,8 +196,9 @@ export default function TermsPage() {
             <h3 className="text-xl font-bold text-neutral-950 mb-3">Plain-English Summary</h3>
             <p className="text-neutral-700 leading-relaxed">
               Use the apps lawfully, keep backups of important content, understand that optional AI features can be
-              wrong, and do not treat LineCheck as medical advice or diagnosis. In Critter Scale, purchases are
-              one-time and restorable, cosmetics are visual only, and leaderboard scores must be earned fairly.
+              wrong, and do not treat LineCheck as medical advice or diagnosis. In Critter Scale and Kinu Tumble,
+              purchases are one-time and restorable, cosmetics are visual only, and leaderboard scores must be
+              earned fairly.
             </p>
           </section>
         </div>

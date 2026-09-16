@@ -3,11 +3,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy - GetSolutions",
   description:
-    "Privacy policy for GetSolutions apps and websites, including LineCheck and Critter Scale. Covers local processing, optional AI features, ads, purchases, game services, and support.",
+    "Privacy policy for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble. Covers local processing, optional AI features, ads, purchases, game services, and support.",
   openGraph: {
     title: "Privacy Policy - GetSolutions",
     description:
-      "Privacy policy for GetSolutions apps and websites, including LineCheck and Critter Scale.",
+      "Privacy policy for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble.",
     url: "https://getsolutions.app/privacy",
     type: "website"
   },
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
             <p className="text-neutral-700 leading-relaxed mb-4">
               GetSolutions builds utility apps and websites with a bias toward local processing and restrained data
               collection. This policy applies to GetSolutions apps and websites, including GetPDF, Smart Resume,
-              LineCheck, Critter Scale, GetPDF.me, and GetSolutions.app.
+              LineCheck, Critter Scale, Kinu Tumble, GetPDF.me, and GetSolutions.app.
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">
               Different apps use different data flows. Many features run entirely on-device or in-browser. Some
@@ -108,6 +108,21 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
+            <h2 className="text-2xl font-bold text-neutral-950 mb-4">Kinu Tumble-Specific Privacy Details</h2>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              Kinu Tumble is a game that runs on your device. It has no accounts, no AI features, and no chat, and
+              it does not ask for access to your camera, photos, microphone, contacts, or location.
+            </p>
+            <ul className="list-disc pl-6 text-neutral-700 space-y-2 mb-4">
+              <li><strong>Local storage:</strong> run progress, unlocked flavours, outfits, boxes, rooms, settings, and purchase status are saved on your device. We do not receive a copy.</li>
+              <li><strong>Ads:</strong> the free version may show ads. Ad providers may collect device identifiers, approximate location derived from IP address, and ad interaction data to deliver, measure, and limit fraud in those ads. On iOS, Kinu Tumble asks for App Tracking Transparency permission before any ad personalization that relies on tracking; if you decline, ads are shown without that tracking. Where required, such as in the EEA, UK, and Switzerland, a consent message lets you choose how your data is used for ads.</li>
+              <li><strong>Purchases:</strong> optional purchases such as ad removal or cosmetic content are processed by Apple. We receive only the entitlement status needed to unlock and restore them; we never see your payment details.</li>
+              <li><strong>Game Center:</strong> if you are signed in to Game Center, your score and Game Center player profile are submitted to Apple so leaderboards can work. This is handled by Apple under its own privacy policy.</li>
+              <li><strong>Diagnostics:</strong> crash and performance data may be shared with us through Apple if you have enabled sharing with app developers in your device settings.</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">AI Features Across Our Apps</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               Some GetSolutions apps offer optional AI features. When you use them, the content you submit and the
@@ -129,7 +144,7 @@ export default function PrivacyPage() {
               <li><strong>Apple App Store and Google Play:</strong> app distribution, updates, subscriptions, and purchase handling.</li>
               <li><strong>Cloud hosting and API providers:</strong> to support optional online and AI-assisted features.</li>
               <li><strong>Ad networks:</strong> for free tiers that show ads, including Google AdMob.</li>
-              <li><strong>Apple Game Center:</strong> for leaderboards in games such as Critter Scale.</li>
+              <li><strong>Apple Game Center:</strong> for leaderboards in games such as Critter Scale and Kinu Tumble.</li>
               <li><strong>Analytics or diagnostics tools:</strong> where enabled to understand stability and product usage.</li>
             </ul>
             <p className="text-neutral-700 leading-relaxed mb-4">
@@ -168,10 +183,10 @@ export default function PrivacyPage() {
             <p className="text-neutral-700 leading-relaxed mb-4">
               None of our apps are designed specifically for children, and we do not knowingly collect personal
               information from children under 13, or the minimum age of digital consent where you live. General
-              audience apps that younger people may use are built to need no account and no contact details, and
-              we keep any data collection in them to what the app needs to run, deliver ads in free versions, and
-              process purchases. A parent or guardian should review an app's age rating and store listing before a
-              child uses it.
+              audience apps that younger people may use, such as Critter Scale and Kinu Tumble, are built to need
+              no account and no contact details, and we keep any data collection in them to what the app needs to
+              run, deliver ads in free versions, and process purchases. A parent or guardian should review an
+              app's age rating and store listing before a child uses it.
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">
               If you believe a child has provided us personal information, contact us and we will review and, where
@@ -221,8 +236,9 @@ export default function PrivacyPage() {
               Most of our products try to keep work local. Some optional features, especially AI features, need data
               to be sent out so they can function. For LineCheck specifically, local tracking data usually stays on
               the device, while optional AI reads and assistant features send the photo, message, and related context
-              needed to answer the request. Critter Scale keeps your game progress on the device; its only outside
-              data flows are ads in the free version, Apple purchases, and optional Game Center leaderboards.
+              needed to answer the request. Critter Scale and Kinu Tumble keep your game progress on the device;
+              their only outside data flows are ads in the free version, Apple purchases, and optional Game Center
+              leaderboards.
             </p>
           </section>
         </div>
