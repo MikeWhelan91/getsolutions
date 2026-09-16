@@ -31,7 +31,6 @@ export default function Home() {
       <div className="section-heading catalog-heading"><div><p className="eyebrow">The collection</p><h2>All GetSolutions apps.</h2></div><p>{allApps.length} apps for mobile and web</p></div>
       <div className="app-catalog">{allApps.map((app, index) => <Link href={`/apps/${app.id}`} className={`catalog-card catalog-card-${index % 4}`} key={app.id}>
         <div className="catalog-visual">
-          <span className="catalog-number">{String(index + 1).padStart(2,"0")}</span>
           <div className="catalog-screen-stack">
             {(app.screenshots.length ? app.screenshots.slice(0, 3) : [app.icon]).map((screenshot, screenshotIndex) =>
               <Image className={`catalog-screen catalog-screen-${screenshotIndex + 1}`} src={screenshot} alt={`${app.name} app preview ${screenshotIndex + 1}`} width={310} height={671} key={screenshot}/>

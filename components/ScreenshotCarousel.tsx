@@ -33,16 +33,13 @@ export default function ScreenshotCarousel({ appName, screenshots }: ScreenshotC
           <Image src={src} alt={`${appName} app screenshot ${index + 1}`} width={310} height={671} sizes="(max-width: 640px) 74vw, 310px" priority={index < 2}/>
         </figure>)}
       </div>
-      {pageCount > 1 && <div className="screenshot-carousel-controls" aria-label="Screenshot carousel controls">
-        <div className="screenshot-carousel-buttons">
-          <button type="button" className="screenshot-carousel-button" onClick={() => goToPage(Math.max(0, page - 1))} disabled={page === 0} aria-label="Show previous screenshots">←</button>
-          <button type="button" className="screenshot-carousel-button" onClick={() => goToPage(Math.min(pageCount - 1, page + 1))} disabled={page === pageCount - 1} aria-label="Show more screenshots">→</button>
-        </div>
+      {pageCount > 1 && <>
+        <button type="button" className="screenshot-carousel-button screenshot-carousel-previous" onClick={() => goToPage(Math.max(0, page - 1))} disabled={page === 0} aria-label="Show previous screenshots">←</button>
+        <button type="button" className="screenshot-carousel-button screenshot-carousel-next" onClick={() => goToPage(Math.min(pageCount - 1, page + 1))} disabled={page === pageCount - 1} aria-label="Show more screenshots">→</button>
         <div className="screenshot-carousel-dots" aria-label={`Screenshot page ${page + 1} of ${pageCount}`}>
           {Array.from({ length: pageCount }, (_, index) => <button type="button" key={index} onClick={() => goToPage(index)} className={`screenshot-carousel-dot ${page === index ? "is-active" : ""}`} aria-label={`Show screenshots ${index * 4 + 1} to ${Math.min((index + 1) * 4, screenshots.length)}`} aria-current={page === index ? "true" : undefined}/>) }
         </div>
-        <span className="screenshot-carousel-count">{String(page + 1).padStart(2, "0")} / {String(pageCount).padStart(2, "0")}</span>
-      </div>}
+      </>}
     </div>
   );
 }
