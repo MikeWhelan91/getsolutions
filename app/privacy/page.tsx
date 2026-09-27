@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy - GetSolutions",
   description:
-    "Privacy policy for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble. Covers local processing, optional AI features, ads, purchases, game services, and support.",
+    "Privacy policy for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble. Covers local processing, Apple Health, optional AI features, ads, purchases, game services, and support.",
   openGraph: {
     title: "Privacy Policy - GetSolutions",
     description:
@@ -76,15 +76,25 @@ export default function PrivacyPage() {
               remote processing.
             </p>
             <ul className="list-disc pl-6 text-neutral-700 space-y-2 mb-4">
-              <li><strong>Local storage:</strong> test photos, thumbnails, notes, scan history, reminders, and calendar-related settings are generally stored on-device.</li>
+              <li><strong>Local storage:</strong> test photos, thumbnails, notes, scan history, reminders, cycle and daily logs, and calendar-related settings are generally stored on-device.</li>
+              <li><strong>iCloud sync:</strong> if iCloud is enabled on your device, LineCheck syncs your data through your own private iCloud database so it is available on your other devices. This is handled by Apple, and we cannot access it.</li>
+              <li><strong>About you:</strong> details you choose to add, such as your name, age, height, weight, cycle details, reproductive-health conditions, contraception, and supplements, are stored on your device and used to tailor predictions and explanations.</li>
+              <li><strong>Apple Health:</strong> if you connect Apple Health, LineCheck reads only the types you allow: menstrual flow and spotting, basal body temperature, Apple Watch wrist temperature, cervical mucus, sexual activity, ovulation, pregnancy, and progesterone test results, cycle-related symptoms, contraception, pregnancy and lactation status, sleep, resting heart rate, heart rate variability, steps, walking and running distance, active energy, exercise time, workouts, height, weight, water, and date of birth. It can also save the temperature, weight, and water you log in LineCheck back to Apple Health. Apple Health data is processed on your device to power your calendar, predictions, and insights.</li>
               <li><strong>AI test reads:</strong> if you choose an AI-assisted read, LineCheck may send the selected test photo, enhanced helper variants, test type, limited cycle context, recent reading context, and a pseudonymous safety identifier to our processing providers so the feature can work.</li>
-              <li><strong>Luna chat and AI comparisons:</strong> if you use the in-app assistant or AI comparison features, LineCheck may send your message, recent scan context, reminder context, user-entered notes, cycle context, and the same pseudonymous safety identifier.</li>
+              <li><strong>Luna chat, weekly updates, and AI comparisons:</strong> if you use the in-app assistant, Luna's explanations, or AI comparison features, LineCheck may send your message, your first name, recent scan context, reminder context, user-entered notes, cycle context, your About you details, observations LineCheck has noticed, a short summary of recent Apple Health readings (such as sleep, resting heart rate, heart rate variability, activity, and weight), and the same pseudonymous safety identifier. This is sent through our server to our AI provider, OpenAI, only to answer your request. Our server does not store the content of these requests; OpenAI may retain API data for a limited period (currently up to 30 days) for abuse monitoring under its own policies.</li>
               <li><strong>Ads:</strong> free tiers may display ads. Ad providers may collect device- or ad-related data needed to deliver and measure those ads.</li>
               <li><strong>Purchases:</strong> purchase status is used to unlock Pro features and restore entitlements.</li>
             </ul>
             <p className="text-neutral-700 leading-relaxed mb-4">
               LineCheck deals with sensitive reproductive-health-related information. We do not use that sensitive
               information for cross-app tracking. We use it only to provide the feature you chose to run.
+            </p>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              <strong>Apple Health data is never used for advertising or marketing, never sold, and never shared
+              with ad networks, data brokers, or information resellers.</strong> It is not used for tracking. It
+              leaves your device only when you use Luna, as part of the request described above, to answer your
+              question. You can disconnect Apple Health at any time in LineCheck's Settings or in the Health app,
+              and delete your LineCheck data from Settings.
             </p>
           </section>
 
@@ -156,8 +166,8 @@ export default function PrivacyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">Permissions</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
-              Our apps may request permissions such as camera, photos, notifications, biometrics, storage, or
-              internet access when those permissions are needed for the app’s actual workflow. We do not ask for
+              Our apps may request permissions such as camera, photos, notifications, Apple Health, biometrics,
+              storage, or internet access when those permissions are needed for the app’s actual workflow. We do not ask for
               unrelated permissions just because we can.
             </p>
           </section>
@@ -234,9 +244,10 @@ export default function PrivacyPage() {
             <h3 className="text-xl font-bold text-neutral-950 mb-3">Plain-English Summary</h3>
             <p className="text-neutral-700 leading-relaxed">
               Most of our products try to keep work local. Some optional features, especially AI features, need data
-              to be sent out so they can function. For LineCheck specifically, local tracking data usually stays on
-              the device, while optional AI reads and assistant features send the photo, message, and related context
-              needed to answer the request. Critter Scale and Kinu Tumble keep your game progress on the device;
+              to be sent out so they can function. For LineCheck specifically, local tracking data and Apple Health
+              data stay on the device (and your private iCloud, if enabled), while optional AI reads and assistant
+              features send the photo, message, and related context needed to answer the request. Apple Health data
+              is never used for ads or sold. Critter Scale and Kinu Tumble keep your game progress on the device;
               their only outside data flows are ads in the free version, Apple purchases, and optional Game Center
               leaderboards.
             </p>
