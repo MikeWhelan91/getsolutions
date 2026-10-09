@@ -7,6 +7,8 @@ export default function SiteStructuredData() {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      // Shared @id: the LineCheck site (uselinecheck.com) points its publisher at this same organisation.
+      "@id": `${siteUrl}/#organization`,
       name: "GetSolutions",
       url: siteUrl,
       logo: `${siteUrl}/getsolutionslogo.png`,
@@ -17,11 +19,7 @@ export default function SiteStructuredData() {
       "@type": "WebSite",
       name: "GetSolutions",
       url: siteUrl,
-      publisher: {
-        "@type": "Organization",
-        name: "GetSolutions",
-        url: siteUrl,
-      },
+      publisher: { "@id": `${siteUrl}/#organization` },
     },
   ];
 
