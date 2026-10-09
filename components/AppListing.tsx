@@ -26,6 +26,7 @@ function StoreLinks({ app, light = false }: { app: AppData; light?: boolean }) {
   return <div className="flex flex-wrap items-center gap-3">
     {app.appStoreUrl && <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" aria-label={`Download ${app.name} on the App Store`} className="store-badge"><Image src="/badges/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width={180} height={54} /></a>}
     {app.playStoreUrl && <a href={app.playStoreUrl} target="_blank" rel="noopener noreferrer" aria-label={`Get ${app.name} on Google Play`} className="store-badge"><Image src="/badges/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" width={180} height={54} /></a>}
+    {app.websiteUrl && <a href={app.websiteUrl} target="_blank" rel="noopener" className={light ? "button button-light" : "button button-outline"}>Visit {new URL(app.websiteUrl).hostname} <span aria-hidden="true">↗</span></a>}
   </div>;
 }
 

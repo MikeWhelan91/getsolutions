@@ -457,7 +457,8 @@ export const apps: Record<string, AppData> = {
     ],
     banner: "/appscreenshots/resume/banner.png",
     appStoreUrl: "https://apps.apple.com/us/app/smart-resume-ai-cv-builder/id6758463319",
-    playStoreUrl: "https://play.google.com/store/apps/details?id=com.smartresume.app"
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.smartresume.app",
+    websiteUrl: "https://smartresumestudio.com"
   },
   linecheck: {
     id: "linecheck",
@@ -538,7 +539,8 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/linecheck/06-see-results-change-iphone-1242x2688.png",
       "/appscreenshots/linecheck/07-ask-luna-iphone-1242x2688.png"
     ],
-    appStoreUrl: "https://apps.apple.com/us/app/linecheck-test-line-scanner/id6775990353"
+    appStoreUrl: "https://apps.apple.com/us/app/linecheck-test-line-scanner/id6775990353",
+    websiteUrl: "https://uselinecheck.com"
   },
   "kinu-tumble": {
     id: "kinu-tumble",

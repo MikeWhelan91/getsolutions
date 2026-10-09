@@ -16,6 +16,12 @@ export default function SiteFooter() {
 
           <div className="flex flex-col gap-4 text-sm font-semibold text-white/56 md:items-end">
             <div className="flex flex-wrap gap-x-5 gap-y-2">
+              <a href="https://uselinecheck.com" className="transition-colors hover:text-[#ffb45c]">
+                LineCheck
+              </a>
+              <a href="https://smartresumestudio.com" className="transition-colors hover:text-[#ffb45c]">
+                Smart Resume Studio
+              </a>
               <Link href="/privacy" className="transition-colors hover:text-[#ffb45c]">
                 Privacy
               </Link>
