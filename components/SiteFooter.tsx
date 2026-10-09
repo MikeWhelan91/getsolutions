@@ -22,6 +22,9 @@ export default function SiteFooter() {
               <a href="https://smartresumestudio.com" className="transition-colors hover:text-[#ffb45c]">
                 Smart Resume Studio
               </a>
+              <a href="https://getpdf.me" className="transition-colors hover:text-[#ffb45c]">
+                GetPDF
+              </a>
               <Link href="/privacy" className="transition-colors hover:text-[#ffb45c]">
                 Privacy
               </Link>
