@@ -3,11 +3,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service - GetSolutions",
   description:
-    "Terms of service for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble. Covers subscriptions, in-app purchases, AI features, acceptable use, and medical disclaimers where relevant.",
+    "Terms of service for GetSolutions apps and websites, including LineCheck, Critter Scale, Kinu Tumble, and Bonkers Run. Covers subscriptions, in-app purchases, AI features, acceptable use, and medical disclaimers where relevant.",
   openGraph: {
     title: "Terms of Service - GetSolutions",
     description:
-      "Terms of service for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble.",
+      "Terms of service for GetSolutions apps and websites, including LineCheck, Critter Scale, Kinu Tumble, and Bonkers Run.",
     url: "https://getsolutions.app/terms",
     type: "website"
   },
@@ -24,7 +24,7 @@ export default function TermsPage() {
           Terms of Service
         </h1>
         <p className="text-sm text-neutral-500 mb-12">
-          Last updated: September 2026
+          Last updated: October 2026
         </p>
 
         <div className="prose prose-lg max-w-none">
@@ -32,7 +32,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">Agreement to These Terms</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               By using GetSolutions apps and websites, including GetPDF, Smart Resume, LineCheck, Critter Scale,
-              Kinu Tumble, GetPDF.me, and GetSolutions.app, you agree to these terms.
+              Kinu Tumble, Bonkers Run, GetPDF.me, and GetSolutions.app, you agree to these terms.
               If you do not agree, do not use the service.
             </p>
           </section>
@@ -127,6 +127,22 @@ export default function TermsPage() {
           </section>
 
           <section className="mb-8">
+            <h2 className="text-2xl font-bold text-neutral-950 mb-4">Bonkers Run-Specific Terms</h2>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              Bonkers Run is an action game provided for personal entertainment.
+            </p>
+            <ul className="list-disc pl-6 text-neutral-700 space-y-2 mb-4">
+              <li><strong>Remove Ads:</strong> a one-time, non-consumable purchase that stops full-screen ads, adds a free extra revive in each run, and includes a one-time bonus of Bonkbux. It can be restored on devices signed in to the same Apple Account; the Bonkbux bonus is granted once.</li>
+              <li><strong>Bonkbux:</strong> an in-game virtual currency, earned through play or bought in packs. Bonkbux packs are consumable purchases. Bonkbux have no cash value, cannot be exchanged for money or transferred, are not refundable except where required by law or by the platform you purchased from, and can only be spent inside the game.</li>
+              <li><strong>Accessories:</strong> hats, glasses, and other accessories are a license to use visual content inside the app. They have no cash value, cannot be transferred or exchanged, and do not affect gameplay or leaderboard results.</li>
+              <li><strong>Silver and upgrades:</strong> Silver is earned only through play, cannot be purchased, and has no cash value.</li>
+              <li><strong>Progress:</strong> progress is stored on your device and, if iCloud is enabled, in your own iCloud account. Deleting the app without iCloud, or resetting your device, can lose progress, including unspent Bonkbux. Remove Ads can be restored; consumed currency and local progress cannot.</li>
+              <li><strong>Leaderboards and achievements:</strong> you must not cheat, exploit bugs, or tamper with the app or its data. We may remove scores or report abuse to Apple where we reasonably believe a result was not earned through normal play.</li>
+              <li><strong>Changes to gameplay:</strong> we may rebalance weapons, enemies, rewards, prices, or difficulty in updates.</li>
+            </ul>
+          </section>
+
+          <section className="mb-8">
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">Free Features, Ads, and Paid Upgrades</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               Some apps offer free tiers, ad-supported experiences, one-time purchases, subscriptions, or a mix of
@@ -188,7 +204,7 @@ export default function TermsPage() {
               Questions about these terms can be sent to:
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">
-              <strong>Email:</strong> support@getsolutions.app
+              <strong>Email:</strong> info@getsolutions.app
             </p>
           </section>
 
@@ -198,7 +214,8 @@ export default function TermsPage() {
               Use the apps lawfully, keep backups of important content, understand that optional AI features can be
               wrong, and do not treat LineCheck as medical advice or diagnosis. In Critter Scale and Kinu Tumble,
               purchases are one-time and restorable, cosmetics are visual only, and leaderboard scores must be
-              earned fairly.
+              earned fairly. In Bonkers Run, Remove Ads is restorable, Bonkbux are an in-game currency with no cash
+              value, and accessories are visual only.
             </p>
           </section>
         </div>

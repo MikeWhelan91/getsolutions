@@ -3,11 +3,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy - GetSolutions",
   description:
-    "Privacy policy for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble. Covers local processing, Apple Health, optional AI features, ads, purchases, game services, and support.",
+    "Privacy policy for GetSolutions apps and websites, including LineCheck, Critter Scale, Kinu Tumble, and Bonkers Run. Covers local processing, Apple Health, optional AI features, ads, purchases, game services, and support.",
   openGraph: {
     title: "Privacy Policy - GetSolutions",
     description:
-      "Privacy policy for GetSolutions apps and websites, including LineCheck, Critter Scale, and Kinu Tumble.",
+      "Privacy policy for GetSolutions apps and websites, including LineCheck, Critter Scale, Kinu Tumble, and Bonkers Run.",
     url: "https://getsolutions.app/privacy",
     type: "website"
   },
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-sm text-neutral-500 mb-12">
-          Last updated: September 2026
+          Last updated: October 2026
         </p>
 
         <div className="prose prose-lg max-w-none">
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
             <p className="text-neutral-700 leading-relaxed mb-4">
               GetSolutions builds utility apps and websites with a bias toward local processing and restrained data
               collection. This policy applies to GetSolutions apps and websites, including GetPDF, Smart Resume,
-              LineCheck, Critter Scale, Kinu Tumble, GetPDF.me, and GetSolutions.app.
+              LineCheck, Critter Scale, Kinu Tumble, Bonkers Run, GetPDF.me, and GetSolutions.app.
             </p>
             <p className="text-neutral-700 leading-relaxed mb-4">
               Different apps use different data flows. Many features run entirely on-device or in-browser. Some
@@ -133,6 +133,26 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
+            <h2 className="text-2xl font-bold text-neutral-950 mb-4">Bonkers Run-Specific Privacy Details</h2>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              Bonkers Run is an action game that runs on your device. It has no accounts, no AI features, and no chat,
+              and it does not ask for access to your camera, photos, microphone, contacts, or location.
+            </p>
+            <ul className="list-disc pl-6 text-neutral-700 space-y-2 mb-4">
+              <li><strong>Local storage:</strong> game progress, unlocks, upgrades, statistics, settings, Silver and Bonkbux balances, owned accessories, and purchase status are saved on your device.</li>
+              <li><strong>iCloud sync:</strong> if iCloud is enabled on your device, a copy of your game progress is stored in your own iCloud account so it survives a reinstall and follows you to a new device. This is handled by Apple, and we cannot access it.</li>
+              <li><strong>Ads:</strong> the free version shows occasional full-screen ads between runs and optional rewarded ads (for example, to revive), served by Google AdMob. Google may collect device identifiers, approximate location derived from IP address, and ad interaction data to deliver, measure, and limit fraud in those ads. On iOS, Bonkers Run asks for App Tracking Transparency permission before any ad personalization that relies on tracking; if you decline, ads are shown without that tracking. Where required, such as in the EEA, UK, and Switzerland, a consent message lets you choose how your data is used for ads, and you can change that choice later from the game's Settings.</li>
+              <li><strong>Purchases:</strong> Remove Ads and Bonkbux packs are processed by Apple. We receive only the transaction and entitlement information needed to deliver and restore them; we never see your payment details.</li>
+              <li><strong>Game Center:</strong> if you are signed in to Game Center, your scores, achievements, and Game Center player profile are submitted to Apple so leaderboards and achievements can work. This is handled by Apple under its own privacy policy.</li>
+              <li><strong>Diagnostics:</strong> crash and performance data may be shared with us through Apple if you have enabled sharing with app developers in your device settings.</li>
+            </ul>
+            <p className="text-neutral-700 leading-relaxed mb-4">
+              Buying Remove Ads stops full-screen ads from loading, which also stops the ad-related data collection
+              that comes with them.
+            </p>
+          </section>
+
+          <section className="mb-8">
             <h2 className="text-2xl font-bold text-neutral-950 mb-4">AI Features Across Our Apps</h2>
             <p className="text-neutral-700 leading-relaxed mb-4">
               Some GetSolutions apps offer optional AI features. When you use them, the content you submit and the
@@ -151,10 +171,11 @@ export default function PrivacyPage() {
               Depending on the app and feature, we may use third-party services such as:
             </p>
             <ul className="list-disc pl-6 text-neutral-700 space-y-2 mb-4">
+              <li><strong>Apple iCloud:</strong> to sync game progress between your devices in games such as Bonkers Run, using your own iCloud account.</li>
               <li><strong>Apple App Store and Google Play:</strong> app distribution, updates, subscriptions, and purchase handling.</li>
               <li><strong>Cloud hosting and API providers:</strong> to support optional online and AI-assisted features.</li>
               <li><strong>Ad networks:</strong> for free tiers that show ads, including Google AdMob.</li>
-              <li><strong>Apple Game Center:</strong> for leaderboards in games such as Critter Scale and Kinu Tumble.</li>
+              <li><strong>Apple Game Center:</strong> for leaderboards and achievements in games such as Critter Scale, Kinu Tumble, and Bonkers Run.</li>
               <li><strong>Analytics or diagnostics tools:</strong> where enabled to understand stability and product usage.</li>
             </ul>
             <p className="text-neutral-700 leading-relaxed mb-4">
@@ -193,7 +214,7 @@ export default function PrivacyPage() {
             <p className="text-neutral-700 leading-relaxed mb-4">
               None of our apps are designed specifically for children, and we do not knowingly collect personal
               information from children under 13, or the minimum age of digital consent where you live. General
-              audience apps that younger people may use, such as Critter Scale and Kinu Tumble, are built to need
+              audience apps that younger people may use, such as Critter Scale, Kinu Tumble, and Bonkers Run, are built to need
               no account and no contact details, and we keep any data collection in them to what the app needs to
               run, deliver ads in free versions, and process purchases. A parent or guardian should review an
               app's age rating and store listing before a child uses it.
@@ -248,9 +269,9 @@ export default function PrivacyPage() {
               data stay on the device (and your private iCloud, if enabled), and test photos are read on the device.
               Only the optional "look again" second opinion sends a photo, and Luna's assistant features send your
               message and related context to answer the request. Apple Health data
-              is never used for ads or sold. Critter Scale and Kinu Tumble keep your game progress on the device;
-              their only outside data flows are ads in the free version, Apple purchases, and optional Game Center
-              leaderboards.
+              is never used for ads or sold. Critter Scale, Kinu Tumble, and Bonkers Run keep your game progress on the device
+              (Bonkers Run also syncs it through your own iCloud, if enabled); their only outside data flows are ads in
+              the free version, Apple purchases, and optional Game Center leaderboards and achievements.
             </p>
           </section>
         </div>
