@@ -16,7 +16,13 @@ function platformLabel(app: AppData) {
   return app.isComingSoon ? `Coming soon${label ? ` for ${label}` : ""}` : label || "In development";
 }
 
-function StoreLinks({ app, light = false }: { app: AppData; light?: boolean }) {
+/** Apple campaign token (`ct`): App Store Connect reports installs by it, so each page's buttons can be told apart. */
+function trackedAppStoreUrl(app: AppData, placement: "top" | "bottom") {
+  if (!app.appStoreUrl) return undefined;
+  return `${app.appStoreUrl}${app.appStoreUrl.includes("?") ? "&" : "?"}ct=${encodeURIComponent(`gs-${app.id}-${placement}`)}`;
+}
+
+function StoreLinks({ app, placement, light = false }: { app: AppData; placement: "top" | "bottom"; light?: boolean }) {
   if (app.isWebsite) return (
     <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer" className={light ? "button button-light" : "button button-primary"}>
       Open web app <span aria-hidden="true">↗</span>
@@ -24,7 +30,7 @@ function StoreLinks({ app, light = false }: { app: AppData; light?: boolean }) {
   );
   if (!app.appStoreUrl && !app.playStoreUrl) return <span className="button button-muted">Coming soon</span>;
   return <div className="flex flex-wrap items-center gap-3">
-    {app.appStoreUrl && <a href={app.appStoreUrl} target="_blank" rel="noopener noreferrer" aria-label={`Download ${app.name} on the App Store`} className="store-badge"><Image src="/badges/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width={180} height={54} /></a>}
+    {app.appStoreUrl && <a href={trackedAppStoreUrl(app, placement)} target="_blank" rel="noopener noreferrer" aria-label={`Download ${app.name} on the App Store`} className="store-badge"><Image src="/badges/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width={180} height={54} /></a>}
     {app.playStoreUrl && <a href={app.playStoreUrl} target="_blank" rel="noopener noreferrer" aria-label={`Get ${app.name} on Google Play`} className="store-badge"><Image src="/badges/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" width={180} height={54} /></a>}
     {app.websiteUrl && <a href={app.websiteUrl} target="_blank" rel="noopener" className={light ? "button button-light" : "button button-outline"}>Visit {new URL(app.websiteUrl).hostname} <span aria-hidden="true">↗</span></a>}
   </div>;
@@ -48,7 +54,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
             <h1>{app.name}</h1>
             <p className="product-tagline">{app.tagline}</p>
             <p className="product-description">{app.description}</p>
-            <StoreLinks app={app}/>
+            <StoreLinks app={app} placement="top"/>
           </div>
         </div>
         {app.screenshots.length > 0 && <div className={`product-preview ${app.isWebsite ? "product-preview-web" : ""}`} aria-label={`${app.name} preview`}>
@@ -87,7 +93,7 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
       <div className="related-grid">{relatedApps.map(item => <Link href={`/apps/${item.id}`} className="related-card" key={item.id}><Image src={item.icon} alt="" width={72} height={72}/><div><h3>{item.name}</h3><p>{item.tagline}</p></div><span aria-hidden="true">↗</span></Link>)}</div>
     </div></section>}
 
-    <section className="download-callout page-shell"><div><p className="eyebrow">{app.isWebsite ? "Web app" : stores ? "Download" : "Coming soon"}</p><h2>{app.isWebsite ? `Open ${app.name}.` : stores ? `Get ${app.name}.` : `${app.name} is coming soon.`}</h2><p>{app.isWebsite ? "Runs in any modern browser with nothing to install." : stores ? `${app.name} is available on ${stores}.` : `${app.name} is coming soon to the App Store.`}</p></div><StoreLinks app={app} light/></section>
+    <section className="download-callout page-shell"><div><p className="eyebrow">{app.isWebsite ? "Web app" : stores ? "Download" : "Coming soon"}</p><h2>{app.isWebsite ? `Open ${app.name}.` : stores ? `Get ${app.name}.` : `${app.name} is coming soon.`}</h2><p>{app.isWebsite ? "Runs in any modern browser with nothing to install." : stores ? `${app.name} is available on ${stores}.` : `${app.name} is coming soon to the App Store.`}</p></div><StoreLinks app={app} placement="bottom" light/></section>
     <SiteFooter/>
   </main>;
 }
