@@ -463,15 +463,16 @@ export const apps: Record<string, AppData> = {
   linecheck: {
     id: "linecheck",
     name: "LineCheck",
-    tagline: "AI-assisted hCG and LH strip review for iPhone",
+    tagline: "AI-assisted hCG and LH strip review for iPhone and Android",
     description: "Read pregnancy and ovulation test strips faster with AI-assisted line review, saved results, cycle tracking, and gentle guidance.",
-    longDescription: "LineCheck helps you capture hCG and LH test strips, review faint lines, track LH changes, compare saved scans, and keep pregnancy or ovulation timing in one place. It is built for quick reference and trend tracking on iPhone, with clear confidence indicators, result history, calendar views, and Luna guidance for making sense of saved tests. LineCheck is not a medical device and does not diagnose pregnancy, fertility status, or health conditions; always follow your test instructions and consult a healthcare professional when needed.",
+    longDescription: "LineCheck reads hCG pregnancy and LH ovulation test strips with its own AI models, which run on your phone, so test photos are not uploaded to be read. It helps you review faint lines, track LH changes, compare saved scans, and keep pregnancy or ovulation timing in one place. It is built for quick reference and trend tracking on iPhone, iPad, and Android, with clear confidence indicators, result history, calendar views, and Luna guidance for making sense of saved tests. LineCheck is not a medical device and does not diagnose pregnancy, fertility status, or health conditions; always follow your test instructions and consult a healthcare professional when needed.",
     icon: "/appicons/linecheck.png",
     category: "Health & Fitness",
     size: "See App Store",
     version: "See App Store",
-    updatedOn: "August 2026",
+    updatedOn: "October 2026",
     features: [
+      "On-device AI reads test lines; photos are not uploaded to be read",
       "AI-assisted review for hCG pregnancy test strips",
       "LH ovulation strip reads with T/C ratio tracking",
       "Faint line detection with read confidence",
@@ -481,7 +482,7 @@ export const apps: Record<string, AppData> = {
       "LH trend charts to watch surge patterns over time",
       "Luna chat guidance based on saved test context",
       "Clear reference-only medical disclaimer",
-      "Built for iPhone"
+      "Available on iPhone, iPad, and Android"
     ],
     useCases: [
       "Check whether a pregnancy test image shows a faint second line",
@@ -527,7 +528,7 @@ export const apps: Record<string, AppData> = {
       },
       {
         question: "Is LineCheck available on Android?",
-        answer: "No. LineCheck is iOS only right now."
+        answer: "Yes. LineCheck is on Google Play for Android 8.0 or later, and on the App Store for iPhone and iPad. Records and LineCheck Pro purchases do not carry over between iPhone and Android."
       }
     ],
     screenshots: [
@@ -540,6 +541,7 @@ export const apps: Record<string, AppData> = {
       "/appscreenshots/linecheck/07-ask-luna-iphone-1242x2688.png"
     ],
     appStoreUrl: "https://apps.apple.com/us/app/linecheck-test-line-scanner/id6775990353",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.getapps.linecheck",
     websiteUrl: "https://uselinecheck.com"
   },
   "kinu-tumble": {

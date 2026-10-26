@@ -3,8 +3,8 @@ import AppListing from "@/components/AppListing";
 import { apps } from "@/types/app";
 
 export const metadata: Metadata = {
-  title: "LineCheck - AI hCG & LH Test Strip Reader for iOS",
-  description: "Review hCG and LH test strips with AI-assisted line reads, saved scan history, comparisons, cycle tracking, and Luna guidance on iPhone.",
+  title: "LineCheck - AI hCG & LH Test Strip Reader for iPhone & Android",
+  description: "Read hCG pregnancy and LH ovulation test strips with on-device AI on iPhone and Android. Saved scan history, side-by-side comparisons, LH trends, cycle tracking, and Luna guidance.",
   keywords: [
     "LineCheck",
     "hCG test reader",
@@ -12,13 +12,15 @@ export const metadata: Metadata = {
     "pregnancy test checker",
     "ovulation test tracker",
     "faint line reader",
+    "pregnancy test reader app Android",
+    "ovulation test app Android",
     "fertility app iOS",
     "cycle tracking iPhone",
     "AI test strip reader"
   ],
   openGraph: {
-    title: "LineCheck - AI hCG & LH Test Strip Reader for iOS",
-    description: "AI-assisted hCG and LH strip review with history, comparisons, calendar tracking, and reference-only guidance.",
+    title: "LineCheck - AI hCG & LH Test Strip Reader for iPhone & Android",
+    description: "On-device AI reads hCG and LH test strips on iPhone and Android, with history, comparisons, calendar tracking, and reference-only guidance.",
     url: "https://getsolutions.app/apps/linecheck",
     type: "website",
     images: [
@@ -32,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LineCheck - AI hCG & LH Test Strip Reader for iOS",
-    description: "Review faint lines, track LH trends, compare scans, and plan around cycle timing.",
+    title: "LineCheck - AI hCG & LH Test Strip Reader for iPhone & Android",
+    description: "Review faint lines, track LH trends, compare scans, and plan around cycle timing on iPhone and Android.",
     images: ["/appicons/linecheck.png"]
   },
   alternates: {

@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     "no subscription apps",
     "Critter Scale",
     "balancing game iPhone",
+    "pregnancy test app Android",
     "Kinu Tumble",
     "physics stacking game",
     "LineCheck",

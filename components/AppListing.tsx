@@ -22,6 +22,13 @@ function trackedAppStoreUrl(app: AppData, placement: "top" | "bottom") {
   return `${app.appStoreUrl}${app.appStoreUrl.includes("?") ? "&" : "?"}ct=${encodeURIComponent(`gs-${app.id}-${placement}`)}`;
 }
 
+/** Play install referrer (UTM tags): Play Console reports installs by campaign, matching the App Store `ct` tokens. */
+function trackedPlayStoreUrl(app: AppData, placement: "top" | "bottom") {
+  if (!app.playStoreUrl) return undefined;
+  const referrer = `utm_source=getsolutions.app&utm_medium=website&utm_campaign=gs-${app.id}-${placement}`;
+  return `${app.playStoreUrl}&referrer=${encodeURIComponent(referrer)}`;
+}
+
 function StoreLinks({ app, placement, light = false }: { app: AppData; placement: "top" | "bottom"; light?: boolean }) {
   if (app.isWebsite) return (
     <a href={app.websiteUrl} target="_blank" rel="noopener noreferrer" className={light ? "button button-light" : "button button-primary"}>
@@ -31,7 +38,7 @@ function StoreLinks({ app, placement, light = false }: { app: AppData; placement
   if (!app.appStoreUrl && !app.playStoreUrl) return <span className="button button-muted">Coming soon</span>;
   return <div className="flex flex-wrap items-center gap-3">
     {app.appStoreUrl && <a href={trackedAppStoreUrl(app, placement)} target="_blank" rel="noopener noreferrer" aria-label={`Download ${app.name} on the App Store`} className="store-badge"><Image src="/badges/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width={180} height={54} /></a>}
-    {app.playStoreUrl && <a href={app.playStoreUrl} target="_blank" rel="noopener noreferrer" aria-label={`Get ${app.name} on Google Play`} className="store-badge"><Image src="/badges/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" width={180} height={54} /></a>}
+    {app.playStoreUrl && <a href={trackedPlayStoreUrl(app, placement)} target="_blank" rel="noopener noreferrer" aria-label={`Get ${app.name} on Google Play`} className="store-badge"><Image src="/badges/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" width={180} height={54} /></a>}
     {app.websiteUrl && <a href={app.websiteUrl} target="_blank" rel="noopener" className={light ? "button button-light" : "button button-outline"}>Visit {new URL(app.websiteUrl).hostname} <span aria-hidden="true">↗</span></a>}
   </div>;
 }
