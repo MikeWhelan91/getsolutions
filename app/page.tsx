@@ -4,6 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { apps, AppData } from "@/types/app";
 
 function platforms(app: AppData) {
+  if (app.platformLabel) return app.platformLabel;
   const available = app.platforms ?? [app.appStoreUrl && "iOS", app.playStoreUrl && "Android", app.isWebsite && "Web"].filter(Boolean);
   const label = available.join(" · ");
   return app.isComingSoon ? `${label ? `${label} · ` : ""}Coming soon` : label || "Coming soon";
@@ -35,7 +36,7 @@ export default function Home() {
         <div className="catalog-visual">
           <div className="catalog-screen-stack">
             {(app.screenshots.length ? app.screenshots.slice(0, 3) : [app.icon]).map((screenshot, screenshotIndex) =>
-              <Image className={`catalog-screen catalog-screen-${screenshotIndex + 1}`} src={screenshot} alt={`${app.name} app preview ${screenshotIndex + 1}`} width={310} height={671} key={screenshot}/>
+              <Image className={`catalog-screen catalog-screen-${screenshotIndex + 1}`} src={screenshot} alt={app.screenshotDetails?.[screenshot]?.alt ?? `${app.name} app preview ${screenshotIndex + 1}`} width={310} height={671} sizes="(max-width: 430px) 132px, (max-width: 760px) 150px, 170px" key={screenshot}/>
             )}
           </div>
           <Image className="catalog-icon" src={app.icon} alt="" width={72} height={72}/>

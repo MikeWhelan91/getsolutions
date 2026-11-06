@@ -3,8 +3,9 @@ import AppListing from "@/components/AppListing";
 import { apps } from "@/types/app";
 
 export const metadata: Metadata = {
-  title: "LineCheck - AI hCG & LH Test Strip Reader for iPhone & Android",
-  description: "Read hCG pregnancy and LH ovulation test strips with on-device AI on iPhone and Android. Saved scan history, side-by-side comparisons, LH trends, cycle tracking, and Luna guidance.",
+  title: "LineCheck: On-Device AI Pregnancy & LH Test Scanner",
+  description: "Read pregnancy and LH ovulation tests with Luna Check’s on-device AI. No test-photo uploads. For iPhone, iPhone Duo, iPad and Android.",
+  itunes: { appId: "6775990353" },
   keywords: [
     "LineCheck",
     "hCG test reader",
@@ -19,24 +20,24 @@ export const metadata: Metadata = {
     "AI test strip reader"
   ],
   openGraph: {
-    title: "LineCheck - AI hCG & LH Test Strip Reader for iPhone & Android",
-    description: "On-device AI reads hCG and LH test strips on iPhone and Android, with history, comparisons, calendar tracking, and reference-only guidance.",
+    title: "LineCheck — your phone reads your test lines",
+    description: "Luna Check’s built-in AI reads pregnancy and LH ovulation tests. Photos stay on-device. Available on iPhone, iPhone Duo, iPad and Android.",
     url: "https://getsolutions.app/apps/linecheck",
     type: "website",
     images: [
       {
-        url: "/appicons/linecheck.png",
+        url: "/apps/linecheck/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "LineCheck App Icon"
+        alt: "LineCheck on-device AI pregnancy and LH ovulation test scanner"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "LineCheck - AI hCG & LH Test Strip Reader for iPhone & Android",
-    description: "Review faint lines, track LH trends, compare scans, and plan around cycle timing on iPhone and Android.",
-    images: ["/appicons/linecheck.png"]
+    title: "LineCheck — your phone reads your test lines",
+    description: "Luna Check’s built-in AI reads pregnancy and LH ovulation tests. Photos stay on-device. Available on iPhone Duo too.",
+    images: ["/apps/linecheck/opengraph-image"]
   },
   alternates: {
     canonical: "https://getsolutions.app/apps/linecheck"

@@ -15,7 +15,11 @@ export interface AppData {
   valueProps?: string[];
   safetyHighlights?: { icon: string; label: string }[];
   screenshots: string[];
+  screenshotDetails?: Record<string, { alt: string; caption: string }>;
+  screenshotPlatform?: string;
+  learnMoreLinks?: { title: string; description: string; href: string }[];
   platforms?: ("iOS" | "Android" | "Web")[];
+  platformLabel?: string;
   banner?: string;
   playStoreUrl?: string;
   appStoreUrl?: string;
@@ -463,26 +467,27 @@ export const apps: Record<string, AppData> = {
   linecheck: {
     id: "linecheck",
     name: "LineCheck",
-    tagline: "AI-assisted hCG and LH strip review for iPhone and Android",
-    description: "Read pregnancy and ovulation test strips faster with AI-assisted line review, saved results, cycle tracking, and gentle guidance.",
-    longDescription: "LineCheck reads hCG pregnancy and LH ovulation test strips with its own AI models, which run on your phone, so test photos are not uploaded to be read. It helps you review faint lines, track LH changes, compare saved scans, and keep pregnancy or ovulation timing in one place. It is built for quick reference and trend tracking on iPhone, iPad, and Android, with clear confidence indicators, result history, calendar views, and Luna guidance for making sense of saved tests. LineCheck is not a medical device and does not diagnose pregnancy, fertility status, or health conditions; always follow your test instructions and consult a healthcare professional when needed.",
-    icon: "/appicons/linecheck.png",
+    tagline: "On-device AI reads pregnancy and ovulation tests",
+    description: "Luna Check uses AI models built into your phone to read faint pregnancy test lines and LH ovulation strips. Your test photos stay on-device, with no server upload.",
+    longDescription: "Luna Check uses LineCheck’s own trained AI models on your iPhone, iPhone Duo, iPad or Android phone to read hCG pregnancy and LH ovulation tests. It checks visible test and control lines and reviews LH line ratios entirely on your device, without uploading your test photos to a server. Rechecks also run on-device. Save your test photos, compare faint lines side by side and follow changes over time. Cycle tracking, calendars and pregnancy tools keep the rest of your journey together. LineCheck is free to download, with an optional Pro upgrade. LineCheck is not a medical device and does not diagnose pregnancy, fertility status or health conditions; follow your test instructions and consult a healthcare professional when needed.",
+    icon: "/appicons/linecheck-luna.png",
+    platformLabel: "iPhone · iPhone Duo · iPad · Android",
     category: "Health & Fitness",
     size: "See App Store",
     version: "See App Store",
-    updatedOn: "October 2026",
+    updatedOn: "November 2026",
     features: [
-      "On-device AI reads test lines; photos are not uploaded to be read",
-      "AI-assisted review for hCG pregnancy test strips",
-      "LH ovulation strip reads with T/C ratio tracking",
+      "Luna Check uses built-in AI models to read photos on your device",
+      "Read hCG pregnancy test lines without a photo upload",
+      "Read LH ovulation strips and follow test-to-control line ratios",
       "Faint line detection with read confidence",
       "Saved scan history for pregnancy and ovulation tests",
       "Side-by-side comparison for earlier and later results",
       "Calendar view for tests, cycle timing, and windows",
       "LH trend charts to watch surge patterns over time",
-      "Luna chat guidance based on saved test context",
+      "Optional Luna guidance alongside your saved test history",
       "Clear reference-only medical disclaimer",
-      "Available on iPhone, iPad, and Android"
+      "Available on iPhone, iPhone Duo, iPad and Android"
     ],
     useCases: [
       "Check whether a pregnancy test image shows a faint second line",
@@ -507,12 +512,12 @@ export const apps: Record<string, AppData> = {
     ],
     faqs: [
       {
-        question: "What tests does LineCheck support?",
-        answer: "LineCheck supports hCG pregnancy test strips and LH ovulation test strips."
+        question: "How does LineCheck read pregnancy and ovulation tests?",
+        answer: "Luna Check uses LineCheck’s own trained AI models on your phone. It checks the test and control lines in a photo of an hCG pregnancy or LH ovulation line test, without sending the photo to a server."
       },
       {
-        question: "Can LineCheck diagnose pregnancy or fertility status?",
-        answer: "No. LineCheck is for reference only and is not a medical device. Follow your test instructions and consult a healthcare professional when needed."
+        question: "Are my test photos uploaded for scanning?",
+        answer: "No. Luna Check reads the photo entirely on your device and does not upload it to a server. Rechecks also use the on-device AI models. Optional Luna chat and written guidance use relevant text and result context, not the test photo."
       },
       {
         question: "Does it help with faint lines?",
@@ -520,27 +525,46 @@ export const apps: Record<string, AppData> = {
       },
       {
         question: "Can I compare results over time?",
-        answer: "Yes. Save scans and compare earlier and later tests to see whether lines appear stronger, lighter, or similar."
+        answer: "Yes. Save pregnancy and ovulation test photos, compare earlier and later tests side by side, and follow LH ratios in your history and charts."
       },
       {
-        question: "Does LineCheck track LH trends?",
-        answer: "Yes. It tracks LH ratios and stages so you can watch changes from low through peak."
+        question: "Is LineCheck free to download?",
+        answer: "Yes. LineCheck is free to download, with optional LineCheck Pro purchases for extra features. It is for reference only and cannot confirm pregnancy or ovulation."
       },
       {
         question: "Is LineCheck available on Android?",
-        answer: "Yes. LineCheck is on Google Play for Android 8.0 or later, and on the App Store for iPhone and iPad. Records and LineCheck Pro purchases do not carry over between iPhone and Android."
+        answer: "Yes. LineCheck is on Google Play for Android 8.0 or later, and on the App Store for iPhone, iPhone Duo and iPad. Records and LineCheck Pro purchases do not carry over between iPhone and Android."
       }
     ],
     screenshots: [
-      "/appscreenshots/linecheck/01-spot-faint-lines-iphone-1242x2688.png",
-      "/appscreenshots/linecheck/02-follow-ovulation-trends-iphone-1242x2688.png",
-      "/appscreenshots/linecheck/03-plan-your-cycle-iphone-1242x2688.png",
-      "/appscreenshots/linecheck/04-see-your-trends-iphone-1242x2688.png",
-      "/appscreenshots/linecheck/05-log-everything-iphone-1242x2688.png",
-      "/appscreenshots/linecheck/06-see-results-change-iphone-1242x2688.png",
-      "/appscreenshots/linecheck/07-ask-luna-iphone-1242x2688.png"
+      "/appscreenshots/linecheck/01-pregnancy-result-faint.webp",
+      "/appscreenshots/linecheck/02-ovulation-result.webp",
+      "/appscreenshots/linecheck/03-history.webp",
+      "/appscreenshots/linecheck/04-home.webp",
+      "/appscreenshots/linecheck/05-compare.webp",
+      "/appscreenshots/linecheck/06-pregnancy-week.webp",
+      "/appscreenshots/linecheck/07-assistant.webp",
+      "/appscreenshots/linecheck/08-calendar.webp",
+      "/appscreenshots/linecheck/09-iphone-duo.webp"
     ],
-    appStoreUrl: "https://apps.apple.com/us/app/linecheck-test-line-scanner/id6775990353",
+    screenshotPlatform: "iPhone",
+    screenshotDetails: {
+      "/appscreenshots/linecheck/01-pregnancy-result-faint.webp": { alt: "LineCheck pregnancy test reader showing a faint test line and image readability", caption: "Read faint pregnancy test lines" },
+      "/appscreenshots/linecheck/02-ovulation-result.webp": { alt: "LineCheck LH ovulation test reader showing a test-to-control line ratio", caption: "Read LH ovulation strips" },
+      "/appscreenshots/linecheck/03-history.webp": { alt: "Saved pregnancy and ovulation test scans in LineCheck history", caption: "Keep your test photos together" },
+      "/appscreenshots/linecheck/04-home.webp": { alt: "LineCheck cycle dashboard with test scanning and fertile-window information", caption: "See your cycle at a glance" },
+      "/appscreenshots/linecheck/05-compare.webp": { alt: "LineCheck comparing two saved pregnancy test photos side by side", caption: "Compare tests side by side" },
+      "/appscreenshots/linecheck/06-pregnancy-week.webp": { alt: "LineCheck pregnancy tracker with pregnancy week and baby-size information", caption: "Follow pregnancy week by week" },
+      "/appscreenshots/linecheck/07-assistant.webp": { alt: "LineCheck optional Luna assistant conversation screen", caption: "Optional Luna guidance" },
+      "/appscreenshots/linecheck/08-calendar.webp": { alt: "LineCheck calendar with cycle dates and saved pregnancy and ovulation tests", caption: "Keep your testing calendar" },
+      "/appscreenshots/linecheck/09-iphone-duo.webp": { alt: "LineCheck on iPhone Duo showing the cycle dashboard and pregnancy and ovulation test scanning", caption: "Available on iPhone Duo too" }
+    },
+    learnMoreLinks: [
+      { title: "On-device pregnancy test scanner", description: "See how Luna Check reads faint test lines on your phone.", href: "https://uselinecheck.com/pregnancy-test-scanner" },
+      { title: "LH ovulation test reader", description: "Explore test-to-control line ratios and saved LH results.", href: "https://uselinecheck.com/ovulation-test-scanner" },
+      { title: "Faint pregnancy test line guide", description: "Read the sourced guide to faint lines and test-reading limits.", href: "https://uselinecheck.com/guides/faint-line-pregnancy-test" }
+    ],
+    appStoreUrl: "https://apps.apple.com/app/id6775990353",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.getapps.linecheck",
     websiteUrl: "https://uselinecheck.com"
   },

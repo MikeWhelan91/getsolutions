@@ -6,9 +6,10 @@ import { useRef, useState } from "react";
 interface ScreenshotCarouselProps {
   appName: string;
   screenshots: string[];
+  details?: Record<string, { alt: string; caption: string }>;
 }
 
-export default function ScreenshotCarousel({ appName, screenshots }: ScreenshotCarouselProps) {
+export default function ScreenshotCarousel({ appName, screenshots, details }: ScreenshotCarouselProps) {
   const railRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
   const pageCount = Math.ceil(screenshots.length / 4);
@@ -30,7 +31,8 @@ export default function ScreenshotCarousel({ appName, screenshots }: ScreenshotC
     <div className="screenshot-carousel">
       <div ref={railRef} className="screenshot-rail" aria-label={`${appName} screenshots`} onScroll={updatePageFromScroll}>
         {screenshots.map((src, index) => <figure className="screenshot-card" key={src}>
-          <Image src={src} alt={`${appName} app screenshot ${index + 1}`} width={310} height={671} sizes="(max-width: 640px) 74vw, 310px" priority={index < 2}/>
+          <Image src={src} alt={details?.[src]?.alt ?? `${appName} app screenshot ${index + 1}`} width={310} height={671} sizes="(max-width: 760px) 78vw, 310px"/>
+          {details?.[src] && <figcaption>{details[src].caption}</figcaption>}
         </figure>)}
       </div>
       {pageCount > 1 && <>

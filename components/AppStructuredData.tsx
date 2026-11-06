@@ -29,10 +29,11 @@ const buildStructuredData = (app: AppData) => {
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": isWebApp ? "WebApplication" : "MobileApplication",
+    "@id": app.websiteUrl ? new URL("#app", app.websiteUrl).toString() : `${siteUrl}/apps/${app.id}#app`,
     name: app.name,
     alternateName: app.tagline,
     description: app.longDescription,
-    applicationCategory: app.category,
+    applicationCategory: app.category === "Health & Fitness" ? "HealthApplication" : app.category,
     operatingSystem: isWebApp ? "Any" : platforms.map((platform) => platform.toUpperCase()).join(", "),
     ...(app.version ? { softwareVersion: app.version } : {}),
     offers: {

@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.7,
+    ...(app.id === "linecheck" ? { images: app.screenshots.map((src) => `${baseUrl}${src}`) } : {}),
   }));
 
   return [...staticRoutes, ...appRoutes];

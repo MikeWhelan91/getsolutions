@@ -10,6 +10,7 @@ import SiteFooter from "./SiteFooter";
 interface AppListingProps { app: AppData; relatedApps?: AppData[] }
 
 function platformLabel(app: AppData) {
+  if (app.platformLabel) return app.platformLabel;
   const available = app.platforms?.map((platform) => platform === "iOS" ? "iPhone & iPad" : platform)
     ?? [app.appStoreUrl && "iPhone & iPad", app.playStoreUrl && "Android", app.isWebsite && "Web"].filter(Boolean);
   const label = available.join(" · ");
@@ -65,15 +66,15 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
           </div>
         </div>
         {app.screenshots.length > 0 && <div className={`product-preview ${app.isWebsite ? "product-preview-web" : ""}`} aria-label={`${app.name} preview`}>
-          {app.screenshots.slice(0, 3).map((src, index) => <Image src={src} alt="" width={250} height={541} className={`product-preview-screen product-preview-screen-${index + 1}`} priority={index === 0} key={src}/>)}
+          {app.screenshots.slice(0, 3).map((src, index) => <Image src={src} alt="" width={250} height={541} sizes="(max-width: 760px) 140px, (max-width: 1000px) 175px, 190px" className={`product-preview-screen product-preview-screen-${index + 1}`} priority={index === 0} key={src}/>)}
         </div>}
       </div>
     </section>
 
     {!app.isWebsite && app.screenshots.length > 0 && <section className="screenshot-section">
       <div className="page-shell">
-        <div className="section-heading"><div><p className="eyebrow">Screenshots</p><h2>{app.name} {app.playStoreUrl && !app.appStoreUrl ? "on Android" : app.playStoreUrl ? "on iPhone and Android" : "on iPhone"}.</h2></div></div>
-        <ScreenshotCarousel appName={app.name} screenshots={app.screenshots}/>
+        <div className="section-heading"><div><p className="eyebrow">Screenshots</p><h2>{app.name} on {app.screenshotPlatform ?? (app.playStoreUrl && !app.appStoreUrl ? "Android" : app.playStoreUrl ? "iPhone and Android" : "iPhone")}.</h2></div></div>
+        <ScreenshotCarousel appName={app.name} screenshots={app.screenshots} details={app.screenshotDetails}/>
       </div>
     </section>}
 
@@ -82,6 +83,9 @@ export default function AppListing({ app, relatedApps = [] }: AppListingProps) {
         <article className="about-app">
           <p className="eyebrow">About</p><h2>About {app.name}.</h2>
           <p className="long-description">{app.longDescription}</p>
+          {app.learnMoreLinks && <nav className="app-learn-more" aria-label={`Explore ${app.name}`}>
+            {app.learnMoreLinks.map(link => <a href={link.href} key={link.href}><strong>{link.title} <span aria-hidden="true">↗</span></strong><span>{link.description}</span></a>)}
+          </nav>}
           <div className="feature-grid">
             {app.features.map((feature, index) => <div className="feature-item" key={feature}><span>{String(index + 1).padStart(2, "0")}</span><p>{feature}</p></div>)}
           </div>

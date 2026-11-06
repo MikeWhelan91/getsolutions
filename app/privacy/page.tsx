@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="text-sm text-neutral-500 mb-12">
-          Last updated: October 2026
+          Last updated: 6 November 2026
         </p>
 
         <div className="prose prose-lg max-w-none">
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
               <li><strong>iCloud sync (iPhone and iPad):</strong> if iCloud is enabled on your device, LineCheck syncs your data through your own private iCloud database so it is available on your other devices. This is handled by Apple, and we cannot access it.</li>
               <li><strong>About you:</strong> details you choose to add, such as your name, age, height, weight, cycle details, reproductive-health conditions, contraception, and supplements, are stored on your device and used to tailor predictions and explanations.</li>
               <li><strong>Apple Health (iPhone):</strong> if you connect Apple Health, LineCheck reads only the types you allow: menstrual flow and spotting, basal body temperature, Apple Watch wrist temperature, cervical mucus, sexual activity, ovulation, pregnancy, and progesterone test results, cycle-related symptoms, contraception, pregnancy and lactation status, sleep, resting heart rate, heart rate variability, steps, walking and running distance, active energy, exercise time, workouts, height, weight, water, and date of birth. It can also save the temperature, weight, and water you log in LineCheck back to Apple Health. Apple Health data is processed on your device to power your calendar, predictions, and insights.</li>
-              <li><strong>Test reads:</strong> pregnancy and ovulation test photos are read on your device by LineCheck's on-device model and local analysis. The photo is not uploaded to read it. The only exception is the optional "look again" second opinion: if you disagree with a result and ask Luna to look again, LineCheck sends that test photo, enhanced helper variants, the test type, your stated opinion, limited cycle and recent reading context, and a pseudonymous safety identifier to our AI provider to return a second reading.</li>
+              <li><strong>Test reads:</strong> Luna Check reads pregnancy and ovulation test photos on your device using LineCheck's own built-in AI models. Test photos are not uploaded to a server for analysis. Rechecks also run on-device. Optional written result guidance uses relevant text and result context, not your test photo.</li>
               <li><strong>Luna chat, weekly updates, and AI comparisons:</strong> if you use the in-app assistant, Luna's explanations, or AI comparison features, LineCheck may send your message, your first name, recent scan context, reminder context, user-entered notes, cycle context, your About you details, observations LineCheck has noticed, a short summary of recent Apple Health readings (such as sleep, resting heart rate, heart rate variability, activity, and weight), and the same pseudonymous safety identifier. This is sent through our server to our AI provider, OpenAI, only to answer your request. Our server does not store the content of these requests; OpenAI may retain API data for a limited period (currently up to 30 days) for abuse monitoring under its own policies.</li>
               <li><strong>Android:</strong> LineCheck for Android stores your data on your device. It does not use iCloud, Apple Health, or Health Connect, and it does not sync with LineCheck on iPhone. Whether LineCheck data is included in a device backup depends on your Android backup settings; those backups are handled by Google, and we cannot access them.</li>
               <li><strong>Ads:</strong> free tiers may display ads. Ad providers may collect device- or ad-related data needed to deliver and measure those ads.</li>
@@ -266,10 +266,10 @@ export default function PrivacyPage() {
             <h3 className="text-xl font-bold text-neutral-950 mb-3">Plain-English Summary</h3>
             <p className="text-neutral-700 leading-relaxed">
               Most of our products try to keep work local. Some optional features, especially AI features, need data
-              to be sent out so they can function. For LineCheck specifically, your tracking data and Apple Health
-              data stay on the device (and your private iCloud or Android backup, if enabled), and test photos are read on the device.
-              Only the optional "look again" second opinion sends a photo, and Luna's assistant features send your
-              message and related context to answer the request. Apple Health data
+              to be sent out so they can function. For LineCheck, Luna Check and rechecks read test photos on your
+              device without uploading them for analysis. Saved records can use your private iCloud or Android backup,
+              if enabled. Luna's written guidance and assistant features can send your message, result and cycle context,
+              and summaries of recent Health readings as described above, to answer the request. Apple Health data
               is never used for ads or sold. Critter Scale, Kinu Tumble, and Bonkers Run keep your game progress on the device
               (Bonkers Run also syncs it through your own iCloud, if enabled); their only outside data flows are ads in
               the free version, Apple purchases, and optional Game Center leaderboards and achievements.
